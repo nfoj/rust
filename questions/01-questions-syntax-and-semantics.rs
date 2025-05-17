@@ -30,21 +30,27 @@ fn main () {
 // println!("First line\\nSecond line");
 // First line\nSecond line
 
+// format!
+// What will be the output of the following code?
+/*
+    let name = "Ana";
+    let age = 30;
+    let text = format!("Hello, {}! You are {} years old.", name, age);
+    println!("{}", text);
+*/
+// Hello, Ana! You are 30 years old. 
 
-format!
+// How would you use the format! macro to create the string "The value is: 42" from the number 42?
+fn main () {
 
-    Qual será a saída do seguinte código?
-    Rust
+    let number = 42;
+    let formated = format!("The value is: {}", number);
+    println!("{}", formated);
+}
 
-    let nome = "Ana";
-    let idade = 30;
-    let texto = format!("Olá, {}! Você tem {} anos.", nome, idade);
-    println!("{}", texto);
-
-    Como você usaria a macro format! para criar a string "O valor é: 42" a partir do número 42?
-    Como você pode formatar o número 7 para que ele seja exibido como "0007" usando format!?
-    Qual é a utilidade de "{:?}" na macro format!? Dê um exemplo de quando você o usaria.
-    O que o especificador {:#?} faz de diferente do "{:?}" ao formatar uma tupla ou estrutura?
+// How can you format the number 7 so that it is displayer as "0007" using format!?
+// What is the utily of "{:?}" in the format! macro? Give an example of when you would use it.
+// What does the specifier "{:#?}" do differently from "{:?}" when formatting a tuple or struct?
 
 Variáveis
 
