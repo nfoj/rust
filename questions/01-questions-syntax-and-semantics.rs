@@ -1,22 +1,35 @@
 // Questions - Syntax-and-semantics
 
-Comentários
+// comments
+// How would you write a single-line comment in rust?
+// single-line comment
 
-    Como você escreveria um comentário de uma única linha em Rust?
-    Qual é a sintaxe para um comentário de bloco em Rust?
+// What is the syntax for a block comments in rust?
+/* block comments */
 
-Print
+// print
+// Which macro would you use to print text on the same line, whihout adding a newline at the end?  Give an example.
+// print();
+fn main () {
+    print("Print: whihout adding a newline at the end!");
+}
 
-    Qual macro você usaria para imprimir um texto na mesma linha, sem adicionar uma nova linha ao final? Dê um exemplo.
-    Qual macro você usaria para imprimir um texto e adicionar automaticamente uma nova linha ao final? Dê um exemplo.
+// Which macro would you use to print text and automatically add a newline at the end? Give an example.
+// println!();
+fn main () {
+    println!("Print: add newline at the end!");
+}
 
-Quebra de Linha
+// line-break
+// How do you insert an explicit newline within a string that is being printed with println!?
+fn main () {
+    println!("First\nSecond!");
+}
 
-    Como você insere uma quebra de linha explícita dentro de uma string que está sendo impressa com println!?
-    O que seria impresso pelo seguinte código?
-    Rust
+// What would be printed by the following code?
+// println!("First line\\nSecond line");
+// First line\nSecond line
 
-    println!("Primeira linha\\nSegunda linha");
 
 format!
 
