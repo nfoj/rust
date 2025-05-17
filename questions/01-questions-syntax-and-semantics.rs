@@ -1,30 +1,119 @@
 // Questions - Syntax-and-semantics
 
-// Create a comment in the code and insert the URL of the official website of the selected programming language.
-// Rust URL: https://www.rust-lang.org/
+Comentários
 
-// Represent the different existing syntaxes for creating comments in the language (in one line, several...).
-// # foj.dev
-/* #foj.dev */
+    Como você escreveria um comentário de uma única linha em Rust?
+    Qual é a sintaxe para um comentário de bloco em Rust?
 
-// Create a variable (and a constant, if the language supports it).
-let name = "Alice";
-println!("What is your name: {}", name);
+Print
 
-const NAME: &str = "Alice";
-println!("What is your name: {}", NAME);
+    Qual macro você usaria para imprimir um texto na mesma linha, sem adicionar uma nova linha ao final? Dê um exemplo.
+    Qual macro você usaria para imprimir um texto e adicionar automaticamente uma nova linha ao final? Dê um exemplo.
 
-// Create variables that represent all the primitive data types of the language (text strings, enters, booleans...).
-let type_u = 1;
-let type_i = 1;
-let type_f = 1.0;
-let type_char = 'a';
-let type_str = "abc";
-let type_bool = true;
-let type_tuples = ("Rodofol", 64, 1.87);
-let type_aray = [1, 2, 3, 4, 5, 6, 7, 8, 9];                              
+Quebra de Linha
 
-// Print the text via terminal: "Hello, [and the name of your language]!"
-fn main () {
-    println!("Hello, rust!");
-}
+    Como você insere uma quebra de linha explícita dentro de uma string que está sendo impressa com println!?
+    O que seria impresso pelo seguinte código?
+    Rust
+
+    println!("Primeira linha\\nSegunda linha");
+
+format!
+
+    Qual será a saída do seguinte código?
+    Rust
+
+    let nome = "Ana";
+    let idade = 30;
+    let texto = format!("Olá, {}! Você tem {} anos.", nome, idade);
+    println!("{}", texto);
+
+    Como você usaria a macro format! para criar a string "O valor é: 42" a partir do número 42?
+    Como você pode formatar o número 7 para que ele seja exibido como "0007" usando format!?
+    Qual é a utilidade de "{:?}" na macro format!? Dê um exemplo de quando você o usaria.
+    O que o especificador {:#?} faz de diferente do "{:?}" ao formatar uma tupla ou estrutura?
+
+Variáveis
+
+    Como você declara uma variável chamada pontuacao e atribui a ela o valor 100?
+    Escreva uma linha de código que declare uma variável cidade com o valor "Paris" e, em seguida, a imprima na tela.
+
+Mutabilidade
+
+    Qual palavra-chave é usada para declarar uma variável que pode ter seu valor alterado após a inicialização?
+    Declare uma variável mutável chamada contador inicializada com 0. Em seguida, escreva o código para alterar o valor de contador para 5 e imprimi-lo.
+
+Constantes
+
+    Como você declara uma constante chamada VELOCIDADE_MAXIMA com o valor 9000 do tipo i32?
+    É possível alterar o valor de uma constante após sua declaração?
+
+Shadowing (Sombreamento)
+
+    O que é "shadowing" em Rust? Explique com um exemplo de código e qual seria a saída.
+    Qual será a saída do seguinte código?
+    Rust
+
+    let x = 5;
+    let x = x + 1;
+    {
+        let x = x * 2;
+        println!("O valor de x interno é: {}", x);
+    }
+    println!("O valor de x externo é: {}", x);
+
+Escopo
+
+    Qual será a saída do seguinte código? Explique por quê.
+    Rust
+
+    let a = 10;
+    {
+        let b = 20;
+        println!("Dentro do bloco: a = {}, b = {}", a, b);
+    }
+    // println!("Fora do bloco: a = {}, b = {}", a, b); // Linha comentada
+    println!("Fora do bloco: a = {}", a);
+
+    O que aconteceria se a linha comentada fosse descomentada e compilada?
+
+Tipos Inteiros (u e i)
+
+    Qual é o intervalo de valores que um tipo u8 pode armazenar?
+    Qual é o intervalo de valores que um tipo i8 pode armazenar?
+    Como você declara uma variável idade_maxima do tipo u16 com o valor 150?
+    Como você pode imprimir os valores mínimo e máximo para o tipo u32 usando as constantes associadas ao tipo?
+
+Tipos de Ponto Flutuante (f)
+
+    Declare uma variável chamada preco do tipo f32 com o valor 19.99.
+    Qual dos tipos f32 ou f64 oferece maior precisão?
+
+Tipo char
+
+    Como você declara uma variável chamada inicial que armazena o caractere 'P'?
+    Um tipo char em Rust pode armazenar apenas caracteres ASCII? Explique.
+
+Tipo bool
+
+    Declare uma variável chamada esta_chovendo e atribua a ela o valor true.
+    Quais são os dois únicos valores possíveis para uma variável do tipo bool?
+
+Tuplas
+
+    Como você declara uma tupla chamada produto que armazena o nome de um item (string), sua quantidade (inteiro) e seu preço (ponto flutuante)? Por exemplo: ("Caneta", 10, 1.50).
+    Dado a tupla let coordenadas = (10, 20, 30);, como você desestruturaria essa tupla em três variáveis separadas x, y, e z?
+    Como você acessaria o segundo elemento da tupla let rgb = (255, 0, 128);?
+
+Arrays
+
+    Declare um array chamado notas que pode armazenar 5 números do tipo f32. Inicialize-o com alguns valores.
+    Qual é a principal diferença entre um array e uma tupla em termos de tipos de dados que eles podem armazenar?
+    Como você acessaria o primeiro elemento do array let cores = ["vermelho", "verde", "azul"];?
+
+Operadores Aritméticos e Precedência
+
+    Qual é o resultado da expressão 10 % 3?
+    Qual é o resultado da expressão 5.0 / 2.0?
+    Qual será o resultado da seguinte expressão em Rust, e por quê? println!("{}", 20 - 5 * 2);
+    Qual será o resultado da seguinte expressão em Rust, e por quê? println!("{}", (20 - 5) * 2);
