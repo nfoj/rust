@@ -1,7 +1,5 @@
 # Syntax and Semantics
 
-### Variables, Constants, and Data Types
-
 - Comments
 ```rust
 // line;
