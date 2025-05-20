@@ -70,6 +70,7 @@ struct Point {
 }
 
 fn main() {
+    //
     let p = Point { x: 10, y: 20 };
     println!("The point is: {:?}", p);
 }
@@ -83,6 +84,7 @@ struct Rectangle {
 }
 
 fn main() {
+    //
     let rect = Rectangle {
         width: 10,
         height: 20,
@@ -165,6 +167,7 @@ fn main() {
 // What will be the output of the following code? Explain why
 /*
 fn main () {
+    //
     let a = 10; {
         let b = 20;
         println!("Inside the block: a = {}, b = {}", a, b);
@@ -189,12 +192,14 @@ fn main () {
 
 // How do you declare a variable maximum_age of type u16 with the value 150?
 fn main() {
+    //
     let maximum_age: u16 = 150;
     println!("maximum_age: {}", maximum_age);
 }
 
 // How can you print the minimum and maximum values for the u32 type using its associated constants?
 fn main() {
+    //
     const MAXIMUM: u32 = u32::MAX;
     println!("Max = {}", MAXIMUM);
 
@@ -202,30 +207,58 @@ fn main() {
     println!("MIN = {}", MINIMUM);
 }
 
-// Tipos de Ponto Flutuante (f)
-// Declare uma variável chamada preco do tipo f32 com o valor 19.99.
-// Qual dos tipos f32 ou f64 oferece maior precisão?
+// float
+// Declare a variable named 'price' of type f32 with the value 19.99
+fn main() {
+    //
+    let price: f32 = 19.99;
+    println!("Price = {}", price);
+}
 
-// Tipo char
-// Como você declara uma variável chamada inicial que armazena o caractere 'P'?
-// Um tipo char em Rust pode armazenar apenas caracteres ASCII? Explique.
+// Which of the types f32 or f64 offers greater precision?
+// f32 (single-precision floating-point): Uses 32 bits to represent a floating-point number. This allows for a certain level of precision, but it's less precise than f64.
+// f64 (double-precision floating-point): Uses 64 bits to represent a floating-point number. The extra bits allow for a significantly larger range of representable numbers and, more importantly for this question, a much higher degree of precision in those representations.
 
-// Tipo bool
-// Declare uma variável chamada esta_chovendo e atribua a ela o valor true.
-// Quais são os dois únicos valores possíveis para uma variável do tipo bool?
+// char
+// How do you declare a variable named 'initial' that stores the character 'P'?
+fn main() {
+    //
+    let initial = 'P';
+    println!("The initial is: {}", initial);
+}
 
-// Tuplas
-// Como você declara uma tupla chamada produto que armazena o nome de um item (string), sua quantidade (inteiro) e seu preço (ponto flutuante)? Por exemplo: ("Caneta", 10, 1.50).
-// Dado a tupla let coordenadas = (10, 20, 30);, como você desestruturaria essa tupla em três variáveis separadas x, y, e z?
-// Como você acessaria o segundo elemento da tupla let rgb = (255, 0, 128);?
+// Can a char type in Rust store only ASCII characters? Explain.
+fn main() {
+    //
+    let cyrillic_char = 'Я';
+    println!("Cyrillic character: {}", cyrillic_char);
+}
 
-// Arrays
-// Declare um array chamado notas que pode armazenar 5 números do tipo f32. Inicialize-o com alguns valores.
-// Qual é a principal diferença entre um array e uma tupla em termos de tipos de dados que eles podem armazenar?
-// Como você acessaria o primeiro elemento do array let cores = ["vermelho", "verde", "azul"];?
+// bool
+// Declare a variable named 'rain' and assign the value true to it.
+fn main() {
+    //
+    let rain: bool = true;
+    println!("Rain? {}", rain);
+}
 
-// Operadores Aritméticos e Precedência
-// Qual é o resultado da expressão 10 % 3?
-// Qual é o resultado da expressão 5.0 / 2.0?
-// Qual será o resultado da seguinte expressão em Rust, e por quê? println!("{}", 20 - 5 * 2);
-// Qual será o resultado da seguinte expressão em Rust, e por quê? println!("{}", (20 - 5) * 2);
+// What are the only two possible values for a variable of type bool?
+// true and false
+
+// tuples
+// How do you declare a tuple named 'product' that stores an item's name (string), its quantity (integer), and its price (floating-point)? For example: ("Pen", 10, 1.50).
+
+// Given the tuple 'let coordinates = (10, 20, 30);', how would you destructure this tuple into three separate variables x, y, and z?
+
+// How would you access the second element of the tuple 'let rgb = (255, 0, 128):'?
+
+// arrays
+// Declare an array named 'notas' that can store 5 numbers of type f32. Initialize it with some values.
+// What is the main difference between an array and a tuple in terms of the data types they can store?
+// How would you access the first element of the array `let cores = ["red", "green", "blue"];`?
+
+// arithmetic operators
+// What is the result of the expression 10 % 3?
+// What is the result of the expression 5.0 / 2.0?
+// What will be the result of the following expression in Rust, and why? println!("{}", 20 - 5 * 2);
+// What will be the result of the following expression in Rust, and why? println!("{}", (20 - 5) * 2);
