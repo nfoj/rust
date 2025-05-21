@@ -281,13 +281,57 @@ fn main() {
 // arrays
 // Declare an array named 'notes' that can store 5 numbers of type f32. Initialize it with some values.
 fn main() {
-    //
-    let notes: [u8; 5] = [6, 7, 8, 9, 10];
+    //sdfsdiiuuuu
+    let notes: [u8; 5] = [1, 2, 3, 4, 5];
     println!("{:?}", notes);
+
+    //
+    let notes: [u8; 5];
+    notes = [1, 2, 3, 4, 5];
+    println!("{:?}", notes);
+
+    //
+    let notes_slice: &[u8] = &notes;
+    println!("{:?}", notes_slice);
+
+    //
+    let partial_notes_slice: &[u8] = &notes[0..3];
+    println!("{:?}", partial_notes_slice);
 }
 
 // What is the main difference between an array and a tuple in terms of the data types they can store?
+/*
+Arrays ([T; N])
+
+    Homogeneous: All elements must have the identical type T.
+    Fixed Size: The number of elements N is known at compile time and cannot change.
+    Example:
+    Rust
+
+let numbers: [i32; 3] = [1, 2, 3]; // All are i32
+let words: [&str; 2] = ["hello", "world"]; // All are &str
+
+Tuples ((T1, T2, ..., Tn))
+
+    Heterogeneous: Each element can have a different type (T1, T2, etc.).
+    Fixed Size: The number of elements is known at compile time and cannot change.
+    Example:
+    Rust
+
+    let person_data: (&str, i32, f64) = ("Alice", 30, 60.5); // &str, i32, f64
+    let coordinates: (i32, i32) = (10, 20); // i32, i32 (though they are the same type here, they *could* be different)
+*/
+
 // How would you access the first element of the array `let cores = ["red", "green", "blue"];`?
+fn main() {
+    //
+    let list: [&str; 3] = ["red", "green", "blue"];
+    println!("List: {:?}", list);
+
+    //
+    let list: [&str; 3] = ["red", "green", "blue"];
+    println!("List: {:?}", list[0]);
+}
 
 // arithmetic operators
 // What is the result of the expression 10 % 3?
