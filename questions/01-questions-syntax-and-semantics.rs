@@ -247,13 +247,45 @@ fn main() {
 
 // tuples
 // How do you declare a tuple named 'product' that stores an item's name (string), its quantity (integer), and its price (floating-point)? For example: ("Pen", 10, 1.50).
+fn main() {
+    //
+    let product = ("Pen", 10, 1.50);
+    println!("Product = {:?}", product);
+}
 
 // Given the tuple 'let coordinates = (10, 20, 30);', how would you destructure this tuple into three separate variables x, y, and z?
+fn main() {
+    //
+    let product: (&str, u8, f32) = ("Pen", 10, 1.50);
+    println!("Product: {}, {} and {}", product.0, product.1, product.2);
 
+    //
+    let (name, quantity, price): (&str, u8, f32) = ("Pen", 10, 1.50);
+    println!("Product: {}, {} and {}", name, quantity, price);
+
+    //
+    let (name, quantity, price) = product;
+    println!("Product: {}, {} and {}", name, quantity, price);
+}
 // How would you access the second element of the tuple 'let rgb = (255, 0, 128):'?
+fn main() {
+    //
+    let product: (&str, &str, &str) = ("Item 1", "Item 2", "Item 3");
+    println!("Product: {}", product.1);
+
+    //
+    let (item_01, item_02, item_03) = product;
+    println!("Product: {}", item_02);
+}
 
 // arrays
-// Declare an array named 'notas' that can store 5 numbers of type f32. Initialize it with some values.
+// Declare an array named 'notes' that can store 5 numbers of type f32. Initialize it with some values.
+fn main() {
+    //
+    let notes: [u8; 5] = [6, 7, 8, 9, 10];
+    println!("{:?}", notes);
+}
+
 // What is the main difference between an array and a tuple in terms of the data types they can store?
 // How would you access the first element of the array `let cores = ["red", "green", "blue"];`?
 
