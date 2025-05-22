@@ -1,7 +1,5 @@
 # Data Structures
 
-# integer
-
 - u
 ```rust
 // u8 = 0 - 255
@@ -23,7 +21,7 @@ println!("{}", number_u64);
 // u128 = 0 - ...
 let number_u128: u128 = 255;
 println!("{}", number_u128);
-  ```
+```
 
 - i
 ```rust
@@ -105,9 +103,58 @@ let (x, y, z) = person;
 println!("My name is {x}, i'm {y} years old and my height is {z}");
 ```
 
+- tuples and mut
+```rust
+//
+let mut person = ("Roberto", 90, 1.98);
+println!("{:#?}", person);
+
+person.0 = "Moana";
+person.1 = 58;
+person.2 = 1.62;
+println!("{:#?}", person);
+
+//
+let mut person = ("Helena", 67, 2.10);
+println!("{:?}", person);
+
+person.0 = "Arle";
+person.1 = 64;
+person.2 = 1.71;
+println!("{:?}", person);
+
+//
+let (name, weight, height) = person;
+println!("Name: {} \nWeight: {} \nHeight: {}", name, weight, height);
+```
+
 - array
 ```rust
-let list: [u8; 3] = [1, 5, 9];
+//
+let list: [u8; 4] = [1, 2, 3 , 4];
 println!("{:?}", list);
+
+//
+let list: [u8; 4] = [1, 2, 3 , 4];
+println!("{:#?}", list);
+
+//
+let list = ['a', 'b', 'c' , 'd'];
+println!("{:?}", list);
+
+//
+let list : [&str; 3];
+list = ["ab", "cd", "de"];
+println!("{:?}", list);
+
+//
+let [a, b, c] : [&str; 3] = ["xy", "yz", "zw"]; 
+let list = [a, b, c];
+println!("{:?}", list);
+
+//
+let list = ["12", "23", "34"];
+let [a, b, c] = list;
+println!("{:?} {:?} {:?}", a, b, c);
 ```
 
