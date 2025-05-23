@@ -335,6 +335,29 @@ fn main() {
 
 // arithmetic operators
 // What is the result of the expression 10 % 3?
+// 1
+fn main() {
+    //
+    println!("{}", 10 % 3);
+}
+
 // What is the result of the expression 5.0 / 2.0?
+// 2.5
+fn main() {
+    //
+    println!("{}", 5.0 / 2.0);
+}
+
 // What will be the result of the following expression in Rust, and why? println!("{}", 20 - 5 * 2);
+// 10
+fn main() {
+    //
+    println!("{}", 20 - 5 * 2);
+}
+
 // What will be the result of the following expression in Rust, and why? println!("{}", (20 - 5) * 2);
+// 30
+fn main() {
+    //
+    println!("{}", (20 - 5) * 2);
+}
