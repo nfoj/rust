@@ -1,11 +1,93 @@
+// Questions - Data Structures
+
+// Declare a variable positive_only of type u32 with the value 100. Declare another variable can_be_negative of type i32 with the value -100. Print both. Now, try to assign -5 to the positive_only variable. What happens when you try to compile and why?
+fn main() {
+    //
+    let positive_only: u32 = 100;
+    println!("{:?}", positive_only);
+
+    //
+    let can_be_negative: i32 = -100;
+    println!("{:?}", can_be_negative);
+
+    // error: attempt to compute `u8::MAX + 1_u8`, which would overflow
+    let positive_only: u32 = -5;
+    println!("{:?}", positive_only);
+}
+
+// Write Rust code to declare a variable max_u8 of type u8 and assign it the largest possible value for this type. Print this value. Then, in your code, try to assign max_u8 + 1 to a new u8 variable. What happens during compilation or execution (especially in debug vs. release mode, if you know)?
+fn main() {
+    //
+    let max_u8: u8 = u8::MAX;
+    println!("{:?}", max_u8);
+
+    // error: attempt to compute `u8::MAX + 1_u8`, which would overflow
+    let max_u8: u8 = u8::MAX + 1;
+    println!("{:?}");
+}
+
+// Declare a variable named world_population of type u64 and assign it the value 7800000000. Then, print the variable's value formatted with thousand separators (research how to do this if necessary, or just print the number).
+//
+fn main() {
+    //
+    let world_population: u64 = 7_800_000_000;
+    println!("{:?}", world_population);
+}
+// output: 7800000000
+
+// dp
+// [dependecies]
+// thousands = "0.2.0"
+fn main() {
+    //
+    let world_population: u64 = 7_800_000_000;
+    let formatted_population = thousands_with_separator(world_population, '.');
+    println!("{:?}", formatted_population);
+}
+// output: 7.800.000.000
+
+// Suppose you are modeling a system that uses extremely large unique IDs that will never be negative. Declare a variable super_large_id of type u128 and assign it the value 250000000000000000000000000000000000000 (25 followed by 36 zeros). Print this variable.
+fn main() {
+    //
+    let super_large_id: u128 = 250_000_000_000_000_000_000_000_000_000_000_000_000;
+    println!("{:?}", super_large_id);
+}
+
+/* Debugging: The code below causes an error. Identify the error, explain why it occurs, and correct the code to make it work, while maintaining the intention of
+// ↪ using a small type if the value allows.
+
+Rust
+
+// fn main() {
+let small_number: u8 = 260;
+println!("{}", small_number);
+// }
+
+*/
+
+// You need to store the number of video views, which can reach billions but will never be negative. Choose the most appropriate unsigned type (**u32**
+// ↪ or **u64**). Declare a variable **video_views** with this type, assign 2500000000 to it, and print.
+
+//
+//
+//
+//
+//
+//
+//
 /*
 Tipos Inteiros Unsigned (u8, u16, u32, u64, u128)
 
     Código: Declare uma variável positive_only do tipo u32 com o valor 100. Declare outra variável can_be_negative do tipo i32 com o valor -100. Imprima ambas. Agora, tente atribuir -5 à variável positive_only. O que acontece ao tentar compilar e por quê?
+
     Código: Escreva um código Rust para declarar uma variável max_u8 do tipo u8 e atribua a ela o maior valor possível para este tipo. Imprima esse valor. Em seguida, no seu código, tente atribuir max_u8 + 1 a uma nova variável u8. O que acontece durante a compilação ou execução (especialmente em modo de debug vs release, se souber)?
+
     Código: Declare uma variável chamada world_population do tipo u64 e atribua a ela o valor 7800000000. Em seguida, imprima o valor da variável formatado com separadores de milhar (pesquise como fazer isso se necessário, ou apenas imprima o número).
+
     Código: Suponha que você está modelando um sistema que usa IDs únicos extremamente grandes que nunca serão negativos. Declare uma variável super_large_id do tipo u128 e atribua a ela o valor 250000000000000000000000000000000000000 (25 seguido de 36 zeros). Imprima esta variável.
+
     Código - Depuração: O código abaixo causa um erro. Identifique o erro, explique por que ele ocorre e corrija o código para que funcione, mantendo a intenção de usar um tipo pequeno se o valor permitir.
+
     Rust
 
     // fn main() {
@@ -15,6 +97,7 @@ Tipos Inteiros Unsigned (u8, u16, u32, u64, u128)
 
     Código: Você precisa armazenar o número de visualizações de um vídeo, que pode chegar a bilhões, mas nunca será negativo. Escolha o tipo u mais apropriado (u32 ou u64). Declare uma variável video_views com este tipo, atribua 2500000000 e imprima.
 
+//
 Tipos Inteiros Signed (i8, i16, i32, i64, i128)
 
     Código: Declare duas variáveis, min_val_i8 e max_val_i8, ambas do tipo i8. Atribua a elas o menor e o maior valor possível, respectivamente, para o tipo i8. Imprima ambos os valores.
