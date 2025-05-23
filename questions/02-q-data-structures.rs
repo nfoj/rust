@@ -53,51 +53,98 @@ fn main() {
     println!("{:?}", super_large_id);
 }
 
-/* Debugging: The code below causes an error. Identify the error, explain why it occurs, and correct the code to make it work, while maintaining the intention of
-// ↪ using a small type if the value allows.
+/* Debugging: The code below causes an error. Identify the error, explain why it occurs, and correct the code to make it work, while maintaining the intention of using a small type if the value allows.
 
-Rust
-
-// fn main() {
-let small_number: u8 = 260;
-println!("{}", small_number);
-// }
+fn main() {
+    let small_number: u8 = 260;
+    println!("{}", small_number);
+}
 
 */
 
-// You need to store the number of video views, which can reach billions but will never be negative. Choose the most appropriate unsigned type (**u32**
-// ↪ or **u64**). Declare a variable **video_views** with this type, assign 2500000000 to it, and print.
-
-//
-//
-//
-//
-//
-//
-//
-/*
-Tipos Inteiros Unsigned (u8, u16, u32, u64, u128)
-
-    Código: Declare uma variável positive_only do tipo u32 com o valor 100. Declare outra variável can_be_negative do tipo i32 com o valor -100. Imprima ambas. Agora, tente atribuir -5 à variável positive_only. O que acontece ao tentar compilar e por quê?
-
-    Código: Escreva um código Rust para declarar uma variável max_u8 do tipo u8 e atribua a ela o maior valor possível para este tipo. Imprima esse valor. Em seguida, no seu código, tente atribuir max_u8 + 1 a uma nova variável u8. O que acontece durante a compilação ou execução (especialmente em modo de debug vs release, se souber)?
-
-    Código: Declare uma variável chamada world_population do tipo u64 e atribua a ela o valor 7800000000. Em seguida, imprima o valor da variável formatado com separadores de milhar (pesquise como fazer isso se necessário, ou apenas imprima o número).
-
-    Código: Suponha que você está modelando um sistema que usa IDs únicos extremamente grandes que nunca serão negativos. Declare uma variável super_large_id do tipo u128 e atribua a ela o valor 250000000000000000000000000000000000000 (25 seguido de 36 zeros). Imprima esta variável.
-
-    Código - Depuração: O código abaixo causa um erro. Identifique o erro, explique por que ele ocorre e corrija o código para que funcione, mantendo a intenção de usar um tipo pequeno se o valor permitir.
-
-    Rust
-
-    // fn main() {
-    let small_number: u8 = 260;
+// literal out of range for `u8`  the literal `260` does not fit into the type `u8` whose range is `0..= 255
+fn main() {
+    let small_number: u16 = 260;
     println!("{}", small_number);
-    // }
+}
 
-    Código: Você precisa armazenar o número de visualizações de um vídeo, que pode chegar a bilhões, mas nunca será negativo. Escolha o tipo u mais apropriado (u32 ou u64). Declare uma variável video_views com este tipo, atribua 2500000000 e imprima.
+// You need to store the number of video views, which can reach billions but will never be negative. Choose the most appropriate unsigned type (u32 or u64). Declare a variable video_views with this type, assign 2500000000 to it, and print.
+fn main() {
+    //
+    let video_views: u64 = 2_500_000_000;
+    println!("{:?}", video_views);
+}
 
-//
+// Declare two variables, min_val_i8 and max_val_i8, both of type i8. Assign them the smallest and largest possible value, respectively, for the i8 type. Print both values.
+fn main() {
+    //
+    let min_val_i8: i8 = i8::MIN;
+    println!("{:?}", min_val_i8);
+
+    //
+    let max_val_i8: i8 = i8::MAX;
+    println!("{:?}", max_val_i8);
+}
+
+// Declare a variable named current_altitude_change of type i16 to represent an altitude change in meters. Assign it the value -350 (a descent of 350 meters). Print this value.
+fn main() {
+    //
+    let current_altitude_change: i16 = -350;
+    println!("Altitude: {:?} meters", current_altitude_change);
+}
+
+// You are processing financial transactions where the values can be very large and represent both credits and debits (in cents, to avoid floating-point issues). Declare a variable transaction_value_cents of type i64 and assign it a value like -12345678900 (representing a debit of over 123 million). Print it.
+fn main() {
+    //
+    let transaction_value_cents: i64 = -123_456_789_000;
+    println!("Debit = {:.3} million", transaction_value_cents);
+}
+
+/* Debugging: The code below attempts to assign a value that exceeds the limit of i32. Correct the code by choosing a larger i type that can accommodate the value 2_200_000_000.
+
+fn main() {
+    let large_positive: i32 = 2_200_000_000; // Exceeds the limit of i32
+    println!("{}", large_positive);
+}
+*/
+// the literal `2_200_000_000` does not fit into the type `i32` whose range is `-2147483648..=2147483647`
+
+// Declare a variable value_a of type i8 with 120. Declare value_b of type u8 with 120. Now, try to declare value_c of type i8 with -10 and value_d of type u8 attempting to assign -10 (literally). What happens to value_d during compilation? Explain.
+fn main() {
+    //
+    let value_a: i8 = 120;
+    println!("{:?}", value_a);
+
+    //
+    let value_b: u8 = 120;
+    println!("{:?}", value_b);
+
+    //
+    let value_c: i8 = -10;
+    println!("{:?}", value_c);
+
+    //
+    let value_d = -10;
+    println!("{:?}", value_d);
+}
+
+// Write a code snippet that declares two variables score_team_a and score_team_b (both i32). Assign values to them and calculate the score_difference (which can be negative). Print the difference.
+fn main() {
+    //
+    let score_team_a: i32;
+    let score_team_b: i32;
+
+    //
+    score_team_a = 20;
+    score_team_b = 24;
+
+    //
+    let score_difference = score_team_a - score_team_b;
+
+    println!("Score difference: {:?}", score_difference);
+}
+
+/*
 Tipos Inteiros Signed (i8, i16, i32, i64, i128)
 
     Código: Declare duas variáveis, min_val_i8 e max_val_i8, ambas do tipo i8. Atribua a elas o menor e o maior valor possível, respectivamente, para o tipo i8. Imprima ambos os valores.
