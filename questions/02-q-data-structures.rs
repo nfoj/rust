@@ -309,30 +309,121 @@ fn main() {
     }
 }
 
-
-// Write a simple function can_vote(age: u8, is_citizen: bool) -> bool that returns true if age is 18 or greater AND is_citizen is true. Call it with some values and print the results.
-
 // Declare is_online = true and has_new_messages = false. Create a variable should_notify that is true if is_online AND has_new_messages are both true. Print should_notify. Then, change has_new_messages to true and recalculate/print should_notify.
+fn main() {
+    //
+    let is_online: bool = true;
+    let mut has_new_messages: bool = false;
 
-// Create a tuple record that contains a name (&str), an age (u8), and a passing grade (f32). For example: ("Maria", 22, 7.5). Print the entire tuple using {:?}.
+    //
+    let should_notify = is_online && has_new_messages;
+    println!("Should notify (initial): {}", should_notify);
+
+    //
+    has_new_messages = true;
+    let should_notify = is_online && has_new_messages;
+    println!("Should notify (after new message): {}", should_notify);
+}
+
+// Create a tuple record that contains a name (&str), an age (u8), and a passing grade (f32). For example: ("Maria", 22, 7.5). Print the entire tuple.
+fn main() {
+    //
+    let record: (&str, u8, f32) = ("Maria", 22, 7.5);
+    println!("{:#?}", record);
+}
 
 // Create a tuple called server_response that contains an HTTP status code (u16) and a response message (&str), such as (404, "Not Found"). Print the tuple.
+fn main() {
+    //
+    let server_response: (u16, &str) = (404, "Not Found");
+    println!("{:?}", server_response);
+}
 
 // Given the tuple let product_info = ("Laptop XPTO", 1250.99, 15); (name, price, quantity in stock), access and print the product price and the quantity in stock using tuple indexing (e.g., product_info.1).
+fn main() {
+    //
+    let product_info: (&str, f32, u16) = ("Laptop XPTO", 1.250_000, 15);
+    let (name, price, quantity_and_stock) = product_info;
+
+    //
+    println!(
+        "Product: {} \nQuantity and Stock: {}",
+        product_info.0, product_info.2
+    );
+
+    //
+    println!("{:#?}", product_info);
+
+    //
+    println!(
+        "Product: {} \nPrice: {:.3} \nQuantity and Stock: {}",
+        name, price, quantity_and_stock
+    );
+}
 
 // Given the tuple let color_rgb = (255, 128, 0); (representing Orange), destructure it into the variables red, green, and blue. Print each variable separately.
+fn main() {
+    //
+    let color_rgb: (u8, u8, u8) = (255, 128, 0);
+    let (red, green, blue) = color_rgb;
+
+    //
+    println!("Red: {} \nGreen: {} \nBlue: {}", red, green, blue);
+}
 
 // Create a tuple complex_data = ('X', vec![1,2,3], ("nested", true));. Print it. What does this demonstrate about the types a tuple can contain?
+fn main() {
+    //
+    let complex_data = ('X', vec![1, 2, 3], ("nested", true));
+    println!("{:?}", complex_data);
+    println!("{:?}", std::any::type_name_of_val(&complex_data));
+}
 
 // Declare a tuple api_result with a boolean indicating success, a u64 for an ID, and a String for a message. Ex: (true, 1234567890, String::from("Successful operation")). Print using {:#?}.
+fn main() {
+    //
+    let api_result: (bool, u64, String) = (true, 1234567890, String::from("Successful operation"));
+    println!("{:#?}", api_result);
+}
 
 // Declare a tuple let config = ("localhost", 8080);. Try to modify the second element to 8081 (e.g., config.1 = 8081;). What happens when compiling? Now, redeclare it as let mut config = ("localhost", 8080); and try the same modification. Print config.
+fn main() {
+    // let config: (&str, u16) = ("localhost", 8080);
+    //println!("{:?}", config);
+    //config.1 = 8180; // cannot assign to `config.1`, as `config` is not declared as mutable  cannot assign
+
+    //
+    let mut config: (&str, u16) = ("localhost", 8080);
+    println!("{:?}", config);
+    config.1 = 8180;
+    println!("{:?}", config);
+}
 
 // Declare a mutable tuple player_stats to store name (&str), score (i32), and lives (u8). Initialize with ("Hero", 0, 3). Then, modify the score to 1500 and the lives to 2. Print the updated tuple.
+fn main() {
+    //
+    let mut player_stats: (&str, i32, u8) = ("Hero", 0, 3);
+    println!("{:#?}", player_stats);
+
+    //
+    player_stats.1 = 1500;
+    player_stats.2 = 2;
+    println!("{:#?}", player_stats);
+}
 
 // Create a mutable tuple let mut point = (10.0, 20.0);. Modify the first element to 15.5 and the second to 25.0 using index access syntax. Imprint the tuple.
+fn main() {
+    //
+    let mut point: (f32, f32) = (10., 20.);
+    println!("{:#?}", point);
+
+    //
+    point = (15.5, 25.);
+    println!("{:#?}", point);
+}
 
 // Create a mutable tuple file_details containing file name (String), size (u64), and whether it's editable (bool). Initialize it. Then, modify the file name (appending "_v2" to the original name) and change the editable status. Print the tuple.
+
 
 // Create an array temperatures that stores the following f32 temperature readings: [22.5, 23.1, 21.9, 22.8, 23.5]. Print the entire array. Try adding a &str to this array. What happens?
 
