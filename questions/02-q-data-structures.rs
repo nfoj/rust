@@ -423,13 +423,43 @@ fn main() {
 }
 
 // Create a mutable tuple file_details containing file name (String), size (u64), and whether it's editable (bool). Initialize it. Then, modify the file name (appending "_v2" to the original name) and change the editable status. Print the tuple.
+fn main () {
+    // 
+    let file_details: (String, u64, bool) = (String::from("test.txt"), 127, true);
+    println!("{:#?}", file_details);
 
+    //
+    let mut file_details_v2 = file_details;
+    file_details_v2.0 = String::from("teste_v2.txt");
+    file_details_v2.1 = 256;
+    
+    //
+    println!("{:#?}", file_details_v2);
+}
 
 // Create an array temperatures that stores the following f32 temperature readings: [22.5, 23.1, 21.9, 22.8, 23.5]. Print the entire array. Try adding a &str to this array. What happens?
+fn main () {
+    // 
+    let temperatures: [f32; 5] = [22.5, 23.1, 21.9, 22.8, 23.5];
+    println!("{:#?}", temperatures);
+
+    // expected `f32`, found `&str`
+    let array_test: [f32; 2] = [22.5, "Test"];
+    println!("{:#?}", array_test);
+}
 
 // Declare an array months containing the names of the first three months of the year as string slices. Print the name of the second month (remember zero-basedindexing).
+fn main () {
+    // 
+    let months: [&str; 3] = ["January", "February", "March"];
+    println!("{:#?}", months);
+    
+    //
+    println!("{:#?}", months[1])
+}
 
 // Try to create an array let mixed_data = [1, "dois", 3.0];. What does the Rust compiler report? How does this differ from a tuple with elements of different types?
+// The core of the error is mismatched types. Rust arrays have a fixed size and require that all elements within the array have the same data type.
 
 /* The following code has an error related to array size and initializers. Correct it in two different ways (one by adjusting the size, the other by adjusting the initializers) and show both solutions.
 
@@ -439,6 +469,7 @@ fn main() {
     println!("{:?}", some_numbers);
 }
 */
+// expected an array with a size of 4, found one with a size of 3
 
 // Declare an array powers_of_two of 6 elements of type u32. Initialize it with the values [1, 2, 4, 8, 16, 32]. Print the last element of the array using indexing.
 
