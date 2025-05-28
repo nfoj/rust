@@ -144,16 +144,16 @@ mod div;
 
 fn main() {
    let result_sum = sum::cal_sum(1, 1);
-   println!("Result sum = {}", result);
+   println!("Result sum = {}", result_sum);
 
    let result_sub = sub::cal_sub(2, 2);
-   println!("Result sub = {}", result);
+   println!("Result sub = {}", result_sub);
 
    let result_mult = mult::cal_mult(3, 3);
-   println!("Result multi = {}", result);
+   println!("Result multi = {}", result_mult);
    
    let result_div = mult::cal_div(4, 4);
-   println!("Result div = {}", result);
+   println!("Result div = {}", result_div);
    
 }
 ```

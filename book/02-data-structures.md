@@ -1,4 +1,4 @@
-# Data Structures
+# Data Structures - Intergers, Floats, Boolean, Characters, Tuple and Array
 
 - u
 ```rust

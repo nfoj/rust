@@ -23,3 +23,84 @@ Rust is a high-performance system programming language known for its safety feat
 - Installing Rust and Cargo: https://www.rust-lang.org/tools/install
 - IDEs and Rust Toolchains: Jetbrains, Zed, Visual Studio, Helix;
 - Rust REPL (Rust Playground): https://play.rust-lang.org/?version=stable&mode=debug&edition=2021
+
+## Topics
+
+- Variables, Constants, and Data Types
+  - comments
+  - print
+  - line break
+  - format!
+  - variables
+  - mutability
+  - constant
+  - shadowing
+  - scope
+
+- Data Structures
+  - intergers (u and i)
+  - float (f32 and f64)
+  - char
+  - bool
+  - tuples
+  - tuples mut
+  - array
+  - array mut
+
+- Operations
+  - Arithmetic Operators:
+    + : sum
+    - : subtraction
+    * : multiplication
+    / : division
+    % : remainder of division (modulus)
+
+  - Operator Precedence:
+    () : parentheses
+    *, /, % : multiplication, division, and modulus
+    +, - : addition and subtraction
+
+  - Comparison Operators:
+    == : equal to
+    != : not equal to
+    >  : greater than
+    <  : less than
+    >= : greater than or equal to
+    <= : less than or equal to
+
+  - Logical Operators:
+    && : logical AND
+    || : logical OR
+    !  : logical NOT
+
+  - Assignment Operators:
+    =  : simple assignment
+    += : addition and assignment
+    -= : subtraction and assignment
+    *= : multiplication and assignment
+    /= : division and assignment
+    %= : remainder and assignment
+
+- Control Flow Constructs
+  - if
+  - else
+  - else if
+  - loop
+  - while
+  - for
+  - break
+  - continue
+
+- Control Flow Constructs - Part 2
+  - match
+  - if let
+  - while let
+  
+- Operation - Part 2
+  - Bitwise Operators:
+    &  : bitwise AND
+    |  : bitwise OR
+    ^  : bitwise XOR
+    !  : bitwise NOT
+    << : left shift
+    >> : right shift
