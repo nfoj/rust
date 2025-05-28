@@ -506,9 +506,39 @@ fn main () {
 }
 
 // Declare a mutable array inventory_counts of 4 elements of type u16, initialized with [10, 25, 5, 30]. Modify the count of the first item to 12 and the thirdto 8. Print the updated array.
+fn main () {
+      //
+      let mut inventory_counts: [u8; 4] = [10, 25, 5, 30];
+      
+      //
+      inventory_counts[0] = 12;
+      inventory_counts[3] = 8;
+      
+      //
+      println!("{:?}", inventory_counts);
+}
 
 // Create a mutable array active_services: [bool; 3] initialized as [true, false, true]. Modify the second service to true and the last to false. Print the array.
-
-// Given the array let mut values: [i32; 6] = [5, -2, 10, -8, 0, 3];, write a for loop that iterates over this array and, for each element, if it's negative, replace it with its absolute value (e.g., -2 becomes 2, -8 becomes 8). Print the modified array.
+fn main () {
+      //
+      let mut active_services:[bool; 3] = [true, false, true];
+      println!("{:?}", active_services);
+      
+      //
+      active_services[1] = true;
+      println!("{:?}", active_services);
+      
+      //
+      println!("{:?}, {:?}", active_services[0], active_services[2]);
+}
 
 // Create a mutable array pixel_colors: [[u8; 3]; 2] to represent two pixels, each with R, G, B components. Initialize it as [[255, 0, 0], [0, 255, 0]] (one red pixel, one green). Modify the first pixel to be blue ([0, 0, 255]) and the second to be yellow ([255, 255, 0]). Print the pixel array.
+fn main () {
+      //
+      let mut pixel_colors: [[u8; 3]; 3] = [[255, 0, 0], [0, 255, 0], [0, 0, 255]];
+      println!("{:?}", pixel_colors);
+      
+      //
+      pixel_colors[0][1] = 255;
+      println!("{:?}", pixel_colors);
+}
