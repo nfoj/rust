@@ -44,4 +44,30 @@ let num_02: u16 = 9;
 
 let result: u16 = num_01 / num_02;
 println!("{:?}", result);  
+
+// &str
+let num_01: &str = "1";
+let num_02: &str = "2";
+println!("{:?}", num_01.to_owned() + num_02);
+
+// string
+let num_03: String = String::from("1");
+let num_04: String = String::from("2");
+println!("{:?}", num_03 + &num_04);
+
+// String + &str
+let part_01: &str = "10";
+let part_02: String = String::from("20");
+println!("{}", part_01.to_owned() + &part_02);
+
+// String + &str + let
+let part_01: String = String::from("Hello, ");
+let part_02: &str = "World";
+
+let result: String =  part_01 + part_02;
+println!("{}", result);
+
+// tuples
+
+
 ```
