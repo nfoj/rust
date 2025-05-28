@@ -472,10 +472,38 @@ fn main() {
 // expected an array with a size of 4, found one with a size of 3
 
 // Declare an array powers_of_two of 6 elements of type u32. Initialize it with the values [1, 2, 4, 8, 16, 32]. Print the last element of the array using indexing.
+fn main() {
+    //
+    let powers_of_two: [u32; 6] = [1, 2, 4, 8, 16, 32];
+    println!("{:?}, {:?}, {:?}", powers_of_two[3], powers_of_two[4], powers_of_two[5]);
+}
 
 // Declare an array grades with 5 u8 scores all initialized to the value 0 using the repetition syntax (e.g., [0; 5]). Print the array and its size using .len().
+fn main () {
+    //
+    let grades: [u8; 5] = [0; 5];
+    println!("{:?}", grades);
+
+    //
+    println!("{:?}", grades.len());    
+}
 
 // Declare an array let fixed_scores = [100, 90, 80];. Try to modify the second element to 95 (e.g., fixed_scores[1] = 95;). What happens? Now, declare it as let mut fixed_scores = [100, 90, 80];, make the modification, and print it.
+fn main () {
+      //
+      let fixed_scores = [100, 90, 80];
+      println!("{:?}", fixed_scores);
+      
+      // fixed_scores[1] = 95;
+      // println!("{:?}", fixed_scores);
+      
+      //
+      let mut fixed_scores = [10, 30, 60];
+      println!("{:?}", fixed_scores);
+      
+      fixed_scores[1] = 0;
+      println!("{:?}", fixed_scores);
+}
 
 // Declare a mutable array inventory_counts of 4 elements of type u16, initialized with [10, 25, 5, 30]. Modify the count of the first item to 12 and the thirdto 8. Print the updated array.
 
