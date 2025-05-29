@@ -44,7 +44,10 @@ let num_02: u16 = 9;
 
 let result: u16 = num_01 / num_02;
 println!("{:?}", result);  
+```
 
+- string and &str
+```rust
 // &str
 let num_01: &str = "1";
 let num_02: &str = "2";
@@ -66,8 +69,87 @@ let part_02: &str = "World";
 
 let result: String =  part_01 + part_02;
 println!("{}", result);
+```
 
-// tuples
+- tuples
+```rust
+// tuple
+let tup: (u8, u8) = (1, 4);
+println!("{:?}", tup.0 + tup.1);
 
+// tuple let
+let tup: (u8, u8);
+tup = (3, 8);
+println!("{:?}", tup.0 + tup.1);
 
+// tuple + tuple
+let tup: ((u8, u8),(u8, u8)) = ((2, 4),(6, 16));
+println!("{:?}", tup.0.0 + tup.0.1);
+println!("{:?}", tup.1.0 + tup.1.1);
+println!("{:?}", tup.0.0 + tup.1.0);
+println!("{:?}", tup.0.1 + tup.1.1);
+
+// tuple + let + let
+let tup_01: (u8, u8) = (1, 4);
+let tup_02: (u8, u8) = (14, 9);
+
+let result = tup_01.0 + tup_01.1 + tup_02.0 + tup_02.1;
+println!("{:?}", result);
+```
+
+- array
+```rust
+// array
+let arr: [u8; 2] = [1, 4];
+println!("{:?}", arr[0] + arr[1]);
+
+// array let
+let arr: [u8; 2];
+arr = [3, 8];
+println!("{:?}", arr[0] + arr[1]);
+
+// array + array
+let arr: [[u8; 2]; 2] = [[2, 4], [6, 16]];
+println!("{:?}", arr[0][0] + arr[0][1]);
+println!("{:?}", arr[1][0] + arr[1][1]);
+println!("{:?}", arr[0][0] + arr[1][0]);
+println!("{:?}", arr[0][1] + arr[1][1]);
+
+// array + let + let
+let arr_01: [u8; 2] = [1, 4];
+let arr_02: [u8; 2] = [14, 9];
+
+let result = arr_01[0] + arr_01[1] + arr_02[0] + arr_02[1];
+println!("{:?}", result);
+```
+
+- scope
+```rust
+// scope
+let scop_00: i8 = 2;
+let scop_01: i8 = 2;
+
+{
+    let result: i8 = scop_00 + scop_01;
+    println!("{:?}", result)
+}
+
+println!("{:?}", scop_00 + scop_01);
+// println!("{:?}", result);  
+```
+
+- precedence
+```rust
+// () > *, /, and % > + and - 
+let preced: [i8; 2] = [5, 3];
+//
+println!("{:?}", preced[0] + preced[1] * preced[1]);
+// ()
+println!("{:?}", (preced[0] + preced[1]) * preced[1]);
+// *, / and % 
+println!("{:?}", preced[0] * preced[1] / preced[1] % preced[1]);
+// + and - 
+println!("{:?}", preced[0] + preced[1] - preced[0] + preced[0] * preced[0]);
+// 
+println!("{:?}", ((preced[0] + preced[1]) - (preced[0] + preced[0]) * preced[0]));  
 ```
