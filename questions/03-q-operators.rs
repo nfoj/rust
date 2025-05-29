@@ -1,8 +1,6 @@
 // Questions - Operators: arithmetic, assignment, precedence, comparison and logical
 
 // arithmetic
-
-// Escreva um programa que declare duas variáveis inteiras, a com valor 15 e b com valor 7, e imprima a soma delas.
 // Write a program that declares two integer variables, 'a' with the value 15 and 'b' with the value 7, and prints their sum.
 fn main() {
     //
@@ -13,17 +11,51 @@ fn main() {
     println!("{:?}", a + b);
 }
 
-// Crie um código que subtraia o valor 3 de uma variável chamada total que inicialmente vale 10, e exiba o resultado.
 // Create code that subtracts the value 3 from a variable called 'total' that initially equals 10, and displays the result.
+fn main() {
+    //
+    let total = 10;
+    let sub = total - 3;
+    println!("{:?}", sub);
 
-// Desenvolva um programa que multiplique duas variáveis, x igual a 6 e y igual a 8, e mostre o produto.
+    //
+    let mut total = 10;
+    total -= 3;
+    println!("{:?}", total);
+}
+
 // Develop a program that multiplies two variables, 'x' equals 6 and 'y' equals 8, and shows the product.
+fn main() {
+    //
+    let x: u8 = 6;
+    let y: u8 = 8;
 
-// Implemente um código que divida o número 20 por 5 e imprima o quociente.
+    //
+    let result: u8 = x * y;
+
+    //
+    println!("{:?}", result);
+}
+
 // Implement code that divides the number 20 by 5 and prints the quotient.
+fn main() {
+    //
+    let mut number: f32 = 20.;
+    number /= 5.;
 
-// Escreva um programa que calcule o resto da divisão de 23 por 4 e imprima o resultado.
+    //
+    println!("{:?}", number);
+}
+
 // Write a program that calculates the remainder of the division of 23 by 4 and prints the result.
+fn main() {
+    //
+    let mut remainder: u8 = 23;
+    remainder %= 4;
+
+    //
+    println!("{:?}", remainder);
+}
 
 // Declare duas variáveis num1 (12) e num2 (5) e imprima o resultado da sua soma diretamente dentro da macro println!.
 // Declare two variables num1 (12) and num2 (5) and print the result of their sum directly within the println! macro.
