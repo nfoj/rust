@@ -4,6 +4,14 @@
 
 // Escreva um programa que declare duas variáveis inteiras, a com valor 15 e b com valor 7, e imprima a soma delas.
 // Write a program that declares two integer variables, 'a' with the value 15 and 'b' with the value 7, and prints their sum.
+fn main() {
+    //
+    let a: u8 = 15;
+    let b: u8 = 7;
+
+    //
+    println!("{:?}", a + b);
+}
 
 // Crie um código que subtraia o valor 3 de uma variável chamada total que inicialmente vale 10, e exiba o resultado.
 // Create code that subtracts the value 3 from a variable called 'total' that initially equals 10, and displays the result.
