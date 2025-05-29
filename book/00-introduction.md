@@ -55,6 +55,14 @@ Rust is a high-performance system programming language known for its safety feat
     / : division
     % : remainder of division (modulus)
 
+  - Assignment Operators:
+    =  : simple assignment
+    += : addition and assignment
+    -= : subtraction and assignment
+    *= : multiplication and assignment
+    /= : division and assignment
+    %= : remainder and assignment
+
   - Operator Precedence:
     () : parentheses
     *, /, % : multiplication, division, and modulus
@@ -72,14 +80,6 @@ Rust is a high-performance system programming language known for its safety feat
     && : logical AND
     || : logical OR
     !  : logical NOT
-
-  - Assignment Operators:
-    =  : simple assignment
-    += : addition and assignment
-    -= : subtraction and assignment
-    *= : multiplication and assignment
-    /= : division and assignment
-    %= : remainder and assignment
 
 - Control Flow Constructs
   - if

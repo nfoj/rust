@@ -1,4 +1,4 @@
-# Operators - arithmetic, precedence, comparison, logical and assignment
+# Operators - arithmetic, assignment, precedence, comparison and logical
 
 - arithmetic 
 ```rust
@@ -34,11 +34,11 @@ let calc: u8 = 2 + 5;
 println!("{:?}", calc);
 
 // let + let
-let num01: u8 = 4;
-let num02: u8 = 5;
-println!("{:?}", num01 * num02);
+let num_01: u8 = 4;
+let num_02: u8 = 5;
+println!("{:?}", num_01 * num_02);
 
-// let ++
+// let + let + let
 let num_01: u16 = 9;
 let num_02: u16 = 9;
 
@@ -46,6 +46,31 @@ let result: u16 = num_01 / num_02;
 println!("{:?}", result);  
 ```
 
+- assignment
+```rust
+//
+let mut num: u8 = 10;
+
+// addition and assignment: +=
+num += 1;
+println!("{}", num);
+
+// subtraction and assignment: -=
+num -= 1;
+println!("{}", num);
+
+// multiplication and assignment: *=
+num *= 2;
+println!("{}", num);
+
+// division and assignment: /=
+num /= 3;
+println!("{}", num);
+
+// remainder and assignment: %=
+num %= 4;
+println!("{}", num);  
+```
 - string and &str
 ```rust
 // &str
@@ -152,4 +177,68 @@ println!("{:?}", preced[0] * preced[1] / preced[1] % preced[1]);
 println!("{:?}", preced[0] + preced[1] - preced[0] + preced[0] * preced[0]);
 // 
 println!("{:?}", ((preced[0] + preced[1]) - (preced[0] + preced[0]) * preced[0]));  
+```
+
+- comparison
+```rust
+// ==
+let a = 1; 
+let b = 1;
+println!("{}", a == b);
+// 
+let a = 2; 
+let b = 3;
+println!("{}", a == b);
+
+// !=
+let a = 1; 
+let b = 1;
+println!("{}", a != b);
+// 
+let a = 2; 
+let b = 3;
+println!("{}", a != b);
+
+// >
+let a = 1; 
+let b = 1;
+println!("{}", a > b);
+
+// <
+let a = 2; 
+let b = 3;
+println!("{}", a < b);
+
+// >=
+let a = 1; 
+let b = 1;
+println!("{}", a >= b);
+
+// <=
+let a = 2; 
+let b = 3;
+println!("{}", a <= b);
+```
+
+- logical
+```rust
+//
+let t: bool = true;
+let f: bool = false;
+
+// &&
+println!("{}", t && t); // true AND true = true
+println!("{}", f && f); // false AND false = false
+println!("{}", t && f); // true AND false = false
+println!("{}", f && t); // false AND true = false
+    
+// ||
+println!("{}", t || t); // true OR true = true
+println!("{}", f || f); // false OR false = false
+println!("{}", t || f); // true OR false = true
+println!("{}", f || t); // false OR true = true
+   
+// !
+println!("{}", !t); // true = false
+println!("{}", !f); // false = true
 ```
