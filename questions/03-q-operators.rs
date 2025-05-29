@@ -107,15 +107,57 @@ fn main() {
     println!("{:?}", n1 % n2);
 }
 
+// attribution
+// Declare a mutable variable named counter with an initial value of 5. Increment it by 3 using the addition assignment operator and print the new value.
+fn main() {
+    //
+    let mut counter: u8 = 5;
+    counter += 3;
+
+    //
+    println!("{:?}", counter);
+}
+
+// Create a mutable variable pontuacao initialized with 20. Decrement it by 5 using the subtraction assignment operator and display the final value.
+fn main() {
+    //
+    let mut score: u8 = 20;
+    score -= 5;
+
+    //
+    println!("{:?}", score);
+}
+
+// Declare a mutable variable fator with the value 2. Multiply it by 4 using the multiplication assignment operator and print the result.
+fn main() {
+    //
+    let mut value: u8 = 2;
+    value *= 4;
+
+    //
+    println!("{:?}", value);
+}
+
+// Initialize a mutable variable size with 30. Divide it by 6 using the division assignment operator and show the resulting value.
+fn main() {
+    //
+    let mut size: u8 = 30;
+    size /= 6;
+
+    //
+    println!("{:?}", size);
+}
+
+// Declare a mutable variable mod with the value 17. Calculate the remainder of the division by 5 using the remainder assignment operator and print the value.
+fn main() {
+    let mut mode: u8 = 17;
+    mode %= 5;
+
+    //
+    println!("{:?}", mode);
+}
+
 /*
-
-Atribuição
-
-    Declare uma variável mutável chamada contador com o valor inicial de 5. Incremente-a em 3 usando o operador de atribuição de adição e imprima o novo valor.
-    Crie uma variável mutável pontuacao iniciada com 20. Decremente-a em 5 usando o operador de atribuição de subtração e exiba o valor final.
-    Declare uma variável mutável fator com o valor 2. Multiplique-a por 4 usando o operador de atribuição de multiplicação e imprima o resultado.
-    Inicialize uma variável mutável tamanho com 30. Divida-a por 6 usando o operador de atribuição de divisão e mostre o valor resultante.
-    Declare uma variável mutável mod com o valor 17. Calcule o resto da divisão por 5 usando o operador de atribuição de resto e imprima o valor.
 
 String e &str
 
