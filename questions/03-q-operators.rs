@@ -57,20 +57,55 @@ fn main() {
     println!("{:?}", remainder);
 }
 
-// Declare duas variáveis num1 (12) e num2 (5) e imprima o resultado da sua soma diretamente dentro da macro println!.
 // Declare two variables num1 (12) and num2 (5) and print the result of their sum directly within the println! macro.
+fn main() {
+    //
+    let num1: u8 = 12;
+    let num2: u8 = 5;
 
-// Crie uma variável imutável chamada valor que seja a soma de 9 e 2, e imprima seu valor.
-// Create an immutable variable called 'valor' that is the sum of 9 and 2, and print its value.
+    //
+    println!("{:?}", num1 + num2);
+}
 
-// Declare duas variáveis primeiro (7) e segundo (3) e imprima o resultado da sua multiplicação.
-// Declare two variables 'primeiro' (7) and 'segundo' (3) and print the result of their multiplication.
+// Create an immutable variable called 'value' that is the sum of 9 and 2, and print its value.
+fn main() {
+    //
+    let value: u8 = 9 + 2;
+    println!("{:?}", value);
+}
 
-// Declare duas variáveis dividendo (18) e divisor (3) e armazene o resultado da divisão em uma variável chamada resultado, imprimindo-a.
-// Declare two variables 'dividendo' (18) and 'divisor' (3) and store the result of the division in a variable called 'resultado', printing it.
+// Declare two variables 'first' (7) and 'second' (3) and print the result of their multiplication.
+fn main() {
+    //
+    let first: u8 = 7;
+    let second: u8 = 3;
 
-// Declare duas variáveis n1 (25) e n2 (7). Calcule e imprima o resto da divisão de n1 por n2.
+    //
+    println!("{:?}", first * second);
+}
+
+// Declare two variables 'dividend' (18) and 'divisor' (3) and store the result of the division in a variable called 'result', printing it.
+fn main() {
+    //
+    let dividend: u8 = 18;
+    let divisor: u8 = 3;
+
+    //
+    let result: u8 = dividend / divisor;
+
+    //
+    println!("{:?}", result);
+}
+
 // Declare two variables n1 (25) and n2 (7). Calculate and print the remainder of the division of n1 by n2.
+fn main() {
+    //
+    let n1: u8 = 25;
+    let n2: u8 = 7;
+
+    //
+    println!("{:?}", n1 % n2);
+}
 
 /*
 
