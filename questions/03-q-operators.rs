@@ -157,15 +157,59 @@ fn main() {
     println!("{:?}", mode);
 }
 
+// string and &str
+// Declare two variables of type &str, part1 with "Hello, " and part2 with "Rust!". Concatenate them and print the result.
+fn main() {
+    //
+    let part1: &str = "Hello, ";
+    let part2: &str = "Rust!";
+
+    //
+    println!("{:?}", part1.to_owned() + part2);
+}
+
+// Create two String variables, s1 with "Language" and s2 with "Rust.". Concatenate them and print the resulting string.
+fn main() {
+    //
+    let s1: String = String::from("Language ");
+    let s2: String = String::from("Rust.");
+
+    //
+    println!("{:?}", s1 + &s2);
+}
+
+// Declare a variable of type &str called prefix with the value "Number: ". Create a variable of type String called number_str with the value "42". Concatenate them and print the result.
+fn main() {
+    //
+    let number: &str = "Number: ";
+    let number_str: String = String::from("42");
+
+    //
+    println!("{:?}", number.to_owned() + &number_str);
+}
+
+// Create a String variable called initial_message with "Welcome ". Declare a &str variable called name with "User". Concatenate them and print the complete message.
+fn main() {
+    //
+    let initial_message = "Welcome ";
+    let name: &str = "User";
+
+    //
+    println!("{:?}", initial_message.to_owned() + name);
+}
+
+// Declare duas variáveis saudacao do tipo String com "Bom " e periodo do tipo &str com "dia!". Concatene-as e imprima a saudação completa.
+// Declare two variables greeting of type String with "Good " and period of type &str with "day!". Concatenate them and print the complete greeting.
+fn main() {
+    //
+    let greeting: String = String::from("Good ");
+    let period: &str = "day!";
+
+    //
+    println!("{:#?}", greeting.to_owned() + &period);
+}
+
 /*
-
-String e &str
-
-    Declare duas variáveis do tipo &str, parte1 com "Olá, " e parte2 com "Rust!". Concatene-as e imprima o resultado.
-    Crie duas variáveis do tipo String, s1 com "Linguagem " e s2 com "Rust.". Concatene-as e imprima a string resultante.
-    Declare uma variável do tipo &str chamada prefixo com o valor "Número: ". Crie uma variável do tipo String chamada numero_str com o valor "42". Concatene-as e imprima o resultado.
-    Crie uma variável String chamada mensagem_inicial com "Bem-vindo ". Declare uma variável &str chamada nome com "Usuário". Concatene-as e imprima a mensagem completa.
-    Declare duas variáveis saudacao do tipo String com "Bom " e periodo do tipo &str com "dia!". Concatene-as e imprima a saudação completa.
 
 Tuplas
 
