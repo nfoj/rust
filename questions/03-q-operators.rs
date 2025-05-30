@@ -198,7 +198,6 @@ fn main() {
     println!("{:?}", initial_message.to_owned() + name);
 }
 
-// Declare duas variáveis saudacao do tipo String com "Bom " e periodo do tipo &str com "dia!". Concatene-as e imprima a saudação completa.
 // Declare two variables greeting of type String with "Good " and period of type &str with "day!". Concatenate them and print the complete greeting.
 fn main() {
     //
@@ -209,83 +208,175 @@ fn main() {
     println!("{:#?}", greeting.to_owned() + &period);
 }
 
-/*
+// tuples
+// Crie uma tupla com três u8: (10, 20, 30). Acesse o primeiro e o segundo elemento, some-os e imprima o resultado.
+// Create a tuple with three u8: (10, 20, 30). Access the first and second elements, add them and print the result.
 
-Tuplas
+// Declare uma tupla de dois i32. Inicialize-a com os valores (5, -2). Imprima a multiplicação desses dois valores.
+// Declare a tuple of two i32s. Initialize it with the values ​​(5, -2). Print the multiplication of these two values.
 
-    Crie uma tupla com três u8: (10, 20, 30). Acesse o primeiro e o segundo elemento, some-os e imprima o resultado.
-    Declare uma tupla de dois i32. Inicialize-a com os valores (5, -2). Imprima a multiplicação desses dois valores.
-    Crie uma tupla aninhada: ((1, 2), (3, 4)). Some o primeiro elemento da primeira tupla com o segundo elemento da segunda tupla e imprima o resultado.
-    Declare duas tuplas, t1 com (2, 5) e t2 com (8, 1). Some todos os elementos das duas tuplas e imprima o total.
-    Crie uma tupla com um f64 e um i32. Imprima cada elemento separadamente.
+// Crie uma tupla aninhada: ((1, 2), (3, 4)). Some o primeiro elemento da primeira tupla com o segundo elemento da segunda tupla e imprima o resultado.
+// Create a nested tuple: ((1, 2), (3, 4)). Add the first element of the first tuple to the second element of the second tuple and print the result.
 
-Arrays
+// Declare duas tuplas, t1 com (2, 5) e t2 com (8, 1). Some todos os elementos das duas tuplas e imprima o total.
+// Declare two tuples, t1 with (2, 5) and t2 with (8, 1). Add all the elements of the two tuples and print the total.
 
-    Declare um array de 5 i32 com os valores [1, 3, 5, 7, 9]. Imprima a soma do primeiro e do último elemento.
-    Crie um array de 3 u16. Inicialize-o com os valores [10, 20, 30]. Imprima o produto de todos os elementos.
-    Declare um array bidimensional 2x2 com inteiros. Some todos os elementos e imprima o resultado.
-    Crie dois arrays de dois f32. Some os elementos correspondentes dos dois arrays e imprima os resultados das somas.
-    Declare dois arrays a1 com [4, 2] e a2 com [3, 6]. Calcule e imprima a soma de todos os elementos de ambos os arrays.
+// Crie uma tupla com um f64 e um i32. Imprima cada elemento separadamente.
+// Create a tuple with an f64 and an i32. Print each element separately.
 
-Escopo
+// arrays
+// Declare um array de 5 i32 com os valores [1, 3, 5, 7, 9]. Imprima a soma do primeiro e do último elemento.
+// Declare an array of 5 i32 with the values [1, 3, 5, 7, 9]. Print the sum of the first and last elements.
 
-    Declare uma variável global com valor 5. Dentro de um bloco {} declare outra variável com o mesmo nome e valor 10. Imprima o valor de ambas as variáveis (a global e a do bloco) fora e dentro do bloco.
-    Declare uma variável x com valor 1. Crie um bloco interno onde você declara uma variável y com valor 2. Dentro do bloco, imprima a soma de x e y. Fora do bloco, tente imprimir y (o que acontecerá?).
-    Declare uma variável nivel1 com valor 10. Abra um novo bloco e declare uma variável nivel2 com valor 20. Dentro deste bloco, crie outro bloco e declare nivel3 com valor 30. Imprima a soma de nivel1 e nivel3 dentro do bloco mais interno.
-    Declare uma variável mutável contador_externo com valor 0. Dentro de um bloco, crie um loop que incrementa uma variável local contador_interno de 1 a 5. Após o loop (ainda dentro do bloco), adicione o valor final de contador_interno a contador_externo. Imprima o valor de contador_externo fora do bloco.
-    Declare uma variável principal com valor 100. Crie um bloco onde você declara uma variável com o mesmo nome e atribui o valor de principal mais 50 a ela. Imprima o valor da variável dentro do bloco e fora do bloco.
+// Crie um array de 3 u16. Inicialize-o com os valores [10, 20, 30]. Imprima o produto de todos os elementos.
+// Create an array of 3 u16. Initialize it with the values [10, 20, 30]. Print the product of all elements.
 
-Precedência
+// Declare um array bidimensional 2x2 com inteiros. Some todos os elementos e imprima o resultado.
+// Declare a 2x2 multidimensional array with integers. Sum all elements and print the result.
 
-    Dado o array valores com [2, 3], escreva um código que calcule e imprima o resultado de valores[0]+valores[1]∗valores[1].
-    Usando o mesmo array valores, escreva um código que calcule e imprima o resultado de (valores[0]+valores[1])∗valores[1].
-    Ainda com valores, calcule e imprima valores[0]∗valores[1]/valores[1]%valores[1].
-    Calcule e imprima valores[0]+valores[1]−valores[0]+valores[0]∗valores[0].
-    Calcule e imprima ((valores[0]+valores[1])−(valores[0]+valores[0])∗valores[0]).
+// Crie dois arrays de dois f32. Some os elementos correspondentes dos dois arrays e imprima os resultados das somas.
+// Create two arrays of two f32. Sum the corresponding elements of the two arrays and print the results of the sums.
 
-Comparação
-    Declare duas variáveis inteiras, num1 com valor 10 e num2 com valor 10. Escreva um código que imprima se num1 é igual a num2.
-    Declare duas variáveis de ponto flutuante, f1 com 3.14 e f2 com 2.71. Escreva um código que imprima se f1 é diferente de f2.
-    Declare duas variáveis inteiras, idade1 com 25 e idade2 com 30. Escreva um código que imprima se idade1 é maior que idade2.
-    Declare duas variáveis inteiras, ponto1 com 5 e ponto2 com 8. Escreva um código que imprima se ponto1 é menor que ponto2.
-    Declare duas variáveis inteiras, nota1 com 7 e nota2 com 7. Escreva um código que imprima se nota1 é maior ou igual a nota2.
-    Declare duas variáveis inteiras, altura1 com 170 e altura2 com 165. Escreva um código que imprima se altura1 é menor ou igual a altura2.
-    Declare duas variáveis booleanas, verdadeiro1 com true e verdadeiro2 com true. Compare se são iguais e imprima o resultado.
-    Declare uma variável inteira x com 5 e outra y com 10. Verifique se x não é igual a y e imprima o resultado.
-    Declare uma variável temp1 com 22.5 e temp2 com 20.0. Verifique se temp1 é maior que temp2 e imprima.
-    Declare uma variável count1 com 100 e count2 com 99. Verifique se count1 é menor que count2 e imprima.
+// Declare dois arrays a1 com [4, 2] e a2 com [3, 6]. Calcule e imprima a soma de todos os elementos de ambos os arrays.
+// Declare two arrays a1 with [4, 2] and a2 with [3, 6]. Calculate and print the sum of all elements from both arrays.
 
-Lógico
+// scope
+// Declare uma variável global com valor 5. Dentro de um bloco {} declare outra variável com o mesmo nome e valor 10. Imprima o valor de ambas as variáveis (a global e a do bloco) fora e dentro do bloco.
+// Declare a global variable with value 5. Inside a block {} declare another variable with the same name and value 10. Print the value of both variables (the global and the block variable) outside and inside the block.
 
-    Declare duas variáveis booleanas, cond1 como true e cond2 como true. Imprima o resultado da operação lógica AND (&&) entre elas.
-    Declare flag1 como false e flag2 como false. Imprima o resultado da operação lógica AND entre elas.
-    Declare ativo como true e permitido como false. Imprima o resultado de ativo && permitido.
-    Declare tem_permissao como false e is_admin como true. Imprima o resultado de tem_permissao && is_admin.
-    Declare duas variáveis booleanas, opcao1 como true e opcao2 como true. Imprima o resultado da operação lógica OR (||) entre elas.
-    Declare erro1 como false e erro2 como false. Imprima o resultado de erro1 || erro2.
-    Declare conectado como true e tem_dados como false. Imprima o resultado de conectado || tem_dados.
-    Declare sucesso como false e falha como true. Imprima o resultado de sucesso || falha.
-    Declare uma variável booleana estado como true. Imprima o resultado da negação lógica (!) de estado.
-    Declare uma variável booleana invalido como false. Imprima o resultado de !invalido.
+// Declare uma variável x com valor 1. Crie um bloco interno onde você declara uma variável y com valor 2. Dentro do bloco, imprima a soma de x e y. Fora do bloco, tente imprimir y (o que acontecerá?).
+// Declare a variable x with value 1. Create an inner block where you declare a variable y with value 2. Inside the block, print the sum of x and y. Outside the block, try to print y (what will happen?).
 
-Aritmética (Extra), Atribuição, String/&str, Tuplas, Arrays (combinando conceitos)
+// Declare uma variável nivel1 com valor 10. Abra um novo bloco e declare uma variável nivel2 com valor 20. Dentro deste bloco, crie outro bloco e declare nivel3 com valor 30. Imprima a soma de nivel1 e
+// Declare a variable level1 with value 10. Open a new block and declare a variable level2 with value 20. Inside this block, create another block and declare level3 with value 30. Print the sum of level1 and level3 inside the innermost block.
 
-    Declare duas variáveis u8, val1 com 8 e val2 com 3. Calcule a soma, subtraia 1 do resultado e imprima.
-    Declare uma variável mutável texto com "&str" "Olá". Adicione a ela a String ", Mundo!". Imprima o resultado.
-    Crie uma tupla (u32, u32) com valores (5, 10). Multiplique os dois elementos e atribua o resultado a uma nova variável, imprimindo-a.
-    Declare um array [i32; 3] com valores [2, 4, 6]. Divida cada elemento por 2 (usando atribuição de divisão se aplicável) e imprima o array resultante.
-    Declare duas variáveis n_a como 7 e n_b como 4. Calcule o resto da divisão de n_a por n_b e imprima se o resto é igual a 3.
-    Crie uma String "Número: ". Concatene com o resultado da soma de dois u8 (por exemplo, 5 + 7) convertido para String. Imprima o resultado.
-    Declare uma tupla (f64, f64) com (2.5, 3.5). Some os elementos e imprima o resultado formatado com duas casas decimais.
-    Declare um array [u16; 2] com [100, 200]. Multiplique o primeiro elemento por 2 e o segundo por 3, depois some os resultados e imprima.
-    Declare uma variável mutável mensagem com "&str" "Inicio". Adicione a ela a String " -> Fim". Imprima o valor final de mensagem.
-    Crie uma tupla ((i8, i8), i8) com ((1, 2), 3). Some todos os três números e imprima o resultado.
+// Declare uma variável mutável contador_externo com valor 0. Dentro de um bloco, crie um loop que incrementa uma variável local contador_interno de 1 a 5. Após o loop (ainda dentro do bloco), adicione o
+// Declare a mutable variable external_counter with value 0. Inside a block, create a loop that increments a local variable internal_counter from 1 to 5. After the loop (still inside the block), add the final value of internal_counter to external_counter. Print the value of external_counter outside the block.
 
-Escopo e Precedência (combinando)
+// Declare uma variável principal com valor 100. Crie um bloco onde você declara uma variável com o mesmo nome e atribui o valor de principal mais 50 a ela. Imprima o valor da variável dentro do bloco e fora
+// Declare a main variable with value 100. Create a block where you declare a variable with the same name and assign the value of main plus 50 to it. Print the value of the variable inside the block and outside the block.
 
-    Declare uma variável nivel_externo com 5. Dentro de um bloco, declare nivel_interno com 10. Imprima a soma de ambas dentro do bloco. Fora do bloco, tente imprimir nivel_interno (o que acontece?).
-    Dado um array dados com [3, 2], calcule e imprima o resultado de dados[0]+dados[1]∗5. Em seguida, calcule e imprima (dados[0]+dados[1])∗5.
-    Declare uma variável base com 4. Dentro de um bloco, declare expoente com 3. Calcule e imprima baseexpoente dentro do bloco (sem usar pow, apenas multiplicação repetida).
-    Dado um array valores_calc com [10, 3, 2], calcule e imprima valores_calc[0]/valores_calc[1]+valores_calc[2]. Em seguida, calcule e imprima valores_calc[0]/(valores_calc[1]+valores_calc[2]).
-    Declare uma variável fator_global com 2. Dentro de um bloco, declare um array nums com [1, 2, 3]. Some os elementos do array e multiplique o resultado por fator_global, imprimindo o final dentro do bloco.
-*/
+// Precedence
+// Dado o array valores com [2, 3], escreva um código que calcule e imprima o resultado de valores[0]+valores[1]∗valores[1].
+// Given the array values with [2, 3], write code that calculates and prints the result of values[0]+values[1]∗values[1].
+
+// Usando o mesmo array valores, escreva um código que calcule e imprima o resultado de (valores[0]+valores[1])∗valores[1].
+// Using the same array values, write code that calculates and prints the result of (values[0]+values[1])∗values[1].
+
+// Ainda com valores, calcule e imprima valores[0]∗valores[1]/valores[1]%valores[1].
+// Still with values, calculate and print values[0]∗values[1]/values[1]%values[1].
+
+// Calcule e imprima valores[0]+valores[1]−valores[0]+valores[0]∗valores[0].
+// Calculate and print values[0]+values[1]−values[0]+values[0]∗values[0].
+
+// Calcule e imprima ((valores[0]+valores[1])−(valores[0]+valores[0])∗valores[0]).
+// Calculate and print ((values[0]+values[1])−(values[0]+values[0])∗values[0]).
+
+// Comparison
+// Declare duas variáveis inteiras, num1 com valor 10 e num2 com valor 10. Escreva um código que imprima se num1 é igual a num2.
+// Declare two integer variables, num1 with value 10 and num2 with value 10. Write code that prints if num1 is equal to num2.
+
+// Declare duas variáveis de ponto flutuante, f1 com 3.14 e f2 com 2.71. Escreva um código que imprima se f1 é diferente de f2.
+// Declare two floating-point variables, f1 with 3.14 and f2 with 2.71. Write code that prints if f1 is different from f2.
+
+// Declare duas variáveis inteiras, idade1 com 25 e idade2 com 30. Escreva um código que imprima se idade1 é maior que idade2.
+// Declare two integer variables, age1 with 25 and age2 with 30. Write code that prints if age1 is greater than age2.
+
+// Declare duas variáveis inteiras, ponto1 com 5 e ponto2 com 8. Escreva um código que imprima se ponto1 é menor que ponto2.
+// Declare two integer variables, point1 with 5 and point2 with 8. Write code that prints if point1 is less than point2.
+
+// Declare duas variáveis inteiras, nota1 com 7 e nota2 com 7. Escreva um código que imprima se nota1 é maior ou igual a nota2.
+// Declare two integer variables, grade1 with 7 and grade2 with 7. Write code that prints if grade1 is greater than or equal to grade2.
+
+// Declare duas variáveis inteiras, altura1 com 170 e altura2 com 165. Escreva um código que imprima se altura1 é menor ou igual a altura2.
+// Declare two integer variables, height1 with 170 and height2 with 165. Write code that prints if height1 is less than or equal to height2.
+
+// Declare duas variáveis booleanas, verdadeiro1 com true e verdadeiro2 com true. Compare se são iguais e imprima o resultado.
+// Declare two boolean variables, true1 with true and true2 with true. Compare if they are equal and print the result.
+
+// Declare uma variável inteira x com 5 e outra y com 10. Verifique se x não é igual a y e imprima o resultado.
+// Declare an integer variable x with 5 and another y with 10. Check if x is not equal to y and print the result.
+
+// Declare uma variável temp1 com 22.5 e temp2 com 20.0. Verifique se temp1 é maior que temp2 e imprima.
+// Declare a variable temp1 with 22.5 and temp2 with 20.0. Check if temp1 is greater than temp2 and print.
+
+// Declare uma variável count1 com 100 e count2 com 99. Verifique se count1 é menor que count2 e imprima.
+// Declare a variable count1 with 100 and count2 with 99. Check if count1 is less than count2 and print.
+
+// Logical
+// Declare duas variáveis booleanas, cond1 como true e cond2 como true. Imprima o resultado da operação lógica AND (&&) entre elas.
+// Declare two boolean variables, cond1 as true and cond2 as true. Print the result of the logical AND (&&) operation between them.
+
+// Declare flag1 como false e flag2 como false. Imprima o resultado da operação lógica AND entre elas.
+// Declare flag1 as false and flag2 as false. Print the result of the logical AND operation between them.
+
+// Declare ativo como true e permitido como false. Imprima o resultado de ativo && permitido.
+// Declare active as true and allowed as false. Print the result of active && allowed.
+
+// Declare tem_permissao como false e is_admin como true. Imprima o resultado de tem_permissao && is_admin.
+// Declare has_permission as false and is_admin as true. Print the result of has_permission && is_admin.
+
+// Declare duas variáveis booleanas, opcao1 como true e opcao2 como true. Imprima o resultado da operação lógica OR (||) entre elas.
+// Declare two boolean variables, option1 as true and option2 as true. Print the result of the logical OR (||) operation between them.
+
+// Declare erro1 como false e erro2 como false. Imprima o resultado de erro1 || erro2.
+// Declare error1 as false and error2 as false. Print the result of error1 || error2.
+
+// Declare conectado como true e tem_dados como false. Imprima o resultado de conectado || tem_dados.
+// Declare connected as true and has_data as false. Print the result of connected || has_data.
+
+// Declare sucesso como false e falha como true. Imprima o resultado de sucesso || falha.
+// Declare success as false and failure as true. Print the result of success || failure.
+
+// Declare uma variável booleana estado como true. Imprima o resultado da negação lógica (!) de estado.
+// Declare a boolean variable state as true. Print the result of the logical NOT (!) of state.
+
+// Declare uma variável booleana invalido como false. Imprima o resultado de !invalido.
+// Declare a boolean variable invalid as false. Print the result of !invalid.
+
+// Arithmetic (Extra), Assignment, String/&str, Tuples, Arrays (combining concepts)
+// Declare duas variáveis u8, val1 com 8 e val2 com 3. Calcule a soma, subtraia 1 do resultado e imprima.
+// Declare two u8 variables, val1 with 8 and val2 with 3. Calculate the sum, subtract 1 from the result, and print.
+
+// Declare uma variável mutável texto com "&str" "Olá". Adicione a ela a String ", Mundo!". Imprima o resultado.
+// Declare a mutable variable text with "&str" "Hello". Append to it the String ", World!". Print the result.
+
+// Crie uma tupla (u32, u32) com valores (5, 10). Multiplique os dois elementos e atribua o resultado a uma nova variável, imprimindo-a.
+// Create a tuple (u32, u32) with values (5, 10). Multiply the two elements and assign the result to a new variable, then print it.
+
+// Declare um array [i32; 3] com valores [2, 4, 6]. Divida cada elemento por 2 (usando atribuição de divisão se aplicável) e imprima o array resultante.
+// Declare an array [i32; 3] with values [2, 4, 6]. Divide each element by 2 (using division assignment if applicable) and print the resulting array.
+
+// Declare duas variáveis n_a como 7 e n_b como 4. Calcule o resto da divisão de n_a por n_b e imprima se o resto é igual a 3.
+// Declare two variables n_a as 7 and n_b as 4. Calculate the remainder of the division of n_a by n_b and print if the remainder is equal to 3.
+
+// Crie uma String "Número: ". Concatene com o resultado da soma de dois u8 (por exemplo, 5 + 7) convertido para String. Imprima o resultado.
+// Create a String "Number: ". Concatenate with the result of the sum of two u8s (e.g., 5 + 7) converted to String. Print the result.
+
+// Declare uma tupla (f64, f64) com (2.5, 3.5). Some os elementos e imprima o resultado formatado com duas casas decimais.
+// Declare a tuple (f64, f64) with (2.5, 3.5). Sum the elements and print the result formatted to two decimal places.
+
+// Declare um array [u16; 2] com [100, 200]. Multiplique o primeiro elemento por 2 e o segundo por 3, depois some os resultados e imprima.
+// Declare an array [u16; 2] with [100, 200]. Multiply the first element by 2 and the second by 3, then sum the results and print.
+
+// Declare uma variável mutável mensagem com "&str" "Inicio". Adicione a ela a String " -> Fim". Imprima o valor final de mensagem.
+// Declare a mutable variable message with "&str" "Start". Append to it the String " -> End". Print the final value of message.
+
+// Crie uma tupla ((i8, i8), i8) com ((1, 2), 3). Some todos os três números e imprima o resultado.
+// Create a tuple ((i8, i8), i8) with ((1, 2), 3). Sum all three numbers and print the result.
+
+// Scope and Precedence (combining)
+// Declare uma variável nivel_externo com 5. Dentro de um bloco, declare nivel_interno com 10. Imprima a soma de ambas dentro do bloco. Fora do bloco, tente imprimir nivel_interno (o que acontece?).
+// Declare an outer_level variable with 5. Inside a block, declare inner_level with 10. Print the sum of both inside the block. Outside the block, try to print inner_level (what happens?).
+
+// Dado um array dados com [3, 2], calcule e imprima o resultado de dados[0]+dados[1]∗5. Em seguida, calcule e imprima (dados[0]+dados[1])∗5.
+// Given an array data with [3, 2], calculate and print the result of data[0]+data[1]∗5. Then, calculate and print (data[0]+data[1])∗5.
+
+// Declare uma variável base com 4. Dentro de um bloco, declare expoente com 3. Calcule e imprima baseexpoente dentro do bloco (sem usar pow, apenas multiplicação repetida).
+// Declare a base variable with 4. Inside a block, declare exponent with 3. Calculate and print baseexponent inside the block (without using pow, just repeated multiplication).
+
+// Dado um array valores_calc com [10, 3, 2], calcule e imprima valores_calc[0]/valores_calc[1]+valores_calc[2]. Em seguida, calcule e imprima valores_calc[0]/(valores_calc[1]+valores_calc[2]).
+// Given an array calc_values with [10, 3, 2], calculate and print calc_values[0]/calc_values[1]+calc_values[2]. Then, calculate and print calc_values[0]/(calc_values[1]+calc_values[2]).
+
+// Declare uma variável fator_global com 2. Dentro de um bloco, declare um array nums com [1, 2, 3]. Some os elementos do array e multiplique o resultado por fator_global, imprimindo o final dentro do bloco.
+// Declare a global_factor variable with 2. Inside a block, declare an array nums with [1, 2, 3]. Sum the array elements and multiply the result by global_factor, printing the final result inside the block.
