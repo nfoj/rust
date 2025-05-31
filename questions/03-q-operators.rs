@@ -252,20 +252,52 @@ fn main() {
 }
 
 // arrays
-// Declare um array de 5 i32 com os valores [1, 3, 5, 7, 9]. Imprima a soma do primeiro e do último elemento.
 // Declare an array of 5 i32 with the values [1, 3, 5, 7, 9]. Print the sum of the first and last elements.
+fn main() {
+    //
+    let arr: [i32; 5] = [1, 3, 5, 7, 9];
+    println!("{}, {}", arr[0], arr[4]);
+}
 
-// Crie um array de 3 u16. Inicialize-o com os valores [10, 20, 30]. Imprima o produto de todos os elementos.
 // Create an array of 3 u16. Initialize it with the values [10, 20, 30]. Print the product of all elements.
+fn main() {
+    //
+    let arr: [i32; 3];
+    arr = [10, 20, 30];
 
-// Declare um array bidimensional 2x2 com inteiros. Some todos os elementos e imprima o resultado.
+    //
+    println!("{:?}", arr[0] * arr[1] * arr[2]);
+}
+
 // Declare a 2x2 multidimensional array with integers. Sum all elements and print the result.
+fn main() {
+    //
+    let arr: [[i8; 2]; 2];
+    arr = [[2, 2], [4, 4]];
+    //
+    println!("{:?}", arr[0][0] * arr[0][1] * arr[1][0] * arr[1][1]);
+}
 
 // Crie dois arrays de dois f32. Some os elementos correspondentes dos dois arrays e imprima os resultados das somas.
 // Create two arrays of two f32. Sum the corresponding elements of the two arrays and print the results of the sums.
+fn main() {
+    //
+    let arr1: [i8; 2] = [1, 2];
+    let arr2: [i8; 2] = [1, 2];
 
-// Declare dois arrays a1 com [4, 2] e a2 com [3, 6]. Calcule e imprima a soma de todos os elementos de ambos os arrays.
+    //
+    println!("{:?}", arr1[0] * arr1[1] * arr2[0] * arr2[1]);
+}
+
 // Declare two arrays a1 with [4, 2] and a2 with [3, 6]. Calculate and print the sum of all elements from both arrays.
+fn main() {
+    //
+    let a1: [u8; 2] = [4, 2];
+    let a2: [u8; 2] = [3, 6];
+
+    //
+    println!("{:?}, {:?}", a1[0] + a1[1], a2[0] + a2[1]);
+}
 
 // scope
 // Declare uma variável global com valor 5. Dentro de um bloco {} declare outra variável com o mesmo nome e valor 10. Imprima o valor de ambas as variáveis (a global e a do bloco) fora e dentro do bloco.
