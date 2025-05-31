@@ -209,20 +209,47 @@ fn main() {
 }
 
 // tuples
-// Crie uma tupla com três u8: (10, 20, 30). Acesse o primeiro e o segundo elemento, some-os e imprima o resultado.
 // Create a tuple with three u8: (10, 20, 30). Access the first and second elements, add them and print the result.
+fn main() {
+    //
+    let tup: (u8, u8, u8) = (10, 20, 30);
+    println!("{}, {}", tup.0, tup.1);
+}
 
-// Declare uma tupla de dois i32. Inicialize-a com os valores (5, -2). Imprima a multiplicação desses dois valores.
-// Declare a tuple of two i32s. Initialize it with the values ​​(5, -2). Print the multiplication of these two values.
+// Declare a tuple of two i32s. Initialize it with the values (5, -2). Print the multiplication of these two values.
+fn main() {
+    //
+    let tup: (i32, i32) = (5, -2);
+    println!("{:?}", tup.0 * tup.1);
+}
 
-// Crie uma tupla aninhada: ((1, 2), (3, 4)). Some o primeiro elemento da primeira tupla com o segundo elemento da segunda tupla e imprima o resultado.
 // Create a nested tuple: ((1, 2), (3, 4)). Add the first element of the first tuple to the second element of the second tuple and print the result.
+fn main() {
+    //
+    let tup: ((u8, u8), (u8, u8)) = ((1, 2), (3, 4));
+    println!("{:?}", tup.0 .0 + tup.1 .1);
+}
 
-// Declare duas tuplas, t1 com (2, 5) e t2 com (8, 1). Some todos os elementos das duas tuplas e imprima o total.
 // Declare two tuples, t1 with (2, 5) and t2 with (8, 1). Add all the elements of the two tuples and print the total.
+fn main() {
+    //
+    let t1: (u8, u8) = (2, 5);
+    let t2: (u8, u8) = (8, 1);
 
-// Crie uma tupla com um f64 e um i32. Imprima cada elemento separadamente.
+    //
+    println!("{:?}", t1.0 + t1.1 + t2.0 + t2.1);
+}
+
 // Create a tuple with an f64 and an i32. Print each element separately.
+fn main() {
+    //
+    let mut t1: (f32, i32) = (0.0, 0);
+    t1.0 = -2.;
+    t1.1 = 2;
+
+    //
+    println!("{:#?}", t1);
+}
 
 // arrays
 // Declare um array de 5 i32 com os valores [1, 3, 5, 7, 9]. Imprima a soma do primeiro e do último elemento.
