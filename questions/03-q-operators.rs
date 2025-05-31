@@ -360,21 +360,49 @@ fn main() {
     println!("{:?}", num);
 }
 
-// Precedence
-// Dado o array valores com [2, 3], escreva um código que calcule e imprima o resultado de valores[0]+valores[1]∗valores[1].
+// precedence
 // Given the array values with [2, 3], write code that calculates and prints the result of values[0]+values[1]∗values[1].
+fn main() {
+    //
+    let var: [u8; 2] = [2, 3];
+    println!("{:?}", var[0] + var[1] * var[1]);
+}
 
-// Usando o mesmo array valores, escreva um código que calcule e imprima o resultado de (valores[0]+valores[1])∗valores[1].
 // Using the same array values, write code that calculates and prints the result of (values[0]+values[1])∗values[1].
+fn main() {
+    //
+    let var: [u8; 2] = [2, 3];
 
-// Ainda com valores, calcule e imprima valores[0]∗valores[1]/valores[1]%valores[1].
+    //
+    println!("{:?}", (var[0] + var[1]) * var[1]);
+}
+
 // Still with values, calculate and print values[0]∗values[1]/values[1]%values[1].
+fn main() {
+    //
+    let var: [u8; 2] = [2, 3];
 
-// Calcule e imprima valores[0]+valores[1]−valores[0]+valores[0]∗valores[0].
+    //
+    println!("{:?}", var[0] * var[1] / var[1] % var[1]);
+}
+
 // Calculate and print values[0]+values[1]−values[0]+values[0]∗values[0].
+fn main() {
+    //
+    let var: [u8; 2] = [2, 3];
 
-// Calcule e imprima ((valores[0]+valores[1])−(valores[0]+valores[0])∗valores[0]).
+    //
+    println!("{:?}", var[0] + var[1] - var[0] + var[0] * var[0]);
+}
+
 // Calculate and print ((values[0]+values[1])−(values[0]+values[0])∗values[0]).
+fn main() {
+    //
+    let var: [i8; 2] = [2, 3];
+
+    //
+    println!("{:?}", (var[0] + var[1]) - (var[0] + var[0]) * var[0]);
+}
 
 // Comparison
 // Declare duas variáveis inteiras, num1 com valor 10 e num2 com valor 10. Escreva um código que imprima se num1 é igual a num2.
