@@ -300,20 +300,65 @@ fn main() {
 }
 
 // scope
-// Declare uma variável global com valor 5. Dentro de um bloco {} declare outra variável com o mesmo nome e valor 10. Imprima o valor de ambas as variáveis (a global e a do bloco) fora e dentro do bloco.
 // Declare a global variable with value 5. Inside a block {} declare another variable with the same name and value 10. Print the value of both variables (the global and the block variable) outside and inside the block.
+fn main() {
+    //
+    let var: char = 'a';
+    println!("{:?}", var);
+    //
+    {
+        let var: char = 'b';
+        println!("{:?}", var);
+    }
+    println!("{:?}", var);
+}
 
-// Declare uma variável x com valor 1. Crie um bloco interno onde você declara uma variável y com valor 2. Dentro do bloco, imprima a soma de x e y. Fora do bloco, tente imprimir y (o que acontecerá?).
 // Declare a variable x with value 1. Create an inner block where you declare a variable y with value 2. Inside the block, print the sum of x and y. Outside the block, try to print y (what will happen?).
+fn main() {
+    //
+    let x: u8 = 1;
+    {
+        let y: u8 = 2;
+        println!("{:?}", x + y);
+    }
+    println!("{:?}", x);
+    // println!("{:?}", y); cannot find value `y` in this scope
+}
 
-// Declare uma variável nivel1 com valor 10. Abra um novo bloco e declare uma variável nivel2 com valor 20. Dentro deste bloco, crie outro bloco e declare nivel3 com valor 30. Imprima a soma de nivel1 e
 // Declare a variable level1 with value 10. Open a new block and declare a variable level2 with value 20. Inside this block, create another block and declare level3 with value 30. Print the sum of level1 and level3 inside the innermost block.
+fn main() {
+    //
+    let x: u8 = 1;
+    {
+        //
+        let y: u8 = 2;
+        {
+            //
+            let z: u8 = 3;
+            println!("{:?}", x + y + z);
+        }
+        println!("{:?}", y);
+    }
+    println!("{:?}", x);
+}
 
-// Declare uma variável mutável contador_externo com valor 0. Dentro de um bloco, crie um loop que incrementa uma variável local contador_interno de 1 a 5. Após o loop (ainda dentro do bloco), adicione o
-// Declare a mutable variable external_counter with value 0. Inside a block, create a loop that increments a local variable internal_counter from 1 to 5. After the loop (still inside the block), add the final value of internal_counter to external_counter. Print the value of external_counter outside the block.
-
-// Declare uma variável principal com valor 100. Crie um bloco onde você declara uma variável com o mesmo nome e atribui o valor de principal mais 50 a ela. Imprima o valor da variável dentro do bloco e fora
 // Declare a main variable with value 100. Create a block where you declare a variable with the same name and assign the value of main plus 50 to it. Print the value of the variable inside the block and outside the block.
+fn main() {
+    //
+    let num: u8 = 100;
+    println!("{:?}", num);
+    {
+        let mut num: u8 = 100;
+        println!("{:?}", num);
+        //
+        {
+            num += 50;
+            println!("{:?}", num);
+        }
+        println!("{:?}", num);
+    }
+    println!("{:?}", num);
+}
 
 // Precedence
 // Dado o array valores com [2, 3], escreva um código que calcule e imprima o resultado de valores[0]+valores[1]∗valores[1].
