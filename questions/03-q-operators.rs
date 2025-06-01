@@ -505,36 +505,104 @@ fn main() {
     println!("Count 1 < Count 2? {}", count_1 < count_2);
 }
 
-// Logical
-// Declare duas variáveis booleanas, cond1 como true e cond2 como true. Imprima o resultado da operação lógica AND (&&) entre elas.
+// logical
 // Declare two boolean variables, cond1 as true and cond2 as true. Print the result of the logical AND (&&) operation between them.
+fn main() {
+    //
+    let cond_1: bool = true;
+    let cond_2: bool = true;
 
-// Declare flag1 como false e flag2 como false. Imprima o resultado da operação lógica AND entre elas.
+    //
+    println!("Cond 1 && Cond 2: {}", cond_1 && cond_2);
+}
+
 // Declare flag1 as false and flag2 as false. Print the result of the logical AND operation between them.
+fn main() {
+    //
+    let flag_1: bool = false;
+    let flag_2: bool = false;
 
-// Declare ativo como true e permitido como false. Imprima o resultado de ativo && permitido.
+    //
+    println!("Flag 1 && Flag 2: {}", flag_1 && flag_2);
+}
+
 // Declare active as true and allowed as false. Print the result of active && allowed.
+fn main() {
+    //
+    let active: bool = true;
+    let allowed: bool = false;
 
-// Declare tem_permissao como false e is_admin como true. Imprima o resultado de tem_permissao && is_admin.
+    //
+    println!("Active && Allowed: {}", active && allowed);
+}
+
 // Declare has_permission as false and is_admin as true. Print the result of has_permission && is_admin.
+fn main() {
+    //
+    let has_permission: bool = false;
+    let is_admin: bool = true;
 
-// Declare duas variáveis booleanas, opcao1 como true e opcao2 como true. Imprima o resultado da operação lógica OR (||) entre elas.
+    //
+    println!(
+        " Has permission && Is admin: {}",
+        has_permission && is_admin
+    );
+}
+
 // Declare two boolean variables, option1 as true and option2 as true. Print the result of the logical OR (||) operation between them.
+fn main() {
+    //
+    let option_1: bool = true;
+    let option_2: bool = true;
 
-// Declare erro1 como false e erro2 como false. Imprima o resultado de erro1 || erro2.
+    //
+    println!("Option 1 or Option 2: {}", option_1 || option_2);
+}
+
 // Declare error1 as false and error2 as false. Print the result of error1 || error2.
+fn main() {
+    //
+    let error_1: bool = false;
+    let error_2: bool = false;
 
-// Declare conectado como true e tem_dados como false. Imprima o resultado de conectado || tem_dados.
+    //
+    println!("Error 1 or Error 2: {}", error_1 || error_2);
+}
+
 // Declare connected as true and has_data as false. Print the result of connected || has_data.
+fn main() {
+    //
+    let connected: bool = true;
+    let has_data: bool = false;
 
-// Declare sucesso como false e falha como true. Imprima o resultado de sucesso || falha.
+    //
+    println!("Connected Or Has data: {}", connected && has_data);
+}
+
 // Declare success as false and failure as true. Print the result of success || failure.
+fn main() {
+    //
+    let success: bool = false;
+    let failure: bool = true;
 
-// Declare uma variável booleana estado como true. Imprima o resultado da negação lógica (!) de estado.
+    //
+    println!("Success OR Failure: {}", success || failure);
+}
+
 // Declare a boolean variable state as true. Print the result of the logical NOT (!) of state.
+fn main() {
+    //
+    let var: bool = true;
+    println!("{:?}", !var);
+}
 
 // Declare uma variável booleana invalido como false. Imprima o resultado de !invalido.
 // Declare a boolean variable invalid as false. Print the result of !invalid.
+fn main() {
+    //
+    let invalid: bool = false;
+    println!("{:?}", !invalid);
+}
 
 // Arithmetic (Extra), Assignment, String/&str, Tuples, Arrays (combining concepts)
 // Declare duas variáveis u8, val1 com 8 e val2 com 3. Calcule a soma, subtraia 1 do resultado e imprima.
