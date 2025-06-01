@@ -404,36 +404,106 @@ fn main() {
     println!("{:?}", (var[0] + var[1]) - (var[0] + var[0]) * var[0]);
 }
 
-// Comparison
-// Declare duas variáveis inteiras, num1 com valor 10 e num2 com valor 10. Escreva um código que imprima se num1 é igual a num2.
+// comparison
 // Declare two integer variables, num1 with value 10 and num2 with value 10. Write code that prints if num1 is equal to num2.
+fn main() {
+    //
+    let num1: i8 = 10;
+    let num2: i8 = 10;
 
-// Declare duas variáveis de ponto flutuante, f1 com 3.14 e f2 com 2.71. Escreva um código que imprima se f1 é diferente de f2.
+    //
+    println!("Num1 = Num2? {:?} ", num1 == num2);
+}
+
 // Declare two floating-point variables, f1 with 3.14 and f2 with 2.71. Write code that prints if f1 is different from f2.
+fn main() {
+    //
+    let f1: f32 = 3.14;
+    let f2: f32 = 2.71;
 
-// Declare duas variáveis inteiras, idade1 com 25 e idade2 com 30. Escreva um código que imprima se idade1 é maior que idade2.
+    //
+    println!("f1 != f2? {}", f1 != f2);
+}
+
 // Declare two integer variables, age1 with 25 and age2 with 30. Write code that prints if age1 is greater than age2.
+fn main() {
+    //
+    let age1: u8 = 25;
+    let age2: u8 = 30;
 
-// Declare duas variáveis inteiras, ponto1 com 5 e ponto2 com 8. Escreva um código que imprima se ponto1 é menor que ponto2.
+    //
+    println!("Age-1 > Age-2? {}", age1 > age2);
+}
+
 // Declare two integer variables, point1 with 5 and point2 with 8. Write code that prints if point1 is less than point2.
+fn main() {
+    //
+    let point_1: u8 = 5;
+    let point_2: u8 = 8;
 
-// Declare duas variáveis inteiras, nota1 com 7 e nota2 com 7. Escreva um código que imprima se nota1 é maior ou igual a nota2.
+    //
+    println!("Point-1 < Point-2? {}", point_1 < point_2);
+}
+
 // Declare two integer variables, grade1 with 7 and grade2 with 7. Write code that prints if grade1 is greater than or equal to grade2.
+fn main() {
+    //
+    let grade_1: u8 = 7;
+    let grade_2: u8 = 7;
 
-// Declare duas variáveis inteiras, altura1 com 170 e altura2 com 165. Escreva um código que imprima se altura1 é menor ou igual a altura2.
+    //
+    println!("Grade-1 >= Grade-2? {}", grade_1 >= grade_2);
+}
+
 // Declare two integer variables, height1 with 170 and height2 with 165. Write code that prints if height1 is less than or equal to height2.
+fn main() {
+    //
+    let height_1: f32 = 1.70;
+    let height_2: f32 = 1.65;
 
-// Declare duas variáveis booleanas, verdadeiro1 com true e verdadeiro2 com true. Compare se são iguais e imprima o resultado.
+    //
+    println!("Height-1 <= Height-2? {}", height_1 <= height_2);
+}
+
 // Declare two boolean variables, true1 with true and true2 with true. Compare if they are equal and print the result.
+fn main() {
+    //
+    let true_1: bool = true;
+    let true_2: bool = true;
 
-// Declare uma variável inteira x com 5 e outra y com 10. Verifique se x não é igual a y e imprima o resultado.
+    //
+    println!("True-1 == True-2? {}", true_1 == true_2);
+}
+
 // Declare an integer variable x with 5 and another y with 10. Check if x is not equal to y and print the result.
+fn main() {
+    //
+    let x: u8 = 5;
+    let y: u8 = 10;
 
-// Declare uma variável temp1 com 22.5 e temp2 com 20.0. Verifique se temp1 é maior que temp2 e imprima.
+    //
+    println!("x != y? {}", x != y);
+}
+
 // Declare a variable temp1 with 22.5 and temp2 with 20.0. Check if temp1 is greater than temp2 and print.
+fn main() {
+    //
+    let temp_1: f32 = 22.5;
+    let temp_2: f32 = 20.;
 
-// Declare uma variável count1 com 100 e count2 com 99. Verifique se count1 é menor que count2 e imprima.
+    //
+    println!("Temp1 > Temp2? {}", temp_1 > temp_2);
+}
+
 // Declare a variable count1 with 100 and count2 with 99. Check if count1 is less than count2 and print.
+fn main() {
+    //
+    let count_1: u8 = 100;
+    let count_2: u8 = 99;
+
+    //
+    println!("Count 1 < Count 2? {}", count_1 < count_2);
+}
 
 // Logical
 // Declare duas variáveis booleanas, cond1 como true e cond2 como true. Imprima o resultado da operação lógica AND (&&) entre elas.
