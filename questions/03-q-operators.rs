@@ -596,7 +596,6 @@ fn main() {
     println!("{:?}", !var);
 }
 
-// Declare uma variável booleana invalido como false. Imprima o resultado de !invalido.
 // Declare a boolean variable invalid as false. Print the result of !invalid.
 fn main() {
     //
@@ -605,32 +604,92 @@ fn main() {
 }
 
 // Arithmetic (Extra), Assignment, String/&str, Tuples, Arrays (combining concepts)
-// Declare duas variáveis u8, val1 com 8 e val2 com 3. Calcule a soma, subtraia 1 do resultado e imprima.
 // Declare two u8 variables, val1 with 8 and val2 with 3. Calculate the sum, subtract 1 from the result, and print.
+fn main () {
+    // 
+    let val_1: u8 = 8;
+    let val_2: u8 = 3;
+    
+    //
+    println!("{:?}", (val_1 + val_2) - 1);
+}   
 
-// Declare uma variável mutável texto com "&str" "Olá". Adicione a ela a String ", Mundo!". Imprima o resultado.
-// Declare a mutable variable text with "&str" "Hello". Append to it the String ", World!". Print the result.
-
-// Crie uma tupla (u32, u32) com valores (5, 10). Multiplique os dois elementos e atribua o resultado a uma nova variável, imprimindo-a.
 // Create a tuple (u32, u32) with values (5, 10). Multiply the two elements and assign the result to a new variable, then print it.
+fn main () {
+    // 
+    let arr_1: (u32, u32) = (5, 10);
+    let arr_2 =  arr_1.0 * arr_1.1;
+    
+    //
+    println!("{:?}", arr_2);
+}
 
-// Declare um array [i32; 3] com valores [2, 4, 6]. Divida cada elemento por 2 (usando atribuição de divisão se aplicável) e imprima o array resultante.
 // Declare an array [i32; 3] with values [2, 4, 6]. Divide each element by 2 (using division assignment if applicable) and print the resulting array.
+fn main () {
+    // 
+    let mut arr: [i32; 3] = [2, 4, 6];
+    arr[0] /= 2;
+    arr[1] /= 2;
+    arr[2] /= 2;
+    
+    //
+    println!("{:#?}", arr);
+}
 
-// Declare duas variáveis n_a como 7 e n_b como 4. Calcule o resto da divisão de n_a por n_b e imprima se o resto é igual a 3.
 // Declare two variables n_a as 7 and n_b as 4. Calculate the remainder of the division of n_a by n_b and print if the remainder is equal to 3.
+fn main () {
+    // 
+    let n_a: u8 = 7;
+    let n_b: u8 = 4;
+    
+    //
+    let rema: u8 = n_a % n_b;
+    println!("Remainder: {:?} = 3? {:?}", rema, rema == 3);
+}
 
-// Crie uma String "Número: ". Concatene com o resultado da soma de dois u8 (por exemplo, 5 + 7) convertido para String. Imprima o resultado.
 // Create a String "Number: ". Concatenate with the result of the sum of two u8s (e.g., 5 + 7) converted to String. Print the result.
+fn main () {
+    // 
+    let num: String = String::from("Number: ");
+    let sum: u8 = 5 + 7; 
+    
+    //
+    println!("{}{:?}", num, sum);
+} 
 
-// Declare uma tupla (f64, f64) com (2.5, 3.5). Some os elementos e imprima o resultado formatado com duas casas decimais.
 // Declare a tuple (f64, f64) with (2.5, 3.5). Sum the elements and print the result formatted to two decimal places.
+fn main () {
+    // 
+    let tup: (f64, f64) = (2.5, 3.5);
+    let result: f64 = tup.0 + tup.1;
+    
+    //
+    println!("{:.2}", result);
+}
 
-// Declare um array [u16; 2] com [100, 200]. Multiplique o primeiro elemento por 2 e o segundo por 3, depois some os resultados e imprima.
 // Declare an array [u16; 2] with [100, 200]. Multiply the first element by 2 and the second by 3, then sum the results and print.
+fn main () {
+    // 
+    let arr: [u16; 2] = [100, 200];
+    println!("{:?}", (arr[0] * 2) + (arr[1] * 3));
+}
 
-// Declare uma variável mutável mensagem com "&str" "Inicio". Adicione a ela a String " -> Fim". Imprima o valor final de mensagem.
 // Declare a mutable variable message with "&str" "Start". Append to it the String " -> End". Print the final value of message.
+fn main () {
+    // 
+    let message: &str = "Start";
+    println!("{}", message.to_owned() + " -> End");
+}
+
+// String
+fn main () {
+    // 
+    let mut message: String = String::from("Start");
+    message += " -> End";
+    
+    //
+    println!("{}", message);
+}
 
 // Crie uma tupla ((i8, i8), i8) com ((1, 2), 3). Some todos os três números e imprima o resultado.
 // Create a tuple ((i8, i8), i8) with ((1, 2), 3). Sum all three numbers and print the result.
