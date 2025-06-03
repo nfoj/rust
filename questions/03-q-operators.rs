@@ -681,7 +681,7 @@ fn main () {
     println!("{}", message.to_owned() + " -> End");
 }
 
-// String
+// string
 fn main () {
     // 
     let mut message: String = String::from("Start");
@@ -691,21 +691,51 @@ fn main () {
     println!("{}", message);
 }
 
-// Crie uma tupla ((i8, i8), i8) com ((1, 2), 3). Some todos os três números e imprima o resultado.
-// Create a tuple ((i8, i8), i8) with ((1, 2), 3). Sum all three numbers and print the result.
+// Create a tuple (i8, i8, i8) with (1, 2, 3). Sum all three numbers and print the result.
+fn main () {
+    // 
+    let tup: (i8, i8, i8) = (1, 2, 3);
+    println!("{:?}", tup.0 + tup.1 + tup.2);
+}
 
-// Scope and Precedence (combining)
-// Declare uma variável nivel_externo com 5. Dentro de um bloco, declare nivel_interno com 10. Imprima a soma de ambas dentro do bloco. Fora do bloco, tente imprimir nivel_interno (o que acontece?).
 // Declare an outer_level variable with 5. Inside a block, declare inner_level with 10. Print the sum of both inside the block. Outside the block, try to print inner_level (what happens?).
+fn main () {
+    // 
+    let outer_level: u8 = 5;
+    {
+        let inner_level: u8 = 10;
+        println!("{:?}", outer_level + inner_level);
+    }
+    // println!("{:?}", outer_level + inner_level);
+}
 
-// Dado um array dados com [3, 2], calcule e imprima o resultado de dados[0]+dados[1]∗5. Em seguida, calcule e imprima (dados[0]+dados[1])∗5.
 // Given an array data with [3, 2], calculate and print the result of data[0]+data[1]∗5. Then, calculate and print (data[0]+data[1])∗5.
+fn main () {
+    // 
+    let data: [u8; 2] = [3, 2];
+    
+    //
+    println!("{:?}", data[0] + data[1] * 5);
+    println!("{:?}", (data[0] + data[1]) * 5);
+}
 
-// Declare uma variável base com 4. Dentro de um bloco, declare expoente com 3. Calcule e imprima baseexpoente dentro do bloco (sem usar pow, apenas multiplicação repetida).
-// Declare a base variable with 4. Inside a block, declare exponent with 3. Calculate and print baseexponent inside the block (without using pow, just repeated multiplication).
-
-// Dado um array valores_calc com [10, 3, 2], calcule e imprima valores_calc[0]/valores_calc[1]+valores_calc[2]. Em seguida, calcule e imprima valores_calc[0]/(valores_calc[1]+valores_calc[2]).
 // Given an array calc_values with [10, 3, 2], calculate and print calc_values[0]/calc_values[1]+calc_values[2]. Then, calculate and print calc_values[0]/(calc_values[1]+calc_values[2]).
+fn main () {
+    //
+    let calc_values: [u8; 3] = [10, 3, 2];
+    
+    //
+    println!("{:?}", calc_values[0] / calc_values[1] + calc_values[2]);
+    println!("{:?}", calc_values[0] / (calc_values[1] + calc_values[2]));
+}
 
-// Declare uma variável fator_global com 2. Dentro de um bloco, declare um array nums com [1, 2, 3]. Some os elementos do array e multiplique o resultado por fator_global, imprimindo o final dentro do bloco.
 // Declare a global_factor variable with 2. Inside a block, declare an array nums with [1, 2, 3]. Sum the array elements and multiply the result by global_factor, printing the final result inside the block.
+fn main () {
+    //
+    let global_factor: u8 = 2;
+    {
+        let block: [u8; 3] = [1, 2, 3];
+        let result = (block[0] + block[1] + block[2]) * global_factor;
+        println!("{:?}", result);
+    }
+}
