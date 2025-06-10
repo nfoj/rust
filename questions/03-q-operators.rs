@@ -605,102 +605,102 @@ fn main() {
 
 // Arithmetic (Extra), Assignment, String/&str, Tuples, Arrays (combining concepts)
 // Declare two u8 variables, val1 with 8 and val2 with 3. Calculate the sum, subtract 1 from the result, and print.
-fn main () {
-    // 
+fn main() {
+    //
     let val_1: u8 = 8;
     let val_2: u8 = 3;
-    
+
     //
     println!("{:?}", (val_1 + val_2) - 1);
-}   
+}
 
 // Create a tuple (u32, u32) with values (5, 10). Multiply the two elements and assign the result to a new variable, then print it.
-fn main () {
-    // 
+fn main() {
+    //
     let arr_1: (u32, u32) = (5, 10);
-    let arr_2 =  arr_1.0 * arr_1.1;
-    
+    let arr_2 = arr_1.0 * arr_1.1;
+
     //
     println!("{:?}", arr_2);
 }
 
 // Declare an array [i32; 3] with values [2, 4, 6]. Divide each element by 2 (using division assignment if applicable) and print the resulting array.
-fn main () {
-    // 
+fn main() {
+    //
     let mut arr: [i32; 3] = [2, 4, 6];
     arr[0] /= 2;
     arr[1] /= 2;
     arr[2] /= 2;
-    
+
     //
     println!("{:#?}", arr);
 }
 
 // Declare two variables n_a as 7 and n_b as 4. Calculate the remainder of the division of n_a by n_b and print if the remainder is equal to 3.
-fn main () {
-    // 
+fn main() {
+    //
     let n_a: u8 = 7;
     let n_b: u8 = 4;
-    
+
     //
     let rema: u8 = n_a % n_b;
     println!("Remainder: {:?} = 3? {:?}", rema, rema == 3);
 }
 
 // Create a String "Number: ". Concatenate with the result of the sum of two u8s (e.g., 5 + 7) converted to String. Print the result.
-fn main () {
-    // 
+fn main() {
+    //
     let num: String = String::from("Number: ");
-    let sum: u8 = 5 + 7; 
-    
+    let sum: u8 = 5 + 7;
+
     //
     println!("{}{:?}", num, sum);
-} 
+}
 
 // Declare a tuple (f64, f64) with (2.5, 3.5). Sum the elements and print the result formatted to two decimal places.
-fn main () {
-    // 
+fn main() {
+    //
     let tup: (f64, f64) = (2.5, 3.5);
     let result: f64 = tup.0 + tup.1;
-    
+
     //
     println!("{:.2}", result);
 }
 
 // Declare an array [u16; 2] with [100, 200]. Multiply the first element by 2 and the second by 3, then sum the results and print.
-fn main () {
-    // 
+fn main() {
+    //
     let arr: [u16; 2] = [100, 200];
     println!("{:?}", (arr[0] * 2) + (arr[1] * 3));
 }
 
 // Declare a mutable variable message with "&str" "Start". Append to it the String " -> End". Print the final value of message.
-fn main () {
-    // 
+fn main() {
+    //
     let message: &str = "Start";
     println!("{}", message.to_owned() + " -> End");
 }
 
 // string
-fn main () {
-    // 
+fn main() {
+    //
     let mut message: String = String::from("Start");
     message += " -> End";
-    
+
     //
     println!("{}", message);
 }
 
 // Create a tuple (i8, i8, i8) with (1, 2, 3). Sum all three numbers and print the result.
-fn main () {
-    // 
+fn main() {
+    //
     let tup: (i8, i8, i8) = (1, 2, 3);
     println!("{:?}", tup.0 + tup.1 + tup.2);
 }
 
 // Declare an outer_level variable with 5. Inside a block, declare inner_level with 10. Print the sum of both inside the block. Outside the block, try to print inner_level (what happens?).
-fn main () {
-    // 
+fn main() {
+    //
     let outer_level: u8 = 5;
     {
         let inner_level: u8 = 10;
@@ -710,27 +710,27 @@ fn main () {
 }
 
 // Given an array data with [3, 2], calculate and print the result of data[0]+data[1]∗5. Then, calculate and print (data[0]+data[1])∗5.
-fn main () {
-    // 
+fn main() {
+    //
     let data: [u8; 2] = [3, 2];
-    
+
     //
     println!("{:?}", data[0] + data[1] * 5);
     println!("{:?}", (data[0] + data[1]) * 5);
 }
 
 // Given an array calc_values with [10, 3, 2], calculate and print calc_values[0]/calc_values[1]+calc_values[2]. Then, calculate and print calc_values[0]/(calc_values[1]+calc_values[2]).
-fn main () {
+fn main() {
     //
     let calc_values: [u8; 3] = [10, 3, 2];
-    
+
     //
     println!("{:?}", calc_values[0] / calc_values[1] + calc_values[2]);
     println!("{:?}", calc_values[0] / (calc_values[1] + calc_values[2]));
 }
 
 // Declare a global_factor variable with 2. Inside a block, declare an array nums with [1, 2, 3]. Sum the array elements and multiply the result by global_factor, printing the final result inside the block.
-fn main () {
+fn main() {
     //
     let global_factor: u8 = 2;
     {

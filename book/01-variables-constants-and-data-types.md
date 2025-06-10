@@ -88,13 +88,6 @@ num = 12;
 println!("Which number did you choose? {}", num);
      
 
-let mut letter = 'a';
-println!("What is the first letter that comes to your mind? {}", letter);
-     
-letter = 'b';
-println!("What is the first letter that comes to your mind? {}", letter);
-     
-
 let mut ok = true;
 println!("Is 1 + 1 equal to two? {}", ok);
 
@@ -178,14 +171,12 @@ println!("The data was checked? {}", checked);
 >
 
 - tuples
-
 ```rust
   let data_types: (u8, char, f32, i64) = (2, 'a', 5.4, 28);
   println!("{:?}", data_types);
 ```
 
 - array
-
 ```rust
   let list: [u8; 3] = [1, 5, 9];
   println!("{:?}", list);
@@ -197,7 +188,6 @@ println!("The data was checked? {}", checked);
     - multiplication = *
     - division = /
     - remainder = %
-
 ```rust
 5 + 4 == 9
 5 - 2 == 3
@@ -210,7 +200,6 @@ println!("The data was checked? {}", checked);
     - 1 - ()
     - 2 - *, / and %
     - 3 - + and -
-
 ```rust
 println!("{}", 5 + 3 * 2); // 11
 println!("{}", (5 + 3) * 2); // 16
