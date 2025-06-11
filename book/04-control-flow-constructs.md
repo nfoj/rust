@@ -86,4 +86,51 @@ fn main () {
     // output = "Code != true!"
     println!("{:?}", message);
 }
+
+// if and else + var + logical
+fn main() {
+    //
+    let num: u8;
+    num = 24;
+    
+    //
+    let result: String = if num > 20 || num <= 30 {
+      String::from("Temp: > 20 or <= 30!")
+    } else {
+          String::from("Temp < 20 or >= 30!")  
+    };
+    
+    //
+    println!("{}\nTemp: {:?}", result, num);
+}
+```
+
+- if, else and else if
+```rust
+// if ...
+fn main () {
+    //
+    let temp: i8 = 34;
+    
+    //
+    if temp < 0 {
+        println!("Temp == 0°C");
+    }
+    else if temp >= 0 && temp < 10 {
+        println!("Temp >= 0°C and < 10°C");
+    }
+    else if temp >= 10 && temp < 20 {
+        println!("Temp >= 10°C and < 20°C");
+    }
+    else if temp >= 20 && temp < 30 {
+        println!("Temp >= 20°C and < 30°C");
+    } 
+    else {
+        println!("Temp > 30°C!");
+    };
+}
+
+//
+
+    
 ```
