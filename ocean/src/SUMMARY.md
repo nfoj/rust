@@ -11,3 +11,7 @@
     * [Content](02-data-structures/content.md)
     * [Question](02-data-structures/questions.md)
     * [Answers](02-data-structures/answers.md)
+* [Operators](03-operators/README.md)
+    * [Content](03-operators/content.md)
+    * [Question](03-operators/questions.md)
+    * [Answers](03-operators/answers.md)
