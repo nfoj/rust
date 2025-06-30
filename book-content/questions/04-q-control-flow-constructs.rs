@@ -29,25 +29,24 @@ use std::io;
 
 fn main() {
     //
-    println!("Enter a number:");
+    println!("Enter a number: ");
 
     //
-    let mut input: String = String::new();
+    let mut input_num: String = String::new();
     io::stdin()
-        .read_line(&mut input)
+        .read_line(&mut input_num)
         .expect("Error in the value entered!");
 
-    //
-    let num: i8 = input.trim().parse().expect("Error conveting data!");
+    let num: i8 = input_num.trim().parse().expect("Error converting data!");
 
     //
     if num > 0 {
-        println!("Number = {}, positive!", num);
+        println!("Num = {}!\nPositive", num);
     } else if num < 0 {
-        println!("Number = {}, negative!", num);
+        println!("Num = {}!\nNegative", num);
     } else {
-        println!("Number = {}, zero!", num);
-    };
+        println!("Num = {}!\nZero", num);
+    }
 }
 
 // Develop a program that receives two numbers and shows which one is larger.
@@ -55,34 +54,30 @@ use std::io;
 
 fn main() {
     //
-    println!("Enter a number A:");
-
-    //
-    let mut input_01: String = String::new();
+    println!("Enter a number (a):");
+    let mut input_num_a: String = String::new();
     io::stdin()
-        .read_line(&mut input_01)
+        .read_line(&mut input_num_a)
         .expect("Error in the value entered!");
 
     //
-    println!("Enter a number B:");
-
-    //
-    let mut input_02: String = String::new();
+    println!("Enter a number (b):");
+    let mut input_num_b: String = String::new();
     io::stdin()
-        .read_line(&mut input_02)
-        .expect("Error in the valeu entered!");
+        .read_line(&mut input_num_b)
+        .expect("Error in the value entered!");
 
     //
-    let num_01: i8 = input_01.trim().parse().expect("Error converting data!");
-    let num_02: i8 = input_02.trim().parse().expect("Error converting data!");
+    let num_a: i8 = input_num_a.trim().parse().expect("Error converting data!");
+    let num_b: i8 = input_num_b.trim().parse().expect("Error converting data!");
 
     //
-    if num_01 > num_02 {
-        println!("A: {} > B: {}", num_01, num_02);
-    } else if num_01 < num_02 {
-        println!("B: {} > A: {}", num_02, num_01);
+    if num_a > num_b {
+        println!("Num A > Num B");
+    } else if num_a < num_b {
+        println!("Num A < Num B");
     } else {
-        println!("A: {} == B: {}", num_01, num_02);
+        println!("Num A == Num B");
     }
 }
 
@@ -689,18 +684,20 @@ fn main() {
 // Create a program that uses a loop to count from 1 to 5. For each number, print the counter's value. The loop should stop when the counter reaches 6.
 fn main() {
     //
-    let mut count: u8 = 1;
-    println!("Count A: {}", count);
+    println!("-- Start --");
 
+    //
+    let mut count_number: u8 = 0;
+
+    //
     loop {
-        println!("Count B: {}", count);
-        count += 1;
-
-        if count == 6 {
+        //
+        count_number += 1;
+        println!("Count = {}", count_number);
+        if count_number >= 5 {
             break;
         }
     }
-    println!("Count C: {}", count);
 }
 
 // Define a constant LIMIT with the value 100. Use a loop to add numbers to a mutable variable sum starting from 1. Stop the loop when the value of sum exceeds LIMIT and print the final value of sum.
@@ -708,133 +705,128 @@ const LIMIT: u8 = 100;
 
 fn main() {
     //
-    let mut sum: u8 = 0;
-    let mut num: u8 = 1;
+    let mut start_sum: u8 = 1;
+    println!("-- Start Sum --");
 
     //
-    let result = loop {
-        //
-        sum += num;
-        println!("Sum: {}", sum);
+    loop {
+        println!("{}", start_sum);
 
-        if sum > LIMIT {
-            break sum;
+        if start_sum >= LIMIT {
+            break;
         }
 
-        num += 1;
-    };
-
-    println!("Num: {}", num);
-    println!("Result: {}", result);
+        start_sum += start_sum;
+    }
 }
 
-//Write a loop that repeatedly prints the message "I'm stuck in a loop!". Use a counter variable and an if statement to break the loop after the 3rd iteration.
+// Write a loop that repeatedly prints the message "I'm stuck in a loop!". Use a counter variable and an if statement to break the loop after the 3rd iteration.
 fn main() {
     //
-    let mut num: u8 = 0;
+    println!("-- Start --");
+    let mut count_num: u8 = 0;
 
+    //
     loop {
-        num += 1;
+        //
+        count_num += 1;
+
+        if count_num >= 4 {
+            break;
+        }
+
         println!("I'm stuck in a loop!");
-
-        if num >= 3 {
-            break;
-        }
     }
 }
 
-//Use a loop to iterate from 1 to 10. Inside the loop, check if the current number is even or odd using the modulo operator (%). Print the formatted result, such as "The number 3 is odd.". The loop should stop after the number 10.
+// Use a loop to iterate from 1 to 10. Inside the loop, check if the current number is even or odd using the modulo operator (%). Print the formatted result, such as "The number 3 is odd.". The loop should stop after the number 10.
 fn main() {
     //
-    let mut num: u8 = 0;
+    println!("-- Start --");
+    let mut count_number: u8 = 0;
 
     loop {
-        //
-        num += 1;
-        if num > 10 {
-            break;
-        }
+        count_number += 1;
 
-        //
-        if num % 2 == 0 {
-            println!("The number {} is even!", num);
+        if count_number % 2 == 0 {
+            println!("The number {} is even.", count_number);
         } else {
-            println!("The number {} is odd!", num);
+            println!("The number {} is odd.", count_number);
         }
-    }
-}
 
-//Initialize a mutable variable of type f32 with 0.0. In a loop, add 0.5 to this variable in each iteration. Print the value at each step and stop the loop when the value is greater than or equal to 5.0.
-fn main() {
-    //
-    let mut num: f32 = 0.0;
-
-    loop {
-        num += 0.5;
-        println!("Num: {}", num);
-
-        if num >= 5.0 {
-            println!("...");
+        if count_number >= 10 {
             break;
         }
     }
 }
 
-//Create a loop that starts with the character 'a' and prints each character up to 'f'. Use a mutable variable of type char and increment it. To increment, you can convert the char to u8, add 1, and convert back to char. Stop when the character is greater than 'f'.
+// Initialize a mutable variable of type f32 with 0.0. In a loop, add 0.5 to this variable in each iteration. Print the value at each step and stop the loop when the value is greater than or equal to 5.0.
 fn main() {
     //
-    let mut init_char: char = 'a';
+    println!("-- Start --");
+    let mut count_number: f32 = 0.;
 
     loop {
         //
-        println!("Init = {}", init_char);
-        println!("");
+        count_number += 0.5;
+        println!("{}", count_number);
 
-        let convert_char = init_char as u8;
-        println!("Convert = {}", convert_char);
-
-        let end_char = convert_char + 1;
-        println!("Convert + 1 = {}", end_char);
-
-        init_char = end_char as char;
-        println!("");
-
-        if init_char > 'f' {
-            println!("Init = {}", init_char);
+        if count_number >= 5. {
             break;
         }
     }
 }
 
-//Declare a mutable tuple let mut data = (0, false);. Create a loop that increments the first element of the tuple by 1 in each iteration. When the first element reaches the value 5, change the second element to true and break the loop. Print the final tuple outside the loop.
+// Create a loop that starts with the character 'a' and prints each character up to 'f'. Use a mutable variable of type char and increment it. To increment, you can convert the char to u8, add 1, and convert back to char. Stop when the character is greater than 'f'.
 fn main() {
     //
-    let mut tupl: (u8, bool) = (0, false);
+    let mut input_char: char = 'a';
+    println!("-- Start --");
 
+    //
     loop {
-        tupl.0 += 1;
-        println!("{:?} {:?}", tupl.0, tupl.1);
+        //
+        println!("Char: {}", input_char);
+        let char_init = input_char as u8;
+        let char_next = char_init + 1;
+        input_char = char_next as char;
 
-        if tupl.0 == 5 {
-            tupl.1 = true;
-            println!("");
-            println!("{:?} {:?}", tupl.0, tupl.1);
+        if input_char > 'f' {
             break;
         }
     }
 }
 
-//Declare a mutable array of 5 positions of type i32, initialized with zeros: let mut my_array = [0; 5];. Use a loop and an index variable to fill the array with the values [10, 20, 30, 40, 50]. The loop should stop when the array is complete. Print the final array.
+// Declare a mutable tuple let mut data = (0, false);. Create a loop that increments the first element of the tuple by 1 in each iteration. When the first element reaches the value 5, change the second element to true and break the loop. Print the final tuple outside the loop.
+fn main() {
+    //
+    println!("-- Start --");
+    let mut data: (u8, bool) = (0, false);
 
-//Calculate the factorial of 5 using a loop. You will need two mutable variables: one for the counter (from 1 to 5) and another to store the factorial result. Print the final result.
+    loop {
+        println!("{:?}", data);
+        data.0 += 1;
 
-//Start with a variable number equal to 123. In a loop, divide the number by 2 and print the division result and the remainder (%). Continue the loop until the number is less than 1.
+        //
+        if data.0 > 5 {
+            data.1 = true;
+            println!("{:?}", data);
+            break;
+        }
+    }
+}
 
-//Use a loop with a counter. The loop should stop if the counter is greater than 10 AND a boolean variable stop is true. Initialize stop as false and change its value to true when the counter reaches 7.
+// Declare a mutable array of 5 positions of type i32, initialized with zeros: let mut my_array = [0; 5];. Use a loop and an index variable to fill the array with the values [10, 20, 30, 40, 50]. The loop should stop when the array is complete. Print the final array.
 
-//Inside a loop, calculate and print the result of the expression 5+counter∗2, where counter is a variable that starts at 0 and is incremented in each iteration. Use parentheses to change the precedence and calculate (5 + counter)∗2 in a second print. Stop the loop when the counter reaches 5.
+// Calculate the factorial of 5 using a loop. You will need two mutable variables: one for the counter (from 1 to 5) and another to store the factorial result. Print the final result.
 
-//Use a loop expression to find the first number divisible by both 7 and 3, starting the search from 20. Assign the result of the loop to a variable named result and print it.
+// Start with a variable number equal to 123. In a loop, divide the number by 2 and print the division result and the remainder (%). Continue the loop until the number is less than 1.
+
+// Use a loop with a counter. The loop should stop if the counter is greater than 10 AND a boolean variable stop is true. Initialize stop as false and change its value to true when the counter reaches 7.
+
+// Inside a loop, calculate and print the result of the expression 5+counter∗2, where counter is a variable that starts at 0 and is incremented in each iteration. Use parentheses to change the precedence and calculate (5 + counter)∗2 in a second print. Stop the loop when the counter reaches 5.
+
+// Use a loop expression to find the first number divisible by both 7 and 3, starting the search from 20. Assign the result of the loop to a variable named result and print it.
 
 //Define a constant SECRET_NUMBER: u8 = 42;. Create a loop that simulates guessing attempts. An attempt variable should be incremented in each iteration. Use if/else if/else to print "Too low", "Too high", or "You got it!" when the attempt is equal to SECRET_NUMBER. Break the loop when you guess correctly.
 
