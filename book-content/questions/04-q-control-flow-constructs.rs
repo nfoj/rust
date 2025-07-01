@@ -684,9 +684,6 @@ fn main() {
 // Create a program that uses a loop to count from 1 to 5. For each number, print the counter's value. The loop should stop when the counter reaches 6.
 fn main() {
     //
-    println!("-- Start --");
-
-    //
     let mut count_number: u8 = 0;
 
     //
@@ -706,7 +703,6 @@ const LIMIT: u8 = 100;
 fn main() {
     //
     let mut start_sum: u8 = 1;
-    println!("-- Start Sum --");
 
     //
     loop {
@@ -723,7 +719,6 @@ fn main() {
 // Write a loop that repeatedly prints the message "I'm stuck in a loop!". Use a counter variable and an if statement to break the loop after the 3rd iteration.
 fn main() {
     //
-    println!("-- Start --");
     let mut count_num: u8 = 0;
 
     //
@@ -742,7 +737,6 @@ fn main() {
 // Use a loop to iterate from 1 to 10. Inside the loop, check if the current number is even or odd using the modulo operator (%). Print the formatted result, such as "The number 3 is odd.". The loop should stop after the number 10.
 fn main() {
     //
-    println!("-- Start --");
     let mut count_number: u8 = 0;
 
     loop {
@@ -763,9 +757,9 @@ fn main() {
 // Initialize a mutable variable of type f32 with 0.0. In a loop, add 0.5 to this variable in each iteration. Print the value at each step and stop the loop when the value is greater than or equal to 5.0.
 fn main() {
     //
-    println!("-- Start --");
     let mut count_number: f32 = 0.;
 
+    //
     loop {
         //
         count_number += 0.5;
@@ -776,6 +770,141 @@ fn main() {
         }
     }
 }
+
+/*
+
+Create a turn-based game between player and monster:
+  - HP: 100
+  - Attack: 10
+  - Defense: 10
+
+- Player Attack and Monster Attack: Double damage for both
+- Player Attack and Monster Defend: Player takes half damage and monster takes no damage
+- Player Defend and Monster Attack: Player takes no damage and monster takes half damage
+- Player Defend and Monster Defend: Both block
+
+Using only loop, if/else/else if and rand (SystemTime, UNIX_EPOCH)
+*/
+use std::io;
+use std::time::{SystemTime, UNIX_EPOCH};
+
+const DAMAGE: i8 = 10;
+
+fn main() {
+    //
+    let mut health_player: i8 = 100;
+    let mut health_monster: i8 = 100;
+
+    //
+    let mut round = 0;
+
+    //
+    println!("--- Start Game ---");
+    println!("Player vs Monster");
+    println!("");
+
+    //
+    loop {
+        //
+        round += 1;
+
+        println!("---- Statistics ----");
+        println!(
+            "Player:\n HP: {}\n Damage: 10\n Defense: 10\n",
+            health_player
+        );
+        println!(
+            "Monster:\n HP: {}\n Damage: 10\n Defense: 10\n",
+            health_monster
+        );
+
+        println!("--- Player ---");
+        println!("[1] Attack!\n[2] Defense\n");
+
+        // player 1
+        let mut input_select_player: String = String::new();
+        io::stdin()
+            .read_line(&mut input_select_player)
+            .expect("Error entered data!");
+        let select_player: i8 = input_select_player
+            .trim()
+            .parse()
+            .expect("Error converting data!");
+
+        // monster
+        let input_select_monster = SystemTime::now()
+            .duration_since(UNIX_EPOCH)
+            .expect("Error time!")
+            .as_nanos();
+
+        // random
+        let select_monster = (input_select_monster % 2 + 1) as i8;
+
+        if select_player == 1 && select_monster == 1 {
+            health_player = health_player - (DAMAGE * 2);
+            health_monster = health_monster - (DAMAGE * 2);
+            println!("---- Round {} ----", round);
+            println!("Player: Attack\nMonster: Attack\n");
+            println!("*** SUPER DAMAGE! ***\n");
+        } else if select_player == 1 && select_monster == 2 {
+            health_player = health_player - (DAMAGE / 2);
+            println!("---- Round {} ----", round);
+            println!("Player: Attack\nMonster: Defend\n");
+            println!("*** PLAYER BLOCK! ***\n");
+        } else if select_player == 2 && select_monster == 1 {
+            health_monster = health_monster - (DAMAGE / 2);
+            println!("---- Round {} ----", round);
+            println!("Player: Defend\nMonster: Attack\n");
+            println!("*** MONSTER BLOCK! ***\n");
+        } else if select_player == 2 && select_monster == 2 {
+            health_player = health_player - (DAMAGE * 2);
+            health_monster = health_monster - (DAMAGE * 2);
+            println!("---- Round {} ----", round);
+            println!("Player: Defend\nMonster: Defend\n");
+            println!("*** SUPER BLOCK! ***\n");
+        }
+
+        //
+        if health_player <= 0 {
+            println!("---- Statistics ----");
+            println!(
+                "Player:\n HP: {}\n Damage: 10\n Defense: 10\n",
+                health_player
+            );
+            println!(
+                "Monster:\n HP: {}\n Damage: 10\n Defense: 10\n",
+                health_monster
+            );
+            println!("--- Player ---\n*** YOU LOSE! ***");
+            break;
+        }
+        if health_monster <= 0 {
+            println!("---- Statistics ----");
+            println!(
+                "Player:\n HP: {}\n Damage: 10\n Defense: 10\n",
+                health_player
+            );
+            println!(
+                "Monster:\n HP: {}\n Damage: 10\n Defense: 10\n",
+                health_monster
+            );
+            println!("--- Player ---\n*** YOU WIN! ***");
+            break;
+        }
+    }
+}
+/*
+
+Create a counter that starts from 1 and goes onwards. Inside a loop, check the following conditions:
+  If the number is divisible by both 3 and 5, print "FizzBuzz".
+  If it's only divisible by 3, print "Fizz".
+  If it's only divisible by 5, print "Buzz".
+  Otherwise, print the number.
+  Break the loop when the counter reaches 100.
+
+*/
+
+// Start with capital = 1000.0 and goal = 2000.0. Each "year" (loop iteration), the capital increases by 7% (capital *= 1.07;). The loop should count how many years it takes for the capital to reach or exceed the goal. When the goal is reached, the loop should break, returning the number of years. Print the result.
 
 // Create a loop that starts with the character 'a' and prints each character up to 'f'. Use a mutable variable of type char and increment it. To increment, you can convert the char to u8, add 1, and convert back to char. Stop when the character is greater than 'f'.
 fn main() {
@@ -800,7 +929,6 @@ fn main() {
 // Declare a mutable tuple let mut data = (0, false);. Create a loop that increments the first element of the tuple by 1 in each iteration. When the first element reaches the value 5, change the second element to true and break the loop. Print the final tuple outside the loop.
 fn main() {
     //
-    println!("-- Start --");
     let mut data: (u8, bool) = (0, false);
 
     loop {
@@ -828,7 +956,48 @@ fn main() {
 
 // Use a loop expression to find the first number divisible by both 7 and 3, starting the search from 20. Assign the result of the loop to a variable named result and print it.
 
-//Define a constant SECRET_NUMBER: u8 = 42;. Create a loop that simulates guessing attempts. An attempt variable should be incremented in each iteration. Use if/else if/else to print "Too low", "Too high", or "You got it!" when the attempt is equal to SECRET_NUMBER. Break the loop when you guess correctly.
+// Define a constant SECRET_NUMBER: u8 = 42;. Create a loop that simulates guessing attempts. An attempt variable should be incremented in each iteration. Use if/else if/else to print "Too low", "Too high", or "You got it!" when the attempt is equal to SECRET_NUMBER. Break the loop when you guess correctly.
+use std::io;
+
+const SECRET_NUMBER: u8 = 42;
+
+fn main() {
+    println!("------- Start -------");
+    println!("Player 1 VS Computer");
+    println!("");
+    println!("---------------------");
+    println!("You have 3 attempts!");
+
+    let mut attempts: u8 = 0;
+
+    loop {
+        println!("\nEnter a number:");
+        let mut input_number: String = String::new();
+        io::stdin()
+            .read_line(&mut input_number)
+            .expect("Error entered data!");
+        let player_number: u8 = input_number.trim().parse().expect("Error converting data!");
+
+        if player_number > SECRET_NUMBER {
+            println!("Too High!");
+        } else if player_number < SECRET_NUMBER {
+            println!("Too Low!");
+        } else {
+            println!("\nYou Win!");
+            break;
+        }
+
+        attempts += 1;
+        if attempts == 1 {
+            println!("You have 2 attempts remaining!");
+        } else if attempts == 2 {
+            println!("You have 1 attempt remaining!");
+        } else if attempts == 3 {
+            println!("YOU LOSE!");
+            break;
+        }
+    }
+}
 
 //Declare a variable value with the value 10 outside a loop. Inside the loop, create a new variable value (using shadowing) that is equal to the outer value plus the iteration number. Print the inner value. The loop should run 5 times.
 

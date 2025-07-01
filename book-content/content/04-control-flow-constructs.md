@@ -1,4 +1,4 @@
-# Control Flow Constructs - if, else, else if, loop, while, for break and continue
+# Control Flow Constructs - if, else, else if, loop, while, for break, continue and match
 
 - if
 ```rust
