@@ -1041,17 +1041,205 @@ fn main() {
     }
 }
 
+// Use a loop to display the elements of the following array: [u8; 5] = [10, 20, 30, 40, 50]
+fn main() {
+    //
+    let init_array: [u8; 5] = [10, 20, 30, 40, 50];
+    let mut i = 0;
+
+    //
+    loop {
+        //
+        if i >= init_array.len() {
+            break;
+        }
+
+        //
+        println!("{}", init_array[i]);
+        i += 1;
+    }
+}
+
+// Use a loop to display the elements in reverse order of the following array: [u8; 5] = [1, 2, 3, 4, 5]
+fn main() {
+    //
+    let init_array: [u8; 5] = [1, 2, 3, 4, 5];
+    let mut i = init_array.len() - 1;
+
+    loop {
+        //
+        if i <= 0 {
+            println!("{}", init_array[i]);
+            break;
+        }
+
+        println!("{}", init_array[i]);
+        i -= 1;
+    }
+}
+
+// Could you create code to print the following four arrays: [u8; 2] = [1, 2];, [f32; 3] = [2.5, 7.3, 9.2];, [char; 4] = ['A', 'B', 'C', 'D'];, and [&str; 5] = ["Ana", "Bruno", "Carla", "Daniel", "Elza"];"
+fn main() {
+    //
+    let init_array_int: [u8; 2] = [1, 2];
+    let init_array_float: [f32; 3] = [2.5, 7.3, 9.2];
+    let init_array_char: [char; 4] = ['A', 'B', 'C', 'D'];
+    let init_array_str: [&str; 5] = ["Ana", "Bruno", "Carla", "Daniel", "Elza"];
+
+    //
+    let mut i = 0;
+    loop {
+        //
+        if i >= init_array_int.len() {
+            break;
+        }
+
+        println!("{}", init_array_int[i]);
+        i += 1;
+    }
+    println!("");
+
+    //
+    i = 0;
+    loop {
+        //
+        if i >= init_array_float.len() {
+            break;
+        }
+
+        println!("{}", init_array_float[i]);
+        i += 1;
+    }
+    println!("");
+
+    //
+    i = 0;
+    loop {
+        //
+        if i >= init_array_char.len() {
+            break;
+        }
+
+        println!("{}", init_array_char[i]);
+        i += 1;
+    }
+    println!("");
+
+    //
+    i = 0;
+    loop {
+        //
+        if i >= init_array_str.len() {
+            break;
+        }
+
+        println!("{}", init_array_str[i]);
+        i += 1;
+    }
+}
+
+// Create a code that sums the data in an array using a loop, here is an array: [u8; 4] = [1, 2, 4, 5]"
+fn main() {
+    //
+    let init_array: [u8; 4] = [1, 2, 4, 5];
+
+    //
+    let mut i = 0;
+    let mut sum = 0;
+
+    loop {
+        if i >= init_array.len() {
+            break;
+        }
+
+        println!("Values = {:?}", init_array[i]);
+        sum = sum + init_array[i];
+        i += 1;
+    }
+    println!("Sum = {}", sum);
+}
+
 // Declare a mutable array of 5 positions of type i32, initialized with zeros: let mut my_array = [0; 5];. Use a loop and an index variable to fill the array with the values [10, 20, 30, 40, 50]. The loop should stop when the array is complete. Print the final array.
+fn main() {
+    //
+    let mut init_array: [i32; 5] = [0; 5];
+    let mut i = 0;
+
+    //
+    loop {
+        //
+        if i >= init_array.len() {
+            break;
+        }
+
+        init_array[i] = (i as i32 + 1) * 10;
+        i += 1;
+    }
+
+    println!("Array = {:?}", init_array);
+}
 
 // Calculate the factorial of 5 using a loop. You will need two mutable variables: one for the counter (from 1 to 5) and another to store the factorial result. Print the final result.
+fn main() {
+    //
+    let mut count: u8 = 1;
+    let mut factorial: u8 = 1;
+
+    loop {
+        //
+        println!("Facto = {}", factorial);
+
+        factorial *= count;
+        count += 1;
+
+        if count > 5 {
+            break;
+        }
+    }
+
+    println!("Factorial = {}", factorial);
+}
 
 // Start with a variable number equal to 123. In a loop, divide the number by 2 and print the division result and the remainder (%). Continue the loop until the number is less than 1.
+fn main() {
+    //
+    let mut number: f32 = 123.;
 
-// Use a loop with a counter. The loop should stop if the counter is greater than 10 AND a boolean variable stop is true. Initialize stop as false and change its value to true when the counter reaches 7.
+    loop {
+        //
+        let division = number / 2.;
+        let remainder = number % 2.;
+
+        //
+        number = division;
+
+        //
+        println!("123 / 2 = {:.2}\n123 % 2 = {:.2}\n", division, remainder);
+
+        //
+        if number < 1. {
+            break;
+        }
+    }
+}
 
 // Inside a loop, calculate and print the result of the expression 5+counter∗2, where counter is a variable that starts at 0 and is incremented in each iteration. Use parentheses to change the precedence and calculate (5 + counter)∗2 in a second print. Stop the loop when the counter reaches 5.
+fn main() {
+    //
+    let mut count: u8 = 0;
 
-// Use a loop expression to find the first number divisible by both 7 and 3, starting the search from 20. Assign the result of the loop to a variable named result and print it.
+    //
+    loop {
+        //
+        println!("Count = {} | 5 + count * 2 = {}", count, 5 + count * 2);
+        println!("Count = {} | (5 + count) * 2 = {}", count, (5 + count) * 2);
+
+        count += 1;
+        if count > 5 {
+            break;
+        }
+    }
+}
 
 // Define a constant SECRET_NUMBER: u8 = 42;. Create a loop that simulates guessing attempts. An attempt variable should be incremented in each iteration. Use if/else if/else to print "Too low", "Too high", or "You got it!" when the attempt is equal to SECRET_NUMBER. Break the loop when you guess correctly.
 use std::io;
