@@ -784,7 +784,10 @@ Create a turn-based game between player and monster:
 - Player Defend and Monster Defend: Both block
 
 Using only loop, if/else/else if and rand (SystemTime, UNIX_EPOCH)
+
 */
+
+//
 use std::io;
 use std::time::{SystemTime, UNIX_EPOCH};
 
@@ -893,6 +896,7 @@ fn main() {
         }
     }
 }
+
 /*
 
 Create a counter that starts from 1 and goes onwards. Inside a loop, check the following conditions:
@@ -904,7 +908,52 @@ Create a counter that starts from 1 and goes onwards. Inside a loop, check the f
 
 */
 
+//
+fn main() {
+    //
+    println!("Count 1 .. 100!");
+    let mut count_number: u8 = 0;
+
+    //
+    loop {
+        //
+        count_number += 1;
+
+        if count_number % 3 == 0 && count_number % 5 == 0 {
+            println!("FizzBuzz");
+        } else if count_number % 3 == 0 {
+            println!("Fizz");
+        } else if count_number % 5 == 0 {
+            println!("Buzz");
+        } else {
+            println!("{}", count_number);
+        }
+
+        if count_number > 100 {
+            break;
+        }
+    }
+}
+
 // Start with capital = 1000.0 and goal = 2000.0. Each "year" (loop iteration), the capital increases by 7% (capital *= 1.07;). The loop should count how many years it takes for the capital to reach or exceed the goal. When the goal is reached, the loop should break, returning the number of years. Print the result.
+fn main() {
+    //
+    let mut cap: f32 = 1000.;
+    let mut year: u8 = 0;
+
+    loop {
+        //
+        cap *= 1.07;
+        year += 1;
+        println!("Cap = {} and Year = {}", cap, year);
+
+        if cap >= 2000. {
+            println!("Cap. = {}", cap);
+            println!("Year = {}", year);
+            break;
+        }
+    }
+}
 
 // Create a loop that starts with the character 'a' and prints each character up to 'f'. Use a mutable variable of type char and increment it. To increment, you can convert the char to u8, add 1, and convert back to char. Stop when the character is greater than 'f'.
 fn main() {
@@ -939,6 +988,54 @@ fn main() {
         if data.0 > 5 {
             data.1 = true;
             println!("{:?}", data);
+            break;
+        }
+    }
+}
+
+// Create a tuple named person with the values (Person, 0, 0.0). Then, change its data 3 times using a loop, prompting the user for the name, age, and height, and print the values.
+use std::io;
+fn main() {
+    //
+    let mut person: (String, u8, f32) = ("Person".to_string(), 0, 0.);
+    println!("{:#?}", person);
+
+    let mut amount: u8 = 0;
+
+    //
+    loop {
+        //
+        println!("Whats your name?");
+        let mut input_person: String = String::new();
+        io::stdin()
+            .read_line(&mut input_person)
+            .expect("Error entered data!");
+        let name: String = input_person.trim().to_string();
+
+        //
+        println!("Whats your age?");
+        let mut input_age: String = String::new();
+        io::stdin()
+            .read_line(&mut input_age)
+            .expect("Error entered data!");
+        let age: u8 = input_age.trim().parse().expect("Error convert data!");
+
+        //
+        println!("Whats your height?");
+        let mut input_height: String = String::new();
+        io::stdin()
+            .read_line(&mut input_height)
+            .expect("Error entered data!");
+        let height: f32 = input_height.trim().parse().expect("Error convert data!");
+
+        //
+        amount += 1;
+
+        //
+        person = (name, age, height);
+        println!("{:#?}", person);
+
+        if amount >= 3 {
             break;
         }
     }
