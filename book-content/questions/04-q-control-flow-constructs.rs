@@ -1284,30 +1284,45 @@ fn main() {
     }
 }
 
-//Declare a variable value with the value 10 outside a loop. Inside the loop, create a new variable value (using shadowing) that is equal to the outer value plus the iteration number. Print the inner value. The loop should run 5 times.
-
 //Count down from 10 to 1. Use a loop and the format! macro to print messages like "Countdown: 10", "Countdown: 9", etc. When the counter reaches 0, print "Launch!" and break the loop.
+fn main() {
+    //
+    println!("-- Start --");
+    let mut init_count: i8 = 10;
 
-//Create a loop with a counter. The loop should stop if the counter is divisible by 9 OR if the counter is equal to 15. Print the counter in each iteration and the reason why the loop stopped.
+    //
+    loop {
+        println!("Countdown: {}", init_count);
 
-//Initialize a tuple (attack, defense) with the values (10, 20). In a loop, increment attack by 2 and decrement defense by 3 in each iteration. The loop should stop when attack becomes greater than or equal to defense. Print the tuple values at each step.
+        init_count -= 1;
+        if init_count < 1 {
+            println!("Lauch!");
+            break;
+        }
+    }
+}
 
 //Declare a mutable array of 10 positions ([0; 10]). Use a loop with a counter to fill it. If the array index is even, fill it with the index value itself. If it's odd, fill it with twice the index value. Stop the loop when the array is complete.
+fn main() {
+    //
+    let mut init_array: [i8; 10] = [0; 10];
+    let mut i = 0;
 
-//Create a loop that prints numbers starting from 0. The loop should continue as long as a counter is not equal to (!=) 7. When the counter is 7, break the loop.
+    loop {
+        //
+        if i >= init_array.len() {
+            break;
+        }
 
-//Write a loop that does nothing visually, but contains comments explaining each part: the counter's initialization, the loop keyword, the break condition, and the counter's increment. The loop should stop after 100 iterations.
+        //
+        if i % 2 == 0 {
+            init_array[i] = i as i8;
+        } else {
+            init_array[i] = i as i8 * 2;
+        }
 
-//Start with let mut value = 1;. Inside a loop, multiply value by 2 (*=) in each iteration. Print the result and stop the loop when value is greater than 30.
-
-/*
-
-Create a program that simulates population growth.
- Start with a population of 100 (type i32).
- Define a growth_rate of 1.1 (type f64) and a mortality_rate of 15 (type i32).
- Use a loop to simulate the passage of years (an year counter).
- Each year, the population increases by the growth_rate (remember to convert types for multiplication) and then decreases by the mortality_rate.
- The loop should stop when the population exceeds 200.
- Print the year and the population at the end of each year.
-
-*/
+        //
+        println!("Array = {:?}", init_array);
+        i += 1;
+    }
+}
