@@ -1326,3 +1326,162 @@ fn main() {
         i += 1;
     }
 }
+
+// while
+// Write a Rust program that uses a while loop to print numbers from 1 to 5, one per line.
+fn main() {
+    //
+    let mut count: u8 = 0;
+
+    while count <= 5 {
+        println!("Count = {}", count);
+        count += 1;
+    }
+}
+
+// Using a while loop, create a program that prints a countdown from 10 to 1, and then the message "Launch!".
+fn main() {
+    //
+    let mut count: u8 = 10;
+
+    while count >= 1 {
+        println!("{}", count);
+        count -= 1;
+
+        if count < 1 {
+            println!("Lauch!");
+        }
+    }
+}
+
+// Write a program that calculates the sum of all integers from 1 to 100, using a while loop. Print the final result.
+fn main() {
+    //
+    let mut sum: u16 = 0;
+    let mut count: u8 = 1;
+
+    while count <= 100 {
+        //
+        sum += count as u16;
+        count += 1;
+    }
+    println!("Sum = {}", sum);
+}
+
+// Create a while loop that is intentionally infinite, but uses the break keyword to exit the loop when a counter reaches the value 7. Print the counter's value in each iteration before checking the exit condition.
+fn main() {
+    //
+    let mut count: u8 = 0;
+
+    while count >= 0 {
+        count += 1;
+        println!("Count = {}", count);
+
+        if count >= 7 {
+            break;
+        }
+    }
+}
+
+// Write a program with a while loop that iterates from 0 to 10. If the current number is odd, use continue to skip printing that number. Print only the even numbers.
+fn main() {
+    //
+    let mut count: u8 = 0;
+
+    while count <= 10 {
+        if count % 2 != 0 {
+            count += 1;
+            continue;
+        }
+
+        println!("Number even: {}", count);
+        count += 1;
+    }
+}
+
+// Write a program that asks the user to enter a number greater than 10. Use a while loop to keep asking for input until a valid number is provided.
+use std::io;
+
+fn main() {
+    //
+    let mut cond: u8 = 0;
+
+    while cond <= 10 {
+        //
+        println!("Enter number:");
+        let mut input_number: String = String::new();
+        io::stdin()
+            .read_line(&mut input_number)
+            .expect("Data entry error!");
+        let number: u8 = input_number.trim().parse().expect("Erro converting data!");
+        println!("");
+
+        cond = number;
+
+        //
+        if cond <= 10 {
+            println!("Number < 10");
+            println!("Try again!\n");
+        } else {
+            println!("Number > 10!");
+        }
+    }
+}
+
+// Calcule o fatorial de um número (por exemplo, 5!) usando um loop while. Imprima o resultado. (Lembre-se que n=ntimes(n−1)timesdotstimes1)
+// Calculate the factorial of a number (e.g., 5!) using a while loop. Print the result.
+fn main() {
+    let mut count = 4;
+    let mut number = 1;
+
+    loop {
+        //
+        println!("Number = {}", number);
+        number *= count;
+
+        //
+        count -= 1;
+
+        //
+        if count <= 0 {
+            break;
+        }
+    }
+}
+// Gere os primeiros 8 números da sequência de Fibonacci usando um loop while. (A sequência começa com 0 e 1, e cada número subsequente é a soma dos dois anteriores: 0, 1, 1, 2, 3, 5, 8, ...)
+// Generate the first 8 numbers of the Fibonacci sequence using a while loop. (The sequence starts with 0 and 1, and each subsequent number is the sum of the two preceding ones: 0, 1, 1, 2, 3, 5, 8, ...)
+
+// Dado um número inteiro (por exemplo, 12345), use um loop while para imprimi-lo invertido (ou seja, 54321). Dica: use o operador % (módulo) e / (divisão).
+// Given an integer (e.g., 12345), use a while loop to print it in reverse (i.e., 54321). Hint: use the % (modulo) and / (division) operators.
+
+// Escreva um programa que conte o número de dígitos em um inteiro positivo usando um loop while. Por exemplo, 12345 tem 5 dígitos.
+// Write a program that counts the number of digits in a positive integer using a while loop. For example, 12345 has 5 digits.
+
+// Peça ao usuário um número e, usando um loop while, imprima os primeiros 5 múltiplos desse número.
+// Ask the user for a number and, using a while loop, print the first 5 multiples of that number.
+
+// Imprima os quadrados dos números de 1 a 7 usando um loop while.
+// Print the squares of numbers from 1 to 7 using a while loop.
+
+// Dado um número let mut num = 64;, use um loop while para dividi-lo por 2 repetidamente até que o resultado seja menor ou igual a 1. Imprima cada resultado da divisão.
+// Given a number let mut num = 64;, use a while loop to repeatedly divide it by 2 until the result is less than or equal to 1. Print each division result.
+
+// Encontre e imprima o primeiro número par maior que 50 usando um loop while.
+// Find and print the first even number greater than 50 using a while loop.
+
+// Verifique se um dado número (por exemplo, num = 32) é uma potência de 2 usando um loop while. Imprima true ou false.
+// Check if a given number (e.g., num = 32) is a power of 2 using a while loop. Print true or false.
+
+// Crie um número secreto (por exemplo, secret = 42). Peça ao usuário para adivinhar o número. Use um loop while para continuar o jogo até que o usuário adivinhe corretamente. Dê dicas ("muito alto", "muito baixo"). (Requer std::io para entrada do usuário).
+// Create a secret number (e.g., secret = 42). Ask the user to guess the number. Use a while loop to continue the game until the user guesses correctly. Give hints ("too high", "too low"). (Requires std::io for user input).
+
+/*
+
+Loop Aninhado com while: Use loops while aninhados para imprimir um padrão de asteriscos, por exemplo, um quadrado de 3x3.
+Nested while Loops: Use nested while loops to print a pattern of asterisks, for example, a 3x3 square.
+
+***
+***
+***
+
+*/
