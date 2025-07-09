@@ -1428,26 +1428,37 @@ fn main() {
     }
 }
 
-// Calcule o fatorial de um número (por exemplo, 5!) usando um loop while. Imprima o resultado. (Lembre-se que n=ntimes(n−1)timesdotstimes1)
 // Calculate the factorial of a number (e.g., 5!) using a while loop. Print the result.
+use std::io;
+
 fn main() {
-    let mut count = 4;
-    let mut number = 1;
+    //
+    println!("Enter number:");
+    let mut input_number: String = String::new();
+    io::stdin()
+        .read_line(&mut input_number)
+        .expect("Data entry error!!");
 
-    loop {
-        //
-        println!("Number = {}", number);
-        number *= count;
+    //
+    let number: u16 = input_number.trim().parse().expect("Error conveting data!");
 
+    //
+    if number == 0 {
+        println!("Factorial: 0 = 1");
+    } else {
         //
-        count -= 1;
+        let mut factorial: u16 = 1;
+        let mut i: u16 = 1;
 
-        //
-        if count <= 0 {
-            break;
+        while i <= number {
+            factorial *= i;
+            i += 1;
         }
+
+        println!("Factorial: {} = {}", number, factorial);
     }
 }
+
 // Gere os primeiros 8 números da sequência de Fibonacci usando um loop while. (A sequência começa com 0 e 1, e cada número subsequente é a soma dos dois anteriores: 0, 1, 1, 2, 3, 5, 8, ...)
 // Generate the first 8 numbers of the Fibonacci sequence using a while loop. (The sequence starts with 0 and 1, and each subsequent number is the sum of the two preceding ones: 0, 1, 1, 2, 3, 5, 8, ...)
 
@@ -1460,14 +1471,42 @@ fn main() {
 // Peça ao usuário um número e, usando um loop while, imprima os primeiros 5 múltiplos desse número.
 // Ask the user for a number and, using a while loop, print the first 5 multiples of that number.
 
-// Imprima os quadrados dos números de 1 a 7 usando um loop while.
 // Print the squares of numbers from 1 to 7 using a while loop.
+fn main() {
+    //
+    let mut count: u16 = 0;
 
-// Dado um número let mut num = 64;, use um loop while para dividi-lo por 2 repetidamente até que o resultado seja menor ou igual a 1. Imprima cada resultado da divisão.
+    while count <= 7 {
+        //
+        let number: u16 = count * count;
+        println!("Square: {} = {}", count, number);
+        count += 1;
+    }
+}
+
 // Given a number let mut num = 64;, use a while loop to repeatedly divide it by 2 until the result is less than or equal to 1. Print each division result.
+fn main() {
+    //
+    let mut number: u8 = 64;
 
-// Encontre e imprima o primeiro número par maior que 50 usando um loop while.
+    //
+    while number > 1 {
+        number /= 2;
+        println!("Result = {}", number);
+    }
+}
+
 // Find and print the first even number greater than 50 using a while loop.
+fn main() {
+    //
+    let mut number: u8 = 51;
+
+    //
+    while number % 2 > 0 {
+        number += 1;
+    }
+    println!("Result = {}", number);
+}
 
 // Verifique se um dado número (por exemplo, num = 32) é uma potência de 2 usando um loop while. Imprima true ou false.
 // Check if a given number (e.g., num = 32) is a power of 2 using a while loop. Print true or false.
