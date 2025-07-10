@@ -1383,7 +1383,40 @@ fn main() {
     }
 }
 
+// Check if a given number (e.g., num = 32) is a power of 2 using a while loop. Print true or false.
+use std::io;
+
+fn main() {
+    //
+    println!("Enter number:");
+    let mut input_number: String = String::new();
+    io::stdin()
+        .read_line(&mut input_number)
+        .expect("Data entry error!");
+
+    //
+    let mut number: u16 = input_number.trim().parse().expect("Converting error data!");
+
+    //
+    if number <= 0 {
+        println!("{}", false);
+    } else if number == 1 {
+        println!("{}", true);
+    } else {
+        while number % 2 == 0 {
+            number /= 2;
+        }
+
+        if number == 1 {
+            println!("{}", true);
+        } else {
+            println!("{}", false);
+        }
+    }
+}
+
 // Write a program with a while loop that iterates from 0 to 10. If the current number is odd, use continue to skip printing that number. Print only the even numbers.
+//
 fn main() {
     //
     let mut count: u8 = 0;
@@ -1462,11 +1495,64 @@ fn main() {
 // Gere os primeiros 8 números da sequência de Fibonacci usando um loop while. (A sequência começa com 0 e 1, e cada número subsequente é a soma dos dois anteriores: 0, 1, 1, 2, 3, 5, 8, ...)
 // Generate the first 8 numbers of the Fibonacci sequence using a while loop. (The sequence starts with 0 and 1, and each subsequent number is the sum of the two preceding ones: 0, 1, 1, 2, 3, 5, 8, ...)
 
-// Dado um número inteiro (por exemplo, 12345), use um loop while para imprimi-lo invertido (ou seja, 54321). Dica: use o operador % (módulo) e / (divisão).
 // Given an integer (e.g., 12345), use a while loop to print it in reverse (i.e., 54321). Hint: use the % (modulo) and / (division) operators.
+use std::io;
 
-// Escreva um programa que conte o número de dígitos em um inteiro positivo usando um loop while. Por exemplo, 12345 tem 5 dígitos.
+fn main() {
+    //
+    println!("Enter number:");
+    let mut input_number: String = String::new();
+    io::stdin()
+        .read_line(&mut input_number)
+        .expect("Code entry error!");
+
+    //
+    let mut number: u16 = input_number.trim().parse().expect("Error converting data!");
+    let save_number = number;
+    let mut reverse_count: u16 = 0;
+
+    //
+    if number == 0 {
+        reverse_count = number;
+    } else {
+        while number > 0 {
+            let digit = number % 10;
+            reverse_count = (reverse_count * 10) + digit;
+            number /= 10;
+        }
+    }
+
+    println!("Original number: {}", save_number);
+    println!("Reverse number: {}", reverse_count);
+}
+
 // Write a program that counts the number of digits in a positive integer using a while loop. For example, 12345 has 5 digits.
+use std::io;
+
+fn main() {
+    //
+    println!("Enter number:");
+    let mut input_number: String = String::new();
+    io::stdin()
+        .read_line(&mut input_number)
+        .expect("Code entry error!");
+
+    //
+    let mut number: u16 = input_number.trim().parse().expect("Error converting data!");
+    let save_number: u16 = number;
+    let mut count: u8 = 0;
+
+    if number == 0 {
+        count = 1;
+    } else {
+        while number > 0 {
+            number /= 10;
+            count += 1;
+        }
+    }
+
+    println!("Count numbers {} = {}", save_number, count);
+}
 
 // Peça ao usuário um número e, usando um loop while, imprima os primeiros 5 múltiplos desse número.
 // Ask the user for a number and, using a while loop, print the first 5 multiples of that number.
@@ -1507,9 +1593,6 @@ fn main() {
     }
     println!("Result = {}", number);
 }
-
-// Verifique se um dado número (por exemplo, num = 32) é uma potência de 2 usando um loop while. Imprima true ou false.
-// Check if a given number (e.g., num = 32) is a power of 2 using a while loop. Print true or false.
 
 // Crie um número secreto (por exemplo, secret = 42). Peça ao usuário para adivinhar o número. Use um loop while para continuar o jogo até que o usuário adivinhe corretamente. Dê dicas ("muito alto", "muito baixo"). (Requer std::io para entrada do usuário).
 // Create a secret number (e.g., secret = 42). Ask the user to guess the number. Use a while loop to continue the game until the user guesses correctly. Give hints ("too high", "too low"). (Requires std::io for user input).
