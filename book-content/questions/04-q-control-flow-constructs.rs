@@ -1416,7 +1416,6 @@ fn main() {
 }
 
 // Write a program with a while loop that iterates from 0 to 10. If the current number is odd, use continue to skip printing that number. Print only the even numbers.
-//
 fn main() {
     //
     let mut count: u8 = 0;
@@ -1554,9 +1553,6 @@ fn main() {
     println!("Count numbers {} = {}", save_number, count);
 }
 
-// Peça ao usuário um número e, usando um loop while, imprima os primeiros 5 múltiplos desse número.
-// Ask the user for a number and, using a while loop, print the first 5 multiples of that number.
-
 // Print the squares of numbers from 1 to 7 using a while loop.
 fn main() {
     //
@@ -1594,16 +1590,83 @@ fn main() {
     println!("Result = {}", number);
 }
 
-// Crie um número secreto (por exemplo, secret = 42). Peça ao usuário para adivinhar o número. Use um loop while para continuar o jogo até que o usuário adivinhe corretamente. Dê dicas ("muito alto", "muito baixo"). (Requer std::io para entrada do usuário).
 // Create a secret number (e.g., secret = 42). Ask the user to guess the number. Use a while loop to continue the game until the user guesses correctly. Give hints ("too high", "too low"). (Requires std::io for user input).
+use std::io;
+
+fn main() {
+    //
+    let mut number: u8 = 0;
+    let sort_number: u8 = 42;
+
+    //
+    while number != sort_number {
+        //
+        println!("Enter number:");
+        let mut input_number: String = String::new();
+        io::stdin()
+            .read_line(&mut input_number)
+            .expect("Data entry error!");
+
+        //
+        number = input_number
+            .trim()
+            .parse()
+            .expect("Converting error number!");
+
+        if number > sort_number {
+            println!("Too High!!!");
+        } else {
+            println!("Too Low!!!");
+        }
+    }
+    println!("YOU WIN!");
+}
+
+// Peça ao usuário um número e, usando um loop while, imprima os primeiros 5 múltiplos desse número.
+// Ask the user for a number and, using a while loop, print the first 5 multiples of that number.
 
 /*
 
 Loop Aninhado com while: Use loops while aninhados para imprimir um padrão de asteriscos, por exemplo, um quadrado de 3x3.
-Nested while Loops: Use nested while loops to print a pattern of asterisks, for example, a 3x3 square.
 
 ***
 ***
 ***
 
 */
+
+//
+use std::io;
+
+fn main() {
+    //
+    println!("Enter number of rows: ");
+    let mut input_row: String = String::new();
+    io::stdin()
+        .read_line(&mut input_row)
+        .expect("Data entry error!");
+
+    //
+    println!("Enter number of columns: ");
+    let mut input_column: String = String::new();
+    io::stdin()
+        .read_line(&mut input_column)
+        .expect("Data entry error!");
+
+    //
+    let number_row: u8 = input_row.trim().parse().expect("Error converting data!");
+    let number_column: u8 = input_column.trim().parse().expect("Error converting data!");
+    let symbol: String = String::from("*");
+
+    //
+    let mut row_count: u8 = 0;
+    while row_count < number_row {
+        let mut column_count: u8 = 0;
+        while column_count < number_column {
+            print!("{}", symbol);
+            column_count += 1;
+        }
+        println!();
+        row_count += 1;
+    }
+}
