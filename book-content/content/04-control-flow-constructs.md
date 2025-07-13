@@ -1,4 +1,4 @@
-# Control Flow Constructs - if, else, else if, loop, while, for break, continue and match
+# Control Flow Constructs - if, else, else if, loop, while, for 
 
 - if
 ```rust
@@ -233,6 +233,18 @@ fn main() {
         println!("---");
     }
 }    
+```
+
+- for
+```rust
+//
+for element in collection {
+    
+}
+
+// i
+for i in 
+
 ```
 
 

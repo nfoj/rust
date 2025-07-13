@@ -1622,8 +1622,33 @@ fn main() {
     println!("YOU WIN!");
 }
 
-// Peça ao usuário um número e, usando um loop while, imprima os primeiros 5 múltiplos desse número.
 // Ask the user for a number and, using a while loop, print the first 5 multiples of that number.
+use std::io;
+
+fn main() {
+    //
+    println!("Entry number:");
+    let mut input_number: String = String::new();
+    io::stdin()
+        .read_line(&mut input_number)
+        .expect("Data entry error!");
+
+    //
+    let number: u8 = input_number.trim().parse().expect("Error converting data!");
+    let mut count: u8 = 0;
+    let mut result: u8;
+
+    //
+    println!();
+
+    //
+    while count < 5 {
+        count += 1;
+        result = count * number;
+
+        println!("{}", result);
+    }
+}
 
 /*
 
@@ -1668,5 +1693,42 @@ fn main() {
         }
         println!();
         row_count += 1;
+    }
+}
+
+// Write a Rust program that prompts the user to enter a positive integer. Then, find and display the first five divisors of that number. If fewer than five divisors are found, the program should state that 'This is first 5 multiple numbers were not found!'.
+use std::io;
+
+fn main() {
+    //
+    println!("Entry number:");
+    let mut input_number: String = String::new();
+    io::stdin()
+        .read_line(&mut input_number)
+        .expect("Data entry error!");
+
+    //
+    let number: u8 = input_number.trim().parse().expect("Error converting data!");
+    let mut count: u8 = 0;
+    let mut count_division: u8 = 0;
+
+    //
+    while count_division < 5 {
+        count += 1;
+
+        if count == 0 {
+            continue;
+        }
+
+        if number % count == 0 {
+            count_division += 1;
+
+            println!("{} % {} = 0", number, count);
+        }
+
+        if count > number && count_division < 5 {
+            println!("This is first 5 multiple numbers were not found!");
+            break;
+        }
     }
 }
