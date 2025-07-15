@@ -1732,3 +1732,200 @@ fn main() {
         }
     }
 }
+
+// Write a program that prints numbers from 1 to 10 using a for loop.
+fn main() {
+    //
+    for i in 1..=10 {
+        println!("{}", i);
+    }
+}
+
+// Create a program that calculates the sum of numbers from 1 to 100 using a for loop.
+fn main() {
+    //
+    let mut sum: u16 = 0;
+    for i in 1..=100 {
+        sum += i;
+        println!("{}", i);
+        println!("{}", sum);
+        println!();
+    }
+    println!("{}", sum);
+}
+
+// Develop a program that prints all even numbers from 0 to 20 using a for loop.
+fn main() {
+    //
+    for i in 0..=20 {
+        if i % 2 == 0 {
+            println!("{}", i);
+        }
+    }
+}
+
+// Write a program that prints the multiplication table for a user-provided number (from 1 to 10) using a for loop.
+use std::io;
+
+fn main() {
+    //
+    println!("Enter number:");
+    let mut input_number: String = String::new();
+    io::stdin()
+        .read_line(&mut input_number)
+        .expect("Data entry error!");
+
+    //
+    let number: i16 = input_number.trim().parse().expect("Error converting data!");
+    println!();
+
+    //
+    for i in 1..=10 {
+        let mult: i16 = number * i;
+        println!("{} x {} = {}", number, i, mult);
+    }
+}
+
+// Note: String and ...
+// Create a program that reverses a user-provided string using a for loop.
+use std::io;
+
+fn main() {
+    //
+    println!("Enter text:");
+
+    let mut input_string: String = String::new();
+    io::stdin()
+        .read_line(&mut input_string)
+        .expect("Data entry error!");
+
+    let inver_string: String = input_string.trim().to_string();
+    let mut rever = String::new();
+
+    for i in inver_string.chars().rev() {
+        rever.push(i);
+        println!("{}", rever);
+    }
+
+    println!("\n{}", rever);
+}
+
+// Develop a program that counts how many vowels (a, e, i, o, u) are in a string using a for loop.
+use std::io;
+
+fn main() {
+    //
+    println!("Enter text:");
+
+    let mut input_string: String = String::new();
+    io::stdin()
+        .read_line(&mut input_string)
+        .expect("Data entry error!");
+
+    let vowels_string: String = input_string.trim().to_lowercase().to_string();
+    let mut qtd_vowels: u8 = 0;
+
+    for i in vowels_string.chars() {
+        if i == 'a' || i == 'e' || i == 'i' || i == 'o' || i == 'u' {
+            qtd_vowels += 1;
+        }
+    }
+    println!("Qtd. = {}", qtd_vowels);
+}
+
+// Write a program that finds the largest number in a list of numbers using a for loop. List = [17, 43, 5, 54, 93]
+fn main() {
+    //
+    let arr: [u8; 5] = [17, 43, 5, 54, 93];
+    let mut number_larger: u8 = 0;
+
+    for (_i, j) in arr.iter().enumerate() {
+        if *j > number_larger {
+            number_larger = *j;
+        }
+    }
+    println!("{}", number_larger);
+}
+
+// Create a program that finds the smallest number in a list of numbers using a for loop. List = [63, 36, 57, 7, 82]
+fn main() {
+    //
+    let arr: [u8; 5] = [63, 36, 57, 7, 82];
+    let mut number_larger: u8 = arr[1];
+
+    //
+    for (_i, j) in arr.iter().enumerate() {
+        if *j < number_larger {
+            number_larger = *j;
+        }
+    }
+
+    //
+    println!("{}", number_larger);
+}
+
+// Desenvolva um programa que calcule o fatorial de um número inteiro positivo fornecido pelo usuário usando um laço for.
+// Develop a program that calculates the factorial of a positive integer provided by the user using a for loop.
+
+// Escreva um programa que imprima os elementos de uma lista em ordem inversa usando um laço for.
+// Write a program that prints the elements of a list in reverse order using a for loop.
+
+// Crie um programa que verifique se uma palavra é um palíndromo (lê-se da mesma forma de trás para frente) usando um laço for.
+// Create a program that checks if a word is a palindrome (reads the same forwards and backward) using a for loop.
+
+// Desenvolva um programa que gere os primeiros N termos da sequência de Fibonacci usando um laço for.
+// Develop a program that generates the first N terms of the Fibonacci sequence using a for loop.
+
+// Escreva um programa que conte quantas vezes um caractere específico aparece em uma string usando um laço for.
+// Write a program that counts how many times a specific character appears in a string using a for loop.
+
+// Crie um programa que remova todos os espaços em branco de uma string usando um laço for.
+// Create a program that removes all whitespace from a string using a for loop.
+
+// Desenvolva um programa que encontre a média de uma lista de números usando um laço for.
+// Develop a program that finds the average of a list of numbers using a for loop.
+
+// Escreva um programa que imprima um triângulo de asteriscos com N linhas usando laços for aninhados.
+// Write a program that prints a triangle of asterisks with N rows using nested for loops.
+
+// Crie um programa que imprima um quadrado de asteriscos com lado N usando laços for aninhados.
+// Create a program that prints a square of asterisks with side N using nested for loops.
+
+// Desenvolva um programa que gere todas as combinações possíveis de dois dígitos (00 a 99) usando laços for aninhados.
+// Develop a program that generates all possible combinations of two digits (00 to 99) using nested for loops.
+
+// Escreva um programa que encontre todos os números primos até um limite fornecido pelo usuário usando um laço for.
+// Write a program that finds all prime numbers up to a user-provided limit using a for loop.
+
+// Crie um programa que converta um número decimal para binário usando um laço for.
+// Create a program that converts a decimal number to binary using a for loop.
+
+// Desenvolva um programa que conte a quantidade de números negativos em uma lista usando um laço for.
+// Develop a program that counts the number of negative numbers in a list using a for loop.
+
+// Escreva um programa que crie uma nova lista contendo apenas os números pares de uma lista existente usando um laço for.
+// Write a program that creates a new list containing only the even numbers from an existing list using a for loop.
+
+// Crie um programa que calcule a potência de um número (base e expoente) sem usar operadores de potência, apenas um laço for.
+// Create a program that calculates the power of a number (base and exponent) without using power operators, only a for loop.
+
+// Desenvolva um programa que imprima os números de 1 a 50, mas para múltiplos de 3 imprima "Fizz" e para múltiplos de 5 imprima "Buzz". Para múltiplos de ambos, imprima "FizzBuzz", usando um laço for.
+// Develop a program that prints numbers from 1 to 50, but for multiples of 3, print "Fizz," and for multiples of 5, print "Buzz." For multiples of both, print "FizzBuzz," using a for loop.
+
+// Escreva um programa que encontre o segundo maior número em uma lista usando um laço for.
+// Write a program that finds the second largest number in a list using a for loop.
+
+// Crie um programa que calcule o produto de todos os números em uma lista usando um laço for.
+// Create a program that calculates the product of all numbers in a list using a for loop.
+
+// Desenvolva um programa que conte a ocorrência de cada caractere em uma string e armazene em um dicionário/mapa, usando um laço for.
+// Develop a program that counts the occurrence of each character in a string and stores it in a dictionary/map, using a for loop.
+
+// Escreva um programa que remova duplicatas de uma lista, mantendo a ordem original, usando um laço for.
+// Write a program that removes duplicates from a list, maintaining the original order, using a for loop.
+
+// Crie um programa que calcule a soma dos dígitos de um número inteiro usando um laço for.
+// Create a program that calculates the sum of the digits of an integer using a for loop.
+
+// Desenvolva um programa que crie uma matriz (lista de listas) e preencha-a com valores sequenciais usando laços for aninhados.
+// Develop a program that creates a matrix (list of lists) and fills it with sequential values using nested for loops.

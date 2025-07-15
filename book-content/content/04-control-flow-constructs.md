@@ -243,39 +243,57 @@ for element in collection {
 }
 
 // i
-for i in 
+// 0 - 4
+for i in 0..5 {
+    println!("{}", i);
+}
 
+// 0 - 5
+for i in 0..=5 {
+    println!("{}", i);
+}
+
+// 4 - 0
+for i in (0..5).rev() {
+    println!("{}", i);
+}
+
+// 5 - 0
+for i in (0..=5).rev() {
+    println!("{}", i);
+}
+
+//
+fn main() {
+    //
+    let name: &str = "Rust";
+    for i in name.chars() {
+        println!("{}", i);
+    }
+}
+
+// 
+let arr = ["apple", "banana", "orange", "guava"];
+for i in arr {
+    println!("{:#?}", i)
+}
+
+//
+let arr: [[i32; 3]; 3] = [
+    [1, 2, 3],
+    [4, 5, 6],
+    [7, 8, 9],
+];
+
+for i in arr {
+    for j in i {
+        print!("{}", j);
+    }
+    println!();
+}
 ```
 
-
-loop
-
-Use loop quando você precisa de um loop infinito que continua executando até que você explicitamente o pare com uma palavra-chave break.
-
-    Exemplo de uso: Jogos que precisam de um "game loop" contínuo, ou quando você está esperando por um evento específico para acontecer antes de sair.
-
-    Quando usar: Para repetições contínuas e indefinidas que só terminam com uma condição interna.
-
-while
-
-Use while quando você precisa que o loop continue enquanto uma condição específica for verdadeira.
-
-    Exemplo de uso: Contagem regressiva, esperando por um arquivo ser criado, ou processando itens em uma fila até que ela esteja vazia.
-
-    Quando usar: Para repetições que dependem de uma condição booleana externa que pode mudar a cada iteração.
-
-for
-
-Use for quando você quer iterar sobre uma coleção de itens (como um array, vetor ou range) ou um determinado número de vezes.
-
-    Exemplo de uso: Percorrer todos os elementos de uma lista, iterar por um range de números (ex: de 1 a 10), ou processar cada linha de um arquivo.
-
-    Quando usar: Para iteração previsível sobre uma sequência de itens, tornando o código mais conciso e menos propenso a erros de índice.
-
-Em resumo:
-
-    loop: Para repetições infinitas, parando apenas com break.
-
-    while: Para repetições enquanto uma condição for verdadeira.
-
-    for: Para iterar sobre coleções ou um número definido de vezes.
+Note:
+- loop: for infinite repetitions, stopping only with break;
+- while: for repetitions as long as a condition is true;
+- for: for iterating over collections or a defined number of times.
