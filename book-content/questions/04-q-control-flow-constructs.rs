@@ -1652,7 +1652,7 @@ fn main() {
 
 /*
 
-Loop Aninhado com while: Use loops while aninhados para imprimir um padrão de asteriscos, por exemplo, um quadrado de 3x3.
+Using nested while loops to print a 3x3 square of asterisks.
 
 ***
 ***
@@ -1864,20 +1864,109 @@ fn main() {
     println!("{}", number_larger);
 }
 
-// Desenvolva um programa que calcule o fatorial de um número inteiro positivo fornecido pelo usuário usando um laço for.
 // Develop a program that calculates the factorial of a positive integer provided by the user using a for loop.
+use std::io;
 
-// Escreva um programa que imprima os elementos de uma lista em ordem inversa usando um laço for.
-// Write a program that prints the elements of a list in reverse order using a for loop.
+fn main() {
+    //
+    println!("Enter number:");
+    let mut input_number: String = String::new();
+    io::stdin()
+        .read_line(&mut input_number)
+        .expect("Data entry error!");
 
-// Crie um programa que verifique se uma palavra é um palíndromo (lê-se da mesma forma de trás para frente) usando um laço for.
+    //
+    let number: u8 = input_number.trim().parse().expect("Error converting data!");
+    let mut factorial: u8 = 1;
+
+    //
+    for i in 1..=number {
+        //
+        factorial *= i;
+        println!("Facto = {}", factorial);
+    }
+}
+
+// Write a program that prints the elements of a list in reverse order using a for loop. List = [1, 2, 3, 4, 5];
+fn main() {
+    //
+    let arr: [u8; 5] = [1, 2, 3, 4, 5];
+
+    //
+    for i in arr.iter().rev() {
+        println!("{:#?}", i);
+    }
+}
+
 // Create a program that checks if a word is a palindrome (reads the same forwards and backward) using a for loop.
+use std::io;
+
+fn main() {
+    //
+    println!("Enter word:");
+
+    let mut input_word: String = String::new();
+    io::stdin()
+        .read_line(&mut input_word)
+        .expect("Error entry data!");
+
+    let word: String = input_word.trim().to_lowercase().to_string();
+    let mut rever_word: String = String::new();
+
+    for i in word.chars().rev() {
+        rever_word.push(i);
+    }
+    if word == rever_word {
+        println!("Word {} is polindrome!", word)
+    } else {
+        println!("Word {} not is polindrome!", word);
+    }
+}
 
 // Desenvolva um programa que gere os primeiros N termos da sequência de Fibonacci usando um laço for.
 // Develop a program that generates the first N terms of the Fibonacci sequence using a for loop.
 
-// Escreva um programa que conte quantas vezes um caractere específico aparece em uma string usando um laço for.
 // Write a program that counts how many times a specific character appears in a string using a for loop.
+use std::io;
+
+fn main() {
+    //
+    println!("Enter word:");
+
+    let mut input_word: String = String::new();
+    io::stdin()
+        .read_line(&mut input_word)
+        .expect("Error entry data!");
+
+    let word: String = input_word.trim().to_lowercase().to_string();
+
+    //
+    println!("\nEnter character: ");
+
+    let mut input_character: String = String::new();
+    io::stdin()
+        .read_line(&mut input_character)
+        .expect("Error entry data!");
+
+    let character: char = input_character.trim().parse().expect("Data entry error!");
+
+    //
+    let mut count: u8 = 0;
+
+    //
+    for i in word.chars() {
+        //
+        if i == character {
+            count += 1;
+        }
+    }
+
+    if count >= 1 {
+        println!("\nThe letter '{}' repeats '{}' times!", character, count);
+    } else {
+        println!("\nThe letter '{}' does not repeat", character);
+    }
+}
 
 // Crie um programa que remova todos os espaços em branco de uma string usando um laço for.
 // Create a program that removes all whitespace from a string using a for loop.
@@ -1909,14 +1998,21 @@ fn main() {
 // Crie um programa que calcule a potência de um número (base e expoente) sem usar operadores de potência, apenas um laço for.
 // Create a program that calculates the power of a number (base and exponent) without using power operators, only a for loop.
 
-// Desenvolva um programa que imprima os números de 1 a 50, mas para múltiplos de 3 imprima "Fizz" e para múltiplos de 5 imprima "Buzz". Para múltiplos de ambos, imprima "FizzBuzz", usando um laço for.
-// Develop a program that prints numbers from 1 to 50, but for multiples of 3, print "Fizz," and for multiples of 5, print "Buzz." For multiples of both, print "FizzBuzz," using a for loop.
-
 // Escreva um programa que encontre o segundo maior número em uma lista usando um laço for.
 // Write a program that finds the second largest number in a list using a for loop.
 
-// Crie um programa que calcule o produto de todos os números em uma lista usando um laço for.
 // Create a program that calculates the product of all numbers in a list using a for loop.
+fn main() {
+    //
+    let arr: [u8; 5] = [1, 2, 3, 4, 5];
+    let mut mult: u8 = 1;
+
+    //
+    for i in arr.iter() {
+        mult *= i;
+        println!("Stage {:?} = {:?}", i, mult);
+    }
+}
 
 // Desenvolva um programa que conte a ocorrência de cada caractere em uma string e armazene em um dicionário/mapa, usando um laço for.
 // Develop a program that counts the occurrence of each character in a string and stores it in a dictionary/map, using a for loop.
