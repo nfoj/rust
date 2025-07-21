@@ -1923,9 +1923,6 @@ fn main() {
     }
 }
 
-// Desenvolva um programa que gere os primeiros N termos da sequência de Fibonacci usando um laço for.
-// Develop a program that generates the first N terms of the Fibonacci sequence using a for loop.
-
 // Write a program that counts how many times a specific character appears in a string using a for loop.
 use std::io;
 
@@ -1968,39 +1965,6 @@ fn main() {
     }
 }
 
-// Crie um programa que remova todos os espaços em branco de uma string usando um laço for.
-// Create a program that removes all whitespace from a string using a for loop.
-
-// Desenvolva um programa que encontre a média de uma lista de números usando um laço for.
-// Develop a program that finds the average of a list of numbers using a for loop.
-
-// Escreva um programa que imprima um triângulo de asteriscos com N linhas usando laços for aninhados.
-// Write a program that prints a triangle of asterisks with N rows using nested for loops.
-
-// Crie um programa que imprima um quadrado de asteriscos com lado N usando laços for aninhados.
-// Create a program that prints a square of asterisks with side N using nested for loops.
-
-// Desenvolva um programa que gere todas as combinações possíveis de dois dígitos (00 a 99) usando laços for aninhados.
-// Develop a program that generates all possible combinations of two digits (00 to 99) using nested for loops.
-
-// Escreva um programa que encontre todos os números primos até um limite fornecido pelo usuário usando um laço for.
-// Write a program that finds all prime numbers up to a user-provided limit using a for loop.
-
-// Crie um programa que converta um número decimal para binário usando um laço for.
-// Create a program that converts a decimal number to binary using a for loop.
-
-// Desenvolva um programa que conte a quantidade de números negativos em uma lista usando um laço for.
-// Develop a program that counts the number of negative numbers in a list using a for loop.
-
-// Escreva um programa que crie uma nova lista contendo apenas os números pares de uma lista existente usando um laço for.
-// Write a program that creates a new list containing only the even numbers from an existing list using a for loop.
-
-// Crie um programa que calcule a potência de um número (base e expoente) sem usar operadores de potência, apenas um laço for.
-// Create a program that calculates the power of a number (base and exponent) without using power operators, only a for loop.
-
-// Escreva um programa que encontre o segundo maior número em uma lista usando um laço for.
-// Write a program that finds the second largest number in a list using a for loop.
-
 // Create a program that calculates the product of all numbers in a list using a for loop.
 fn main() {
     //
@@ -2014,14 +1978,76 @@ fn main() {
     }
 }
 
-// Desenvolva um programa que conte a ocorrência de cada caractere em uma string e armazene em um dicionário/mapa, usando um laço for.
+// Develop a program that finds the average of a list of numbers using a for loop.
+use std::io;
+
+fn main() {
+    //
+    let mut init_array: [i8; 10] = [0; 10];
+    let mut sum: u8 = 0;
+
+    for i in 0..init_array.len() {
+        //
+        println!("Enter number:");
+        let mut input_array: String = String::new();
+        io::stdin()
+            .read_line(&mut input_array)
+            .expect("Data entry error!");
+        init_array[i] = input_array.trim().parse().expect("Erro converting data!");
+
+        //
+        sum += init_array[i] as u8;
+    }
+
+    sum /= 10;
+    println!("Average = {}", sum);
+}
+
+// Develop a program that counts the number of negative numbers in a list using a for loop.
+use std::io;
+
+fn main() {
+    //
+    println!("Enter with 5 numbers:");
+    let mut input_array: [i8; 5] = [0; 5];
+    let mut count: u8 = 0;
+
+    for i in 0..input_array.len() {
+        //
+        let mut input_number: String = String::new();
+        io::stdin()
+            .read_line(&mut input_number)
+            .expect("Data entry error!");
+        input_array[i] = input_number.trim().parse().expect("Error converting data!");
+
+        if input_array[i] < 0 {
+            count += 1;
+        }
+    }
+
+    println!("Count numbers negative = {}", count);
+}
+
+// Develop a program that generates all possible combinations of two digits (00 to 99) using nested for loops.
+
+// Write a program that finds all prime numbers up to a user-provided limit using a for loop.
+
+// Create a program that converts a decimal number to binary using a for loop.
+
+// Write a program that creates a new list containing only the even numbers from an existing list using a for loop.
+
+// Create a program that calculates the power of a number (base and exponent) without using power operators, only a for loop.
+
+// Write a program that finds the second largest number in a list using a for loop.
+
 // Develop a program that counts the occurrence of each character in a string and stores it in a dictionary/map, using a for loop.
 
-// Escreva um programa que remova duplicatas de uma lista, mantendo a ordem original, usando um laço for.
 // Write a program that removes duplicates from a list, maintaining the original order, using a for loop.
 
-// Crie um programa que calcule a soma dos dígitos de um número inteiro usando um laço for.
 // Create a program that calculates the sum of the digits of an integer using a for loop.
 
-// Desenvolva um programa que crie uma matriz (lista de listas) e preencha-a com valores sequenciais usando laços for aninhados.
 // Develop a program that creates a matrix (list of lists) and fills it with sequential values using nested for loops.
+
+// Develop a program that generates the first N terms of the Fibonacci sequence using a for loop.
+
+// Create a program that removes all whitespace from a string using a for loop.

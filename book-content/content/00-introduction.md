@@ -88,8 +88,6 @@ Rust is a high-performance system programming language known for its safety feat
   - loop
   - while
   - for
-  - break
-  - continue
 
 - Control Flow Constructs - Part 2
   - match
