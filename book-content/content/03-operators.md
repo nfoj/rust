@@ -99,13 +99,21 @@ println!("{}", result);
 - tuples
 ```rust
 // tuple
-let tup: (u8, u8) = (1, 4);
-println!("{:?}", tup.0 + tup.1);
+let tup = ("A", 1);
+println!("{:#?}", tup);
+
+//
+let tup: (&str, u8) = ("B", 4);
+println!("{:?}", tup);
 
 // tuple let
 let tup: (u8, u8);
 tup = (3, 8);
 println!("{:?}", tup.0 + tup.1);
+
+// tup + string
+let tup: (String, u8) = (String::from("C"), 2);
+println!("{:#?}", tup);
 
 // tuple + tuple
 let tup: ((u8, u8),(u8, u8)) = ((2, 4),(6, 16));

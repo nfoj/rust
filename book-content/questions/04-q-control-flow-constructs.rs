@@ -1764,6 +1764,43 @@ fn main() {
     }
 }
 
+// Write a program that prints all numbers in binary up to the requested number entered.
+use std::io;
+
+fn main() {
+    //
+    println!("Enter number:");
+    let mut input_number: String = String::new();
+    io::stdin().read_line(&mut input_number).err();
+    let number: i16 = input_number.trim().parse().expect("");
+
+    //
+    println!("");
+    for i in 0..=number {
+        println!("Number: {:02} = {:b}", i, i);
+    }
+}
+
+// Develop a program that generates all possible combinations of two digits (00 to 99) using nested for loops.
+fn main() {
+    //
+    for i in 0..=100 {
+        println!("{:02}", i);
+    }
+}
+
+// or
+fn main() {
+    //
+    for i in 0..=100 {
+        if i < 10 {
+            println!("0{}", i)
+        } else {
+            println!("{}", i);
+        }
+    }
+}
+
 // Write a program that prints the multiplication table for a user-provided number (from 1 to 10) using a for loop.
 use std::io;
 
@@ -2028,17 +2065,34 @@ fn main() {
     println!("Count numbers negative = {}", count);
 }
 
-// Develop a program that generates all possible combinations of two digits (00 to 99) using nested for loops.
+// Write a code that receives 5 numbers entered by the user and adds them to an empty tuple, checks if there are even numbers and if so, adds them to another empty list.
+use std::io;
 
-// Write a program that finds all prime numbers up to a user-provided limit using a for loop.
+fn main() {
+    //
+    println!("Enter with 5 numbers:");
+    let mut input_array: [i8; 5] = [0; 5];
+    let mut even_array: [i8; 5] = [0; 5];
 
-// Create a program that converts a decimal number to binary using a for loop.
+    for i in 0..input_array.len() {
+        //
+        let mut input_number: String = String::new();
+        io::stdin()
+            .read_line(&mut input_number)
+            .expect("Data entry error!");
+        input_array[i] = input_number.trim().parse().expect("Error converting data!");
 
-// Write a program that creates a new list containing only the even numbers from an existing list using a for loop.
+        if input_array[i] % 2 == 0 {
+            even_array[i] = input_array[i];
+        }
+    }
 
-// Create a program that calculates the power of a number (base and exponent) without using power operators, only a for loop.
+    println!("\n{:?}", even_array);
+}
 
-// Write a program that finds the second largest number in a list using a for loop.
+// Write a program that receives the name and age of a user and stores them in a tuple using for.
+
+// Write a program that receives 5 integer values, entered by the user, using an array and for.
 
 // Develop a program that counts the occurrence of each character in a string and stores it in a dictionary/map, using a for loop.
 
@@ -2051,3 +2105,5 @@ fn main() {
 // Develop a program that generates the first N terms of the Fibonacci sequence using a for loop.
 
 // Create a program that removes all whitespace from a string using a for loop.
+
+// Write a program that finds all prime numbers up to a user-provided limit using a for loop.

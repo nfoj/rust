@@ -114,6 +114,132 @@ fn main() {
     println!("{}", result);
 }
 
+// Create a new String by removing all whitespace from a string.
+use std::io;
+
+fn main() {
+    //
+    println!("Enter text:");
+    let mut input_text: String = String::new();
+    io::stdin().read_line(&mut input_text).err();
+
+    //
+    let remove_wspace = input_text.replace(" ", "");
+    println!("\nFirst Letter = {}", remove_wspace.trim());
+}
+
+// Replace all occurrences of the substring "error" with "success" in a &str, creating a new String.
+use std::io;
+
+fn main() {
+    //
+    println!("Enter text:");
+    let mut input_text: String = String::new();
+    io::stdin().read_line(&mut input_text).err();
+
+    //
+    let new_text = input_text.replace("error", "success");
+    println!("\nFirst Letter = {}", new_text.trim());
+}
+
+// Check if a &str contains the substring "Rust".
+use std::io;
+
+fn main() {
+    //
+    println!("Enter text:");
+    let mut input_text: String = String::new();
+    io::stdin().read_line(&mut input_text).err();
+
+    //
+    if input_text.contains("Rust") {
+        println!("\n'{}' contains 'Rust'", input_text.trim());
+    } else {
+        println!("\n'{}' does not contain 'Rust'", input_text.trim());
+    }
+}
+
+// Check if a filename in a string ends with the suffix .rs.
+use std::io;
+
+fn main() {
+    //
+    println!("Enter filename:");
+    let mut input_text: String = String::new();
+    io::stdin().read_line(&mut input_text).err();
+
+    //
+    if input_text.trim().ends_with(".rs") {
+        println!("\n'{}' ends with '.rs'", input_text.trim());
+    } else {
+        println!("\n'{}' does not ends with '.rs'", input_text.trim());
+    }
+}
+
+// Check if a &str starts with the prefix "https://".
+use std::io;
+
+fn main() {
+    //
+    println!("Enter text:");
+    let mut input_text: String = String::new();
+    io::stdin().read_line(&mut input_text).err();
+
+    //
+    if input_text.starts_with("https://") {
+        println!("\n'{}' start with 'https://'", input_text.trim());
+    } else {
+        println!("\n'{}' does not start with 'https://'", input_text.trim());
+    }
+}
+
+// Find the starting byte index of the first occurrence of the substring "mundo" in "olá, mundo".
+use std::io;
+
+fn main() {
+    //
+    println!("Enter filename:");
+    let mut input_text: String = String::new();
+    io::stdin().read_line(&mut input_text).err();
+
+    //
+    if let Some(index) = input_text.find("world") {
+        println!("\nByte index: world = {}", index);
+    } else {
+        println!("\nNo word: world");
+    }
+}
+
+// Write a function that accepts a String and returns its first character as a char.
+use std::io;
+
+fn main() {
+    //
+    let mut input_word: String = String::new();
+    io::stdin().read_line(&mut input_word).err();
+
+    //
+    let mut first_letter: char = ' ';
+    for i in input_word.trim_start().chars() {
+        first_letter = i;
+        break;
+    }
+    println!("First Letter = {}", first_letter);
+}
+
+// or
+use std::io;
+
+fn main() {
+    //
+    let mut input_word: String = String::new();
+    io::stdin().read_line(&mut input_word).err();
+
+    //
+    let first_letter: char = input_word.trim_start().chars().next().unwrap_or(' ');
+    println!("First Letter = {}", first_letter);
+}
+
 // Write code that removes the last character from a String.
 use std::io;
 
@@ -179,8 +305,6 @@ fn main() {
 
 // Explain in a comment why it is not possible to index a String with an integer (my_string[i]) to get a character. Then, write code that demonstrates the correct way to get the nth character (and not the nth byte).
 
-// Write a function that accepts a &str and returns its first character as a char.
-
 // Create a function that takes a &str and two byte indices (start and end) and returns an Option<&str>. The function should return Some(slice) if the slice is valid (does not cut a UTF-8 character in the middle) and None otherwise.
 
 // Iterate over the bytes of a &str and print each one.
@@ -189,20 +313,8 @@ fn main() {
 
 // Write a function that counts the number of characters (char) in a &str, not the number of bytes.
 
-// Check if a &str contains the substring "Rust".
-
-// Find the starting byte index of the first occurrence of the substring "mundo" in "olá, mundo".
-
-// Check if a &str starts with the prefix "http://".
-
-// Check if a filename in a &str ends with the suffix .rs.
-
 // Find all byte indices of a specific character (e.g., 'a') in a &str.
-
-// Replace all occurrences of the substring "error" with "success" in a &str, creating a new String.
 
 // Replace only the first occurrence of "old" with "new" in a &str, creating a new String.
 
 // Write a function that takes a &mut String and replaces all lowercase 'a' characters with uppercase 'A's, modifying the original String.
-
-// Create a new String by removing all whitespace from a &str.
