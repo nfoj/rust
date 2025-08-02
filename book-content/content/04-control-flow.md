@@ -1,4 +1,4 @@
-# Control Flow Constructs - if, else, else if, loop, while, for 
+# Control Flow - if, else, else if, loop, while, for 
 
 - if
 ```rust
@@ -154,7 +154,6 @@ fn main () {
             break;
         }
     }
-
     println!("End of loop!");
 }
 

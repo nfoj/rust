@@ -1,0 +1,105 @@
+// Questions - Functions and Method Syntax
+
+// Crie uma funcao que imprima "Hello, world!" na tela.
+fn func_print(text: &str) {
+    //
+    println!("{}", text);
+}
+
+fn main() {
+    //
+    func_print("Hello, world!");
+}
+
+// Crie uma funcao que some dois numeros.
+fn func_sum(x: u8, y: u8) -> u8 {
+    //
+    x + y
+}
+
+fn main() {
+    //
+    println!("{}", func_sum(1, 2));
+}
+
+// Crie um funcao que possua as soma e subtracao.
+fn func_operations(x: u8, y: u8) -> (u8, u8) {
+    //
+    let sum = x + y;
+    let subt = x - y;
+    (sum, subt)
+}
+
+fn main() {
+    //
+    let (sum, subt) = func_operations(8, 2);
+    println!("Sum = {}\nSubtraction = {}", sum, subt);
+}
+
+// or
+fn func_operations(x: u8, y: u8) -> (u8, u8) {
+    //
+    (x + y, x - y)
+}
+
+fn main() {
+    //
+    let (sum, subt) = func_operations(8, 2);
+    println!("Sum = {}\nSubtraction = {}", sum, subt);
+}
+
+// Crie uma funcao que receba o valor de 2 numeros inteiros.
+use std::io;
+
+fn read_input(prompt: &str) -> u8 {
+    println!("{}", prompt);
+
+    let mut input = String::new();
+    io::stdin()
+        .read_line(&mut input)
+        .expect("Erro ao ler a entrada");
+
+    input.trim().parse().expect("Número inválido")
+}
+
+fn main() {
+    let number_a = read_input("Enter number:");
+    let number_b = read_input("\nEnter number:");
+
+    println!("\nNumber A = {}\nNumber B = {}", number_a, number_b);
+}
+
+// Crie um codigo que possua uma funcao que receba o valor de 2 numeros inteiros e outra que faca as quatro operacoes basicas, depois imprima o valor na tela:
+use std::io;
+
+fn func_operations(x: u8, y: u8) -> (u8, u8, u8, u8) {
+    let sum = x + y;
+    let sub = x - y;
+    let mul = x * y;
+    let div = x / y;
+    (sum, sub, mul, div)
+}
+
+fn read_input(prompt: &str) -> u8 {
+    println!("{}", prompt);
+
+    let mut input = String::new();
+    io::stdin()
+        .read_line(&mut input)
+        .expect("Erro ao ler a entrada");
+
+    input.trim().parse().expect("Número inválido")
+}
+
+fn main() {
+    let number_a = read_input("Enter number:");
+    let number_b = read_input("Enter number:");
+
+    let (sum, sub, mul, div) = func_operations(number_a, number_b);
+
+    println!("\nResultados:");
+    println!("Sum = {}", sum);
+    println!("Sub = {}", sub);
+    println!("Mul = {}", mul);
+    println!("Div = {}", div);
+}

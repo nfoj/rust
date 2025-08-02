@@ -142,6 +142,20 @@ fn main() {
     println!("\nFirst Letter = {}", new_text.trim());
 }
 
+// Replace only the first occurrence of "old" with "new" in a &str, creating a new String.
+use std::io;
+
+fn main() {
+    //
+    println!("Enter phrase:");
+    let mut input_phrase: String = String::new();
+    io::stdin().read_line(&mut input_phrase).err();
+
+    //
+    let phrase = input_phrase.replacen("old", "new", 1);
+    println!("{}", phrase.trim());
+}
+
 // Check if a &str contains the substring "Rust".
 use std::io;
 
@@ -193,7 +207,21 @@ fn main() {
     }
 }
 
-// Find the starting byte index of the first occurrence of the substring "mundo" in "olá, mundo".
+// Create code that takes a String and returns a slice containing only the first word. Assume that words are separated by spaces.
+use std::io;
+
+fn main() {
+    //
+    println!("Enter phrase:");
+    let mut input_phrase: String = String::new();
+    io::stdin().read_line(&mut input_phrase).err();
+
+    //
+    let phrase = input_phrase.split_whitespace().next();
+    println!("{}", phrase.unwrap());
+}
+
+// Find the starting byte index of the first occurrence of the substring "world".
 use std::io;
 
 fn main() {
@@ -238,6 +266,77 @@ fn main() {
     //
     let first_letter: char = input_word.trim_start().chars().next().unwrap_or(' ');
     println!("First Letter = {}", first_letter);
+}
+
+// Write a code that counts the number of characters (char) in a &str, not the number of bytes.
+use std::io;
+
+fn main() {
+    //
+    println!("Enter word:");
+    let mut input_word: String = String::new();
+    io::stdin().read_line(&mut input_word).err();
+
+    //
+    let word = input_word.trim();
+    let mut count: u8 = 0;
+
+    //
+    for _i in word.chars() {
+        count += 1;
+    }
+
+    println!("{}", count);
+}
+
+// Write a code that counts the number of characters (char) in a sentence, excluding whitespace.
+use std::io;
+
+fn main() {
+    //
+    println!("Enter phrase:");
+    let mut input_phrase: String = String::new();
+    io::stdin().read_line(&mut input_phrase).err();
+
+    //
+    let phrase = input_phrase.trim().replace(" ", "");
+    let mut count: u8 = 0;
+
+    //
+    for _i in phrase.chars() {
+        count += 1;
+    }
+
+    println!("{}", count);
+}
+
+// Write a code that takes a &mut String and replaces all lowercase 'a' characters with uppercase 'A's, modifying the original String.
+use std::io;
+
+fn main() {
+    // create new var
+    println!("Enter phrase:");
+    let mut input_phrase: String = String::new();
+    io::stdin().read_line(&mut input_phrase).err();
+
+    //
+    let phrase = input_phrase.trim().replace("a", "A");
+    println!("{}", phrase);
+
+    // mut input_phrase
+    println!("Enter phrase:");
+    let mut input_phrase: String = String::new();
+    io::stdin().read_line(&mut input_phrase).err();
+
+    //
+    let bytes = unsafe { input_phrase.as_bytes_mut() };
+
+    for i in bytes.iter_mut() {
+        if *i == b'a' {
+            *i = b'A';
+        }
+    }
+    println!("{}", phrase);
 }
 
 // Write code that removes the last character from a String.
@@ -301,20 +400,4 @@ fn main() {
     println!("Len = {}", var_string.len());
 }
 
-// Create a function that takes a &str and returns a slice containing only the first word. Assume that words are separated by spaces.
-
-// Explain in a comment why it is not possible to index a String with an integer (my_string[i]) to get a character. Then, write code that demonstrates the correct way to get the nth character (and not the nth byte).
-
-// Create a function that takes a &str and two byte indices (start and end) and returns an Option<&str>. The function should return Some(slice) if the slice is valid (does not cut a UTF-8 character in the middle) and None otherwise.
-
-// Iterate over the bytes of a &str and print each one.
-
-// Iterate over the characters (char) of a &str (that contains multibyte characters, like "olá, mundo 👋") and print each one.
-
-// Write a function that counts the number of characters (char) in a &str, not the number of bytes.
-
 // Find all byte indices of a specific character (e.g., 'a') in a &str.
-
-// Replace only the first occurrence of "old" with "new" in a &str, creating a new String.
-
-// Write a function that takes a &mut String and replaces all lowercase 'a' characters with uppercase 'A's, modifying the original String.

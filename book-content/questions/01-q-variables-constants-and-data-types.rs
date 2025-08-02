@@ -1,18 +1,16 @@
 // Questions - Variables Constants and Data Types
 
-// comments
 // How would you write a single-line comment in rust?
 // single-line comment
 
 // What is the syntax for a block comments in rust?
 /* block comments */
 
-// print
 // Which macro would you use to print text on the same line, whihout adding a newline at the end?  Give an example.
 // print();
 fn main() {
     //
-    print("Print: whihout adding a newline at the end!");
+    print!("Print: whihout adding a newline at the end!");
 }
 
 // Which macro would you use to print text and automatically add a newline at the end? Give an example.
@@ -22,7 +20,6 @@ fn main() {
     println!("Print: add newline at the end!");
 }
 
-// line-break
 // How do you insert an explicit newline within a string that is being printed with println!?
 fn main() {
     //

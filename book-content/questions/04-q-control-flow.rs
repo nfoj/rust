@@ -1,4 +1,4 @@
-// Questions - Control Flow Constructs - if, else, else if, loop, while, for break and continue
+// Questions - Control Flow
 
 // Write a program that asks the user for an integer and determines whether it's even or odd.
 use std::io;
@@ -1847,6 +1847,25 @@ fn main() {
     println!("\n{}", rever);
 }
 
+// Create a program that calculates the sum of the digits of an integer using a for loop.
+use std::io;
+
+fn main() {
+    //
+    println!("Enter number:");
+    let mut input_number: String = String::new();
+    io::stdin().read_line(&mut input_number).err();
+
+    let mut result_sum: i16 = 0;
+
+    for i in input_number.trim().chars() {
+        let convert_number: i16 = i.to_string().parse().expect("Error converting data!");
+        result_sum += convert_number;
+    }
+
+    println!("{}", result_sum);
+}
+
 // Develop a program that counts how many vowels (a, e, i, o, u) are in a string using a for loop.
 use std::io;
 
@@ -2015,6 +2034,23 @@ fn main() {
     }
 }
 
+// Write a program that receives 5 integer values, entered by the user, using an array and for.
+use std::io;
+
+fn main() {
+    //
+    let mut input_array: [i8; 5] = [0; 5];
+
+    for i in 0..input_array.len() {
+        //
+        println!("\nEnter number:");
+        let mut input_number: String = String::new();
+        io::stdin().read_line(&mut input_number).err();
+        input_array[i] = input_number.trim().parse().expect("Error converting data!");
+    }
+    println!("\n{:?}", input_array);
+}
+
 // Develop a program that finds the average of a list of numbers using a for loop.
 use std::io;
 
@@ -2091,19 +2127,32 @@ fn main() {
 }
 
 // Write a program that receives the name and age of a user and stores them in a tuple using for.
+use std::io;
 
-// Write a program that receives 5 integer values, entered by the user, using an array and for.
+fn main() {
+    //
+    println!("Enter the number of users you want to add:");
+    let mut input_count: String = String::new();
+    io::stdin().read_line(&mut input_count).err();
+    let count: u8 = input_count.trim().parse().expect("Error converting data!");
 
-// Develop a program that counts the occurrence of each character in a string and stores it in a dictionary/map, using a for loop.
+    //
+    let mut input_array: (String, u8);
 
-// Write a program that removes duplicates from a list, maintaining the original order, using a for loop.
+    for _i in 0..count {
+        //
+        println!("\nEnter name:");
+        let mut input_name: String = String::new();
+        io::stdin().read_line(&mut input_name).err();
+        let name = input_name;
 
-// Create a program that calculates the sum of the digits of an integer using a for loop.
+        println!("\nEnter age:");
+        let mut input_age: String = String::new();
+        io::stdin().read_line(&mut input_age).err();
+        let age: u8 = input_age.trim().parse().expect("Error converting data!");
 
-// Develop a program that creates a matrix (list of lists) and fills it with sequential values using nested for loops.
-
-// Develop a program that generates the first N terms of the Fibonacci sequence using a for loop.
-
-// Create a program that removes all whitespace from a string using a for loop.
-
-// Write a program that finds all prime numbers up to a user-provided limit using a for loop.
+        //
+        input_array = (name, age);
+        println!("\nName:{}Age={}", input_array.0, input_array.1);
+    }
+}
