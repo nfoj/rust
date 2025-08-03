@@ -86,14 +86,20 @@ fn read_input(prompt: &str) -> u8 {
     let mut input = String::new();
     io::stdin()
         .read_line(&mut input)
-        .expect("Erro ao ler a entrada");
+        .expect("Data entry error!");
 
-    input.trim().parse().expect("Número inválido")
+    match input.trim().parse() {
+        Ok(i) => i,
+        Err(_) => {
+            println!("Invalid Number!");
+            read_input(prompt)
+        }
+    }
 }
 
 fn main() {
     let number_a = read_input("Enter number:");
-    let number_b = read_input("Enter number:");
+    let number_b = read_input("\nEnter number:");
 
     let (sum, sub, mul, div) = func_operations(number_a, number_b);
 
@@ -102,4 +108,75 @@ fn main() {
     println!("Sub = {}", sub);
     println!("Mul = {}", mul);
     println!("Div = {}", div);
+}
+
+// Crie um codigo usando funcoes que possa mostrar se um numero digitado pelo usuario e par ou impar.
+use std::io;
+
+fn read_input(prompt: &str) -> u8 {
+    //
+    println!("{}", prompt);
+
+    let mut input = String::new();
+    io::stdin()
+        .read_line(&mut input)
+        .expect("Data entry error!");
+
+    match input.trim().parse() {
+        Ok(i) => i,
+        Err(_) => {
+            println!("Invalid Number!");
+            read_input(prompt)
+        }
+    }
+}
+
+fn func_even_or_odd(x: u8) {
+    //
+    if x % 2 == 0 {
+        println!("Even!");
+    } else {
+        println!("Odd!");
+    }
+}
+
+fn main() {
+    //
+    let num = read_input("Enter number:");
+    func_even_or_odd(num);
+}
+
+// Crie um programa usando funcoes para identificar se o valor de entrada digitado pelo usuario e positivo, negativo ou zero.
+use std::io;
+
+fn read_input(prompt: &str) -> i8 {
+    //
+    println!("{}", prompt);
+
+    let mut input = String::new();
+    io::stdin().read_line(&mut input).err();
+
+    match input.trim().parse() {
+        Ok(i) => i,
+        Err(_) => {
+            println!("Invalid Number!");
+            read_input(prompt)
+        }
+    }
+}
+
+fn func_pos_neg_zer(x: i8) {
+    //
+    if x > 0 {
+        print!("Positive!");
+    } else if x < 0 {
+        print!("Negative!");
+    } else {
+        print!("Zero!");
+    }
+}
+
+fn main() {
+    let num = read_input("Enter number:");
+    func_pos_neg_zer(num);
 }
