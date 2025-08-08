@@ -258,3 +258,92 @@ fn main() {
 
     func_avarage(num_a, num_b, num_c);
 }
+
+// Crei um programa para receber a idade de uma pesssoa e determine se ela pode ou nao voltar. (Nao vota abaixo de 16 anos, opcional acima de 60 anos.)
+use std::io;
+
+fn read_age(prompt: &str) -> u8 {
+    loop {
+        println!("{}", prompt);
+
+        let mut input = String::new();
+        io::stdin()
+            .read_line(&mut input)
+            .expect("Data entry error!");
+
+        match input.trim().parse() {
+            Ok(age) if age <= 120 => return age,
+            Ok(_) => println!("\nInvalid age! Age must be less than or equal to 120."),
+            Err(_) => println!("\nInvalid input! Please enter a number."),
+        }
+    }
+}
+
+fn check_voting(age: u8) {
+    match age {
+        16..=17 | 60..=120 => println!("Your vote is optional!"),
+        18..=59 => println!("Your vote is mandatory!"),
+        _ => println!("You can't vote!"),
+    }
+}
+
+fn main() {
+    let age = read_age("Enter your age:");
+    check_voting(age);
+}
+
+/*
+
+Write a program that calculates a person's BMI (weight / height²) and classifies the result:
+ - Below 18.5: Underweight
+ - 18.5 - 24.9: Normal weight
+ - 25.0 - 29.9: Overweight
+ - 30.0 or more: Obesity
+
+*/
+
+use std::io;
+
+fn read_input(prompt: &str) -> f32 {
+    //
+    loop {
+        println!("{}", prompt);
+
+        let mut input: String = String::new();
+        io::stdin()
+            .read_line(&mut input)
+            .expect("Data entry error!");
+
+        match input.trim().parse() {
+            Ok(average) if average > 0.0 => return average,
+            _ => {
+                println!("Invalid number!");
+                read_input(prompt);
+            }
+        }
+    }
+}
+
+fn func_bmi(weight: f32, height: f32) {
+    let bmi: f32 = weight / (height * height);
+
+    if bmi <= 18.5 {
+        println!("\nUnderweight!");
+    } else if bmi > 18.5 && bmi <= 24.9 {
+        println!("\nNormal weight!");
+    } else if bmi >= 25. && bmi <= 29.0 {
+        println!("\nOverweight!");
+    } else if bmi >= 30.0 {
+        println!("\nObesity!");
+    } else {
+        println!("\nError calculating BMI or invalid range!");
+    }
+}
+
+fn main() {
+    //
+    let weight = read_input("Enter with weight:");
+    let height = read_input("\nEnter with height");
+
+    func_bmi(weight, height);
+}
