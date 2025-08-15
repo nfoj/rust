@@ -347,3 +347,35 @@ fn main() {
 
     func_bmi(weight, height);
 }
+
+// Crie um programa que use modulos para fazer as 4 operacoes basicas: soma, subtracao, multiplicacao e divisao
+mod cal {
+
+    pub fn sum(a: i8, b: i8) -> i8 {
+        a + b
+    }
+
+    pub fn sub(a: i8, b: i8) -> i8 {
+        a + b
+    }
+
+    pub fn mul(a: i8, b: i8) -> i8 {
+        a * b
+    }
+
+    pub fn div(a: i8, b: i8) -> i8 {
+        a / b
+    }
+}
+
+fn main() {
+    //
+    let x: i8 = 2;
+    let y: i8 = 2;
+
+    //
+    println!("{} + {} = {}", x, y, cal::sum(x, y));
+    println!("{} + {} = {}", x, y, cal::sub(x, y));
+    println!("{} + {} = {}", x, y, cal::mul(x, y));
+    println!("{} + {} = {}", x, y, cal::div(x, y));
+}
