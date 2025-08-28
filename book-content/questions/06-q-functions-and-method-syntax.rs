@@ -356,7 +356,7 @@ mod cal {
     }
 
     pub fn sub(a: i8, b: i8) -> i8 {
-        a + b
+        a - b
     }
 
     pub fn mul(a: i8, b: i8) -> i8 {
