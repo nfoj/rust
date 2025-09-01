@@ -66,7 +66,7 @@ fn main () {
 ```
 
 > [!TIP]
-Organize your code using modules, in the same file or outside it
+> Organize your code using modules, in the same file or outside it
 > 
 
 - modules
@@ -155,5 +155,69 @@ fn main() {
    let result_div = mult::cal_div(4, 4);
    println!("Result div = {}", result_div);
    
+}
+```
+
+- files + mod + fn
+
+```rust
+// tree
+/*
+project/
+├── Cargo.toml
+└── src/
+     ├── main.rs
+     ├── math.rs
+     └── text.rs
+*/
+
+// math.rs
+pub mod math {
+    //
+    pub fn sum(a: i8, b: i8) -> i8 {
+        a + b
+    }
+
+    pub fn sub(a: i8, b: i8) -> i8 {
+        a - b
+    }
+
+    pub fn mul(a: i8, b: i8) -> i8 {
+        a * b
+    }
+
+    pub fn div(a: i8, b: i8) -> i8 {
+        a / b
+    }
+}
+
+// text.rs
+pub mod text {
+    //
+    pub fn hello() {
+        println!("Hello!!");
+    }
+
+    pub fn thank() {
+        println!("Thank you!");
+    }
+}
+
+// main.rs
+mod math;
+mod text;
+
+fn main() {
+    //
+    text::text::hello();
+
+    //
+    println!("Sum: 1 + 2 = {:?}", math::math::sum(1, 2));
+    println!("Sub: 1 + 2 = {:?}", math::math::sub(1, 2));
+    println!("Mul: 1 + 2 = {:?}", math::math::mul(1, 2));
+    println!("Div: 1 + 2 = {:?}", math::math::div(1, 2));
+
+    //
+    text::text::thank();
 }
 ```
