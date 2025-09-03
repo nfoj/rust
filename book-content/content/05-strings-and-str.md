@@ -1,112 +1,134 @@
 ## Strings and &str
 
-Sequence of UTF-8 characters that can form a word or a phrase, including letters, numbers, symbols, or any other type of special character.
+Think of your memory as a cabinet and a variable as a drawer.
 
-Think of your memory as a cabinet, a variable as a drawer, and a string as a piece of paper.
+When you create a "String," you own the entire drawer and can freely modify its contents.
 
-When you create a "string" variable, you use the entire drawer. But when you create a "&str" variable, you use a piece of paper to write down the information and then put it inside the drawer.
+When you create a "&str," you're simply looking at a piece of paper inside the drawer—you can read it, but you don't own it and can't modify the original.
+
+| Feature     | &str                    | String              |
+|-------------|-------------------------|---------------------|
+| Ownership   | Borrowed                | Owned               |
+| Mutability  | Immutable content       | Can be mutable      |
+| Memory      | Stack (for literals)    | Heap allocated      |
+| Size        | Fixed                   | Growable            |
+| Performance | Very fast               | Slightly slower     |
+| Use case    | Reading, passing around | Building, modifying |
 
 ## String
 
 ```rust
-// new()
-let create_string: String = String::new();
-println!("{}", create_string);
+//
+let empty_string: String = String::new();
+println!("{}", empty_string);
 
 // from()
-let create_string: String = String::from("Create text!");
-println!("{}", create_string);
+let from_literal: String = String::from("Hello, World!");
+println!("{}", from_literal);
 
 // to_string()
-let create_string: String = "Create text!".to_string();
-println!("{}", create_string);
+let to_string_method: String = "Hello, World!".to_string();
+println!("{}", to_string_method);
 
 // mut
-let mut create_string: String = String::from("Create text!");
-println!("{}", create_string);
+let mut mutable_string: String = String::from("Initial text");
+println!("{}", mutable_string);
 
-create_string = "Create new text!".to_string();
-println!("{}", create_string);
+mutable_string = "New text".to_string();
+println!("{}", mutable_string);
 ```
 
-## String Concatenation
+## String concatenation
 
 ```rust
-// format!
-let create_string_01: String = String::from("1");
-let create_string_02: String = String::from("2");
-let create_string: String = format!("{}{}", create_string_01, create_string_02);
-println!("{}", create_string);
+// concate + new variable
+let string1: String = String::from("Hello");
+let string2: String = String::from(" World");
+let combined: String = format!("{}{}", string1, string2);
+println!("{}", combined);
 
 //
-let create_string_01: String = String::from("1");
-let create_string_02: String = String::from("2");
-println!("{}{}", create_string_01, create_string_02);
+let string1: String = String::from("Hello");
+let string2: String = String::from(" World");
+println!("{}{}", string1, string2); 
+```
 
-// push
-let mut create_string: String = String::new();
-create_string.push_str("Create");
-create_string.push_str(" String");
-println!("{}", create_string);
+## push_str(): strings/text
 
-// concatenation -> +
-let create_string_01: String = String::from("1");
-let create_string_02: String = String::from("2");
-let create_string: String = create_string_01 + &create_string_02;
-println!("{}", create_string);
+```rust
+let mut text: String = String::new();
+text.push_str("Hello");
+text.push_str(" World!");
+println!("{:?}", text);
+```
 
-// ERROR
-println!("{}", create_string_01);
+## push() for individual characters
 
-// Value of create_string_01 moved for create_string
-// create_string_01 == null
-// Velue of create_string_02 referenced in create_string = 01 + &02
-// Consider cloning the value if the performance cost is acceptable: `.clone()`
-// let create_string: String = create_string_01.clone() + &create_string_02;
+```rust
+let mut text: String = String::new();
+text.push('H');
+text.push('e');
+text.push('e');
+text.push('o');
+text.push(' ');
+text.push('W');
+text.push('o');
+text.push('r');
+text.push('l');
+text.push('d');
+text.push('!');
+println!("{:?}", text);
+```
+
+## using +
+
+```rust
+let string1: String = String::from("Hello");
+let string2: String = String::from(" World");
+
+let combined: String = string1 + &string2;
+println!("{}", combined); 
+println!("{}", string2); 
+
+// This would cause an error, value used after move:
+// println!("{}", string1); 
 ```
 
 ## &str
 
 ```rust
-// &str
-let create_str: &str = "Create text!";
-println!("{}", create_str);
+// 
+let text_slice: &str = "Hello, World!";
+println!("{}", text_slice); // Hello, World!
 
-// without &str
-let create_str = "Create new text!";
-println!("{}", create_str);
+// inference
+let text_slice = "Hello, World!";
+println!("{}", text_slice); // Hello, World!
 
 // mut
-let mut create_str = "Create text!";
-println!("{}", create_str);
+let mut text_slice = "Initial text";
+println!("{}", text_slice);
 
-create_str = "Create new text!";
-println!("{}", create_str);
-
-// &str > string
-let create_str = "Create text!";
-
-// from and format!
-let create_str_01: String = String::from(create_str);
-let create_str_02: String = format!("{}", create_str);
-
-// to
-let create_str_03: String = create_str.to_string();
-let create_str_04: String = create_str.to_owned();
-
-//
-println!("{}", create_str);
-println!("{}", create_str_01);
-println!("{}", create_str_02);
-println!("{}", create_str_03);
-println!("{}", create_str_04);
+text_slice = "New text"; 
+println!("{}", text_slice); 
 ```
 
-## Str Concatenation
+## Concatenation always produces a new String
 
 ```rust
-let create_str_01 = "Create";
-let create_str_02 = " text!";
-println!("{}", create_str_01.to_string() + create_str_02); // or .to_owned()
+let part1 = "Hello";
+let part2 = " World";
+let part3 = "!";
 
+// concatenate
+let result1: String = part1.to_string() + part2 + part3;
+println!("{}", result1); // Hello World!
+
+// format!
+let result2: String = format!("{}{}{}", part1, part2, part3);
+println!("{}", result2); // Hello World!
+
+// to_owned()
+let result3: String = part1.to_owned() + part2 + part3;
+println!("{}", result3); // Hello World!
 ```

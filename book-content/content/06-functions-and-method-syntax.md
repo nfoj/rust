@@ -1,206 +1,227 @@
 # Functions and Method Syntax
 
-- functions
+## Function
 
 ```rust
-  fn basic() {
-      println!("Hello, world!");
-  }
+fn text() {
+    println!("Hello, world!");
+}
 
-  fn main() {
-      // basic
-      basic();
-  }
+fn main() {
+    text();
+}
 ```
 
-- parameters
+## Parameters
+
+`paramenter`
 
 ```rust
-  fn parameter(x: i8) {
-      println!("x = {}", x);
-  }
-
-  fn main() {
-      // parameter
-      parameter(1);
-  }
-```
-
-```rust
- fn parameter_00(x: i8, y: i8) {
-      // 00
-      println!("{} + {} = {}", x, y, x + y);
-	}
-  
-  fn main() {
-      // 00
-      parameter_00(1, 2);
-  }
-```
-
-- expression: →
-
-```rust
-  fn expression_01(x: i8, y: i8) -> i8 {
-      // 01
-      x + y
-  }
-
-  fn main() {
-      // 01
-      println!("{}", expression_01(7, 7));
-  }
-```
-
-- Not use: indicates that the function will not be used
-
-```rust
-#[allow(dead_code)]
-fn hello () {
-	println!("Hello, world!");
+fn number (x: i8) {
+    println!("Number = {}", x);
 }
 
 fn main () {
-	println!("...");
+    number (24);
 }
 ```
 
-> [!TIP]
-> Organize your code using modules, in the same file or outside it
-> 
-
-- modules
+`multiple parameters`
 
 ```rust
-  mod cal {
+fn multiple_parameters (x: i8, y: i8) {
+    println!("{} + {} = {}", x, y, x + y);
+}
 
-      pub fn sum(a: i8, b: i8) -> i8 {
-          a + b
-      }
-
-      pub fn sub(c: i8, d: i8) -> i8 {
-          c - d
-      }
-  }
-
-  mod text {
-
-      pub fn tprint() {
-          println!("Hello, world!");
-      }
-  }
-
-  fn main() {
-      let sum = cal::sum(1, 2);
-      println!("Result: {}", sum);
-
-      let sub = cal::sub(5, 2);
-      println!("Result: {}", sub);
-
-      text::tprint();
-  }
+fn main () {
+    multiple_parameters (10, 20);
+}
 ```
 
-- files + modules
+## Return values
 
 ```rust
-// tree
+fn sum(x: i8, y: i8) -> i8 {
+    x + y
+}
+
+fn main() {
+    let result = sum(15, 25);
+    println!("Result: {}", result);
+}
+```
+
+## Unsed code
+
+```rust
+#[allow(dead_code)]
+fn unused_function() {
+    println!("This function won't be called");
+}
+
+fn main() {
+    println!("...");
+}
+```
+
+## Modules
+
+```rust
+mod calculator {
+    pub fn sum(a: i8, b: i8) -> i8 {
+        a + b
+    }
+    
+    pub fn subtract(a: i8, b: i8) -> i8 {
+        a - b
+    }
+}
+
+mod text {
+    pub fn text() {
+        println!("Hello, world!");
+    }
+}
+
+fn main() {
+    let sum = calculator::sum(10, 5);
+    println!("Sum: {}", sum);
+    
+    let difference = calculator::subtract(10, 5);
+    println!("Difference: {}", difference);
+    
+    text::text();
+}
+```
+
+## Modules inside modules
+
+```rust
+mod utilities {
+
+    pub mod math {
+        pub fn add(a: i32, b: i32) -> i32 {
+            a + b
+        }
+        
+        pub fn multiply(a: i32, b: i32) -> i32 {
+            a * b
+        }
+    }
+    
+    pub mod text {
+        pub fn greet(name: &str) -> String {
+            format!("Hello, {}!", name)
+        }
+        
+        pub fn farewell(name: &str) -> String {
+            format!("Goodbye, {}!", name)
+        }
+    }
+}
+
+fn main() {
+    let sum = utilities::math::add(5, 3);
+    println!("Sum: {}", sum);
+    
+    let greeting = utilities::text::greet("Alice");
+    println!("{}", greeting);
+}
+```
+
+## File-based modules
+
+```rust
+// Project structure:
 /*
 project/
 ├── Cargo.toml
 └── src/
     ├── main.rs
     ├── sum.rs
-    ├── sub.rs
-    ├── mult.rs
-    └── div.rs
+    ├── subtract.rs
+    ├── multiply.rs
+    └── divide.rs
 */
-  
+
 // sum.rs
-pub fn cal_sum(a: i8, b: i8) -> i8 {
-	a + b
+pub fn calculate(a: i8, b: i8) -> i8 {
+    a + b
 }
 
-// sub.rs
-pub fn cal_sub(c: i8, d: i8) -> i8 {
-	c - d
+// subtract.rs  
+pub fn calculate(a: i8, b: i8) -> i8 {
+    a - b
 }
 
-// mult.rs
-pub fn cal_mult(e: i8, f: i8) -> i8 {
-	e * f
+// multiply.rs
+pub fn calculate(a: i8, b: i8) -> i8 {
+    a * b
 }
 
-// div.rs
-pub fn cal_div(g: i8, h: i8) -> i8 {
-	g / h
+// divide.rs
+pub fn calculate(a: i8, b: i8) -> i8 {
+    a / b
 }
 
 // main.rs
-mod sum;
-mod sub;
-mod mult;
-mod div;
+mod add;
+mod subtract;
+mod multiply;
+mod divide;
 
 fn main() {
-   let result_sum = sum::cal_sum(1, 1);
-   println!("Result sum = {}", result_sum);
-
-   let result_sub = sub::cal_sub(2, 2);
-   println!("Result sub = {}", result_sub);
-
-   let result_mult = mult::cal_mult(3, 3);
-   println!("Result multi = {}", result_mult);
-   
-   let result_div = mult::cal_div(4, 4);
-   println!("Result div = {}", result_div);
-   
+    let sum = sum::calculate(10, 5);
+    println!("10 + 5 = {}", sum);
+    
+    let diff = subtract::calculate(10, 5);
+    println!("10 - 5 = {}", diff);
+    
+    let product = multiply::calculate(10, 5);
+    println!("10 * 5 = {}", product);
+    
+    let quotient = divide::calculate(10, 5);
+    println!("10 / 5 = {}", quotient);
 }
 ```
 
-- files + mod + fn
+## File-based modules with submodules
 
 ```rust
-// tree
+// Project structure:
 /*
 project/
 ├── Cargo.toml
 └── src/
-     ├── main.rs
-     ├── math.rs
-     └── text.rs
+    ├── main.rs
+    ├── math.rs
+    └── text.rs
 */
 
 // math.rs
-pub mod math {
-    //
-    pub fn sum(a: i8, b: i8) -> i8 {
-        a + b
-    }
+pub fn sum(a: i8, b: i8) -> i8 {
+    a + b
+}
 
-    pub fn sub(a: i8, b: i8) -> i8 {
-        a - b
-    }
+pub fn subtract(a: i8, b: i8) -> i8 {
+    a - b
+}
 
-    pub fn mul(a: i8, b: i8) -> i8 {
-        a * b
-    }
+pub fn multiply(a: i8, b: i8) -> i8 {
+    a * b
+}
 
-    pub fn div(a: i8, b: i8) -> i8 {
-        a / b
-    }
+pub fn divide(a: i8, b: i8) -> i8 {
+    a / b
 }
 
 // text.rs
-pub mod text {
-    //
-    pub fn hello() {
-        println!("Hello!!");
-    }
+pub fn hello() {
+    println!("Hello!");
+}
 
-    pub fn thank() {
-        println!("Thank you!");
-    }
+pub fn thanks() {
+    println!("Thank you!");
 }
 
 // main.rs
@@ -208,16 +229,88 @@ mod math;
 mod text;
 
 fn main() {
-    //
-    text::text::hello();
 
-    //
-    println!("Sum: 1 + 2 = {:?}", math::math::sum(1, 2));
-    println!("Sub: 1 + 2 = {:?}", math::math::sub(1, 2));
-    println!("Mul: 1 + 2 = {:?}", math::math::mul(1, 2));
-    println!("Div: 1 + 2 = {:?}", math::math::div(1, 2));
-
-    //
-    text::text::thank();
+    text::hello();
+    println!("Addition: 8 + 4 = {}", math::sum(8, 4));
+    println!("Subtraction: 8 - 4 = {}", math::subtract(8, 4));
+    println!("Multiplication: 8 * 4 = {}", math::multiply(8, 4));
+    println!("Division: 8 / 4 = {}", math::divide(8, 4));    
+    text::thanks();
 }
+```
+
+## Modules with internal module structure
+
+```rust
+// Project structure:
+/*
+  project/
+    ├── Cargo.toml
+    └── src/
+        ├── main.rs
+        └── calculator.rs
+*/
+
+// calculator.rs
+pub mod basic_ops {
+    pub fn add(a: i16, b: i16) -> i16 {
+        a + b
+    }
+    
+    pub fn subtract(a: i16, b: i16) -> i16 {
+        a - b
+    }
+}
+
+pub mod advanced_ops {
+    pub fn power(base: i16, exp: u16) -> i16 {
+        base.pow(exp)
+    }
+    
+    pub fn square_root(n: f32) -> f32 {
+        n.sqrt()
+    }
+}
+
+// Functions directly in the calculator module
+pub fn display_result(operation: &str, result: i16) {
+    println!("{} = {}", operation, result);
+}
+
+// main.rs
+mod calculator;
+
+fn main() {
+    // calculator.rs
+    let sum = calculator::basic_ops::add(10, 5);
+    calculator::display_result("10 + 5", sum);
+    
+    let power = calculator::advanced_ops::power(2, 3);
+    calculator::display_result("2^3", power);    
+}
+```
+
+
+```rust
+
+```
+
+
+```rust
+
+```
+
+
+```rust
+
+```
+
+
+```rust
+
+```
+
+
+```rust
+
 ```
