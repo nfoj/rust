@@ -5,32 +5,46 @@ A vector in Rust is a homogeneous array that can be started empty, so values can
 - inicialized
 
 ```rust
-// 
+//
 let my_vector_u8: Vec<u8> = vec![0, 1, 2, 3, 4];
-println!("Vector u8 = {:#?}", my_vector_u8);
+println!("Vec<u8> = {:#?}", my_vector_u8);
 
-// 
+//
 let my_vector_str: Vec<&str> = vec!["a", "b", "c", "d"];
-println!("Vector &str = {:?}", my_vector_str);
+println!("Vec<&str> = {:?}", my_vector_str);
 
 //
 let my_vector_f32 = vec![0.1, 0.2];
-println!("Vector f32 = {:?}", my_vector_f32);
+println!("Vec<f32> = {:?}", my_vector_f32);
 ```
 
 - index
 
 ```rust
-// 
-let vector_index: Vec<u16> = vec![0, 1, 2];
+//
+let vector_index: Vec<char> = vec!['a', 'b', 'c'];
 println!("i[0] = {:?}", vector_index[0]);
-println!("i[0] = {:?}", vector_index[1]);
-println!("i[0] = {:?}", vector_index[2]);
+println!("i[1] = {:?}", vector_index[1]);
+println!("i[2] = {:?}", vector_index[2]);
 
 // let + index
 let vector_index_alph: Vec<&str> = vec!["x", "y"];
 let vector_alph: &str = vector_index_alph[1];
 println!("Vector Alph = {}", vector_alph);
+```
+
+- mut
+
+```rust
+//
+let mut vec: Vec<char> = vec!['a', 'b'];
+println!("Vec<char> = {:?}", vec);
+
+vec[0] = 'b';
+println!("Vec<char> = {:?}", vec);
+
+vec[1] = 'c';
+println!("Vec<char> = {:?}", vec);
 ```
 
 - push
@@ -95,10 +109,46 @@ vector_delete.remove(3);
 println!("Vector Remove = {:?}", vector_delete);
 ```
 
+- is_empty()
+
+```rust
+let mut vec: Vec<u8> = vec![];
+println!("Vec.is_empty() = {:?}", vec.is_empty());
+
+//
+vec.push(24);
+println!("\nVec.is_empty() = {:?}", vec);
+println!("Vec.is_empty() = {:?}", vec.is_empty());
+```
+
+- len()
+
+```rust
+//
+let vec: Vec<u8> = vec![1, 2, 3, 4, 5, 6];
+println!("Vec.len() = {:?}", vec.len());
+
+//
+let vec: Vec<&str> = vec!["Yellow", "Blue", "Green", "Red", "Gray", "Pink"];
+println!("Vec.len() = {:?}", vec.len());
+```
+
 - repeat
 
 ```rust
 //
 let vector_repeat: Vec<u8> = vec![0; 5];
 println!("Vector Repeat = {:#?}", vector_repeat);
+```
+
+- clear()
+
+```rust
+//
+let mut vec_alph: Vec<char> = vec!['a', 'e', 'i', 'o', 'u'];
+println!("Vec_alph:Vec<cha> = {:?}", vec_alph);
+
+//
+vec_alph.clear();
+println!("\nVec_alph:Vec<cha> = {:?}", vec_alph);
 ```

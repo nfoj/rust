@@ -71,7 +71,7 @@ mod calculator {
     pub fn sum(a: i8, b: i8) -> i8 {
         a + b
     }
-    
+
     pub fn subtract(a: i8, b: i8) -> i8 {
         a - b
     }
@@ -86,10 +86,10 @@ mod text {
 fn main() {
     let sum = calculator::sum(10, 5);
     println!("Sum: {}", sum);
-    
+
     let difference = calculator::subtract(10, 5);
     println!("Difference: {}", difference);
-    
+
     text::text();
 }
 ```
@@ -103,17 +103,17 @@ mod utilities {
         pub fn add(a: i32, b: i32) -> i32 {
             a + b
         }
-        
+
         pub fn multiply(a: i32, b: i32) -> i32 {
             a * b
         }
     }
-    
+
     pub mod text {
         pub fn greet(name: &str) -> String {
             format!("Hello, {}!", name)
         }
-        
+
         pub fn farewell(name: &str) -> String {
             format!("Goodbye, {}!", name)
         }
@@ -123,7 +123,7 @@ mod utilities {
 fn main() {
     let sum = utilities::math::add(5, 3);
     println!("Sum: {}", sum);
-    
+
     let greeting = utilities::text::greet("Alice");
     println!("{}", greeting);
 }
@@ -149,7 +149,7 @@ pub fn calculate(a: i8, b: i8) -> i8 {
     a + b
 }
 
-// subtract.rs  
+// subtract.rs
 pub fn calculate(a: i8, b: i8) -> i8 {
     a - b
 }
@@ -173,13 +173,13 @@ mod divide;
 fn main() {
     let sum = sum::calculate(10, 5);
     println!("10 + 5 = {}", sum);
-    
+
     let diff = subtract::calculate(10, 5);
     println!("10 - 5 = {}", diff);
-    
+
     let product = multiply::calculate(10, 5);
     println!("10 * 5 = {}", product);
-    
+
     let quotient = divide::calculate(10, 5);
     println!("10 / 5 = {}", quotient);
 }
@@ -234,7 +234,7 @@ fn main() {
     println!("Addition: 8 + 4 = {}", math::sum(8, 4));
     println!("Subtraction: 8 - 4 = {}", math::subtract(8, 4));
     println!("Multiplication: 8 * 4 = {}", math::multiply(8, 4));
-    println!("Division: 8 / 4 = {}", math::divide(8, 4));    
+    println!("Division: 8 / 4 = {}", math::divide(8, 4));
     text::thanks();
 }
 ```
@@ -256,7 +256,7 @@ pub mod basic_ops {
     pub fn add(a: i16, b: i16) -> i16 {
         a + b
     }
-    
+
     pub fn subtract(a: i16, b: i16) -> i16 {
         a - b
     }
@@ -266,7 +266,7 @@ pub mod advanced_ops {
     pub fn power(base: i16, exp: u16) -> i16 {
         base.pow(exp)
     }
-    
+
     pub fn square_root(n: f32) -> f32 {
         n.sqrt()
     }
@@ -284,18 +284,8 @@ fn main() {
     // calculator.rs
     let sum = calculator::basic_ops::add(10, 5);
     calculator::display_result("10 + 5", sum);
-    
+
     let power = calculator::advanced_ops::power(2, 3);
-    calculator::display_result("2^3", power);    
+    calculator::display_result("2^3", power);
 }
-```
-
-
-```rust
-
-```
-
-
-```rust
-
 ```
